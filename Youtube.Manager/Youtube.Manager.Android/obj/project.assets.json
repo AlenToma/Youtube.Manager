@@ -99,23 +99,6 @@
           "lib/monoandroid44/Plugin.CurrentActivity.dll": {}
         }
       },
-      "Plugin.InAppBilling/2.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "9.0.1",
-          "Plugin.CurrentActivity": "2.1.0.2"
-        },
-        "compile": {
-          "lib/MonoAndroid10/Plugin.InAppBilling.Abstractions.dll": {},
-          "lib/MonoAndroid10/Plugin.InAppBilling.VendingLibrary.dll": {},
-          "lib/MonoAndroid10/Plugin.InAppBilling.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid10/Plugin.InAppBilling.Abstractions.dll": {},
-          "lib/MonoAndroid10/Plugin.InAppBilling.VendingLibrary.dll": {},
-          "lib/MonoAndroid10/Plugin.InAppBilling.dll": {}
-        }
-      },
       "Plugin.MediaManager.Forms/0.6.7": {
         "type": "package",
         "dependencies": {
@@ -244,17 +227,6 @@
         },
         "runtime": {
           "lib/MonoAndroid10/_._": {}
-        }
-      },
-      "Xam.Plugin.Connectivity/3.2.0": {
-        "type": "package",
-        "compile": {
-          "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.dll": {},
-          "lib/MonoAndroid10/Plugin.Connectivity.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.dll": {},
-          "lib/MonoAndroid10/Plugin.Connectivity.dll": {}
         }
       },
       "Xam.Plugins.Android.ExoPlayer/2.8.8": {
@@ -1217,6 +1189,23 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.GooglePlayServices.Ads/60.1142.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.GooglePlayServices.Ads.Lite": "[60.1142.1]",
+          "Xamarin.GooglePlayServices.Basement": "[60.1142.1]",
+          "Xamarin.GooglePlayServices.Gass": "[60.1142.1]"
+        },
+        "compile": {
+          "lib/MonoAndroid80/Xamarin.GooglePlayServices.Ads.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid80/Xamarin.GooglePlayServices.Ads.dll": {}
+        },
+        "build": {
+          "build/MonoAndroid80/Xamarin.GooglePlayServices.Ads.targets": {}
+        }
+      },
       "Xamarin.GooglePlayServices.Ads.Lite/60.1142.1": {
         "type": "package",
         "dependencies": {
@@ -1250,6 +1239,21 @@
         },
         "build": {
           "build/MonoAndroid80/Xamarin.GooglePlayServices.Basement.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Gass/60.1142.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.GooglePlayServices.Basement": "[60.1142.1]"
+        },
+        "compile": {
+          "lib/MonoAndroid80/Xamarin.GooglePlayServices.Gass.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid80/Xamarin.GooglePlayServices.Gass.dll": {}
+        },
+        "build": {
+          "build/MonoAndroid80/Xamarin.GooglePlayServices.Gass.targets": {}
         }
       },
       "EntityWorker.Core/3.0.7": {
@@ -1356,6 +1360,7 @@
         "lib/monoandroid81/Acr.UserDialogs.dll",
         "lib/monoandroid81/Acr.UserDialogs.pdb",
         "lib/monoandroid90/Acr.UserDialogs.dll",
+        "lib/monoandroid90/Acr.UserDialogs.dll.mdb",
         "lib/monoandroid90/Acr.UserDialogs.pdb",
         "lib/netstandard2.0/Acr.UserDialogs.dll",
         "lib/netstandard2.0/Acr.UserDialogs.pdb",
@@ -1553,53 +1558,6 @@
         "lib/monoandroid44/Plugin.CurrentActivity.xml",
         "plugin.currentactivity.2.1.0.2.nupkg.sha512",
         "plugin.currentactivity.nuspec",
-        "readme.txt"
-      ]
-    },
-    "Plugin.InAppBilling/2.0.0": {
-      "sha512": "NAuSohkp1QP4Z9WMGi1NhZBDomfKNgKgLCnoheRBJ3NRv+R4qi92LtO3hJWT2rcxl+HvPc/CgIhh4uD6MNNH0A==",
-      "type": "package",
-      "path": "plugin.inappbilling/2.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/MonoAndroid10/Plugin.InAppBilling.Abstractions.dll",
-        "lib/MonoAndroid10/Plugin.InAppBilling.Abstractions.pdb",
-        "lib/MonoAndroid10/Plugin.InAppBilling.Abstractions.xml",
-        "lib/MonoAndroid10/Plugin.InAppBilling.VendingLibrary.dll",
-        "lib/MonoAndroid10/Plugin.InAppBilling.VendingLibrary.pdb",
-        "lib/MonoAndroid10/Plugin.InAppBilling.VendingLibrary.xml",
-        "lib/MonoAndroid10/Plugin.InAppBilling.XML",
-        "lib/MonoAndroid10/Plugin.InAppBilling.dll",
-        "lib/MonoAndroid10/Plugin.InAppBilling.pdb",
-        "lib/UAP10/Plugin.InAppBilling.Abstractions.dll",
-        "lib/UAP10/Plugin.InAppBilling.Abstractions.pdb",
-        "lib/UAP10/Plugin.InAppBilling.Abstractions.xml",
-        "lib/UAP10/Plugin.InAppBilling.XML",
-        "lib/UAP10/Plugin.InAppBilling.dll",
-        "lib/UAP10/Plugin.InAppBilling.pdb",
-        "lib/UAP10/Plugin.InAppBilling.pri",
-        "lib/Xamarin.iOS10/Plugin.InAppBilling.Abstractions.dll",
-        "lib/Xamarin.iOS10/Plugin.InAppBilling.Abstractions.pdb",
-        "lib/Xamarin.iOS10/Plugin.InAppBilling.Abstractions.xml",
-        "lib/Xamarin.iOS10/Plugin.InAppBilling.XML",
-        "lib/Xamarin.iOS10/Plugin.InAppBilling.dll",
-        "lib/Xamarin.iOS10/Plugin.InAppBilling.pdb",
-        "lib/netstandard1.0/Plugin.InAppBilling.Abstractions.dll",
-        "lib/netstandard1.0/Plugin.InAppBilling.Abstractions.pdb",
-        "lib/netstandard1.0/Plugin.InAppBilling.Abstractions.xml",
-        "lib/netstandard1.0/Plugin.InAppBilling.deps.json",
-        "lib/netstandard1.0/Plugin.InAppBilling.dll",
-        "lib/netstandard1.0/Plugin.InAppBilling.pdb",
-        "lib/netstandard1.0/Plugin.InAppBilling.xml",
-        "lib/xamarintvos/Plugin.InAppBilling.Abstractions.dll",
-        "lib/xamarintvos/Plugin.InAppBilling.Abstractions.pdb",
-        "lib/xamarintvos/Plugin.InAppBilling.Abstractions.xml",
-        "lib/xamarintvos/Plugin.InAppBilling.dll",
-        "lib/xamarintvos/Plugin.InAppBilling.pdb",
-        "lib/xamarintvos/Plugin.InAppBilling.xml",
-        "plugin.inappbilling.2.0.0.nupkg.sha512",
-        "plugin.inappbilling.nuspec",
         "readme.txt"
       ]
     },
@@ -2149,73 +2107,6 @@
         "ref/xamarinwatchos10/_._",
         "system.text.regularexpressions.4.3.0.nupkg.sha512",
         "system.text.regularexpressions.nuspec"
-      ]
-    },
-    "Xam.Plugin.Connectivity/3.2.0": {
-      "sha512": "ZV45TaBTCJg7XQNEl3fPyyJcuMMhdDEQ6BCLc/5pMuTv38M226ER0WTu5sbmba8jlliDuzeRqkRFHwrGdWAgyg==",
-      "type": "package",
-      "path": "xam.plugin.connectivity/3.2.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.dll",
-        "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.pdb",
-        "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.xml",
-        "lib/MonoAndroid10/Plugin.Connectivity.dll",
-        "lib/MonoAndroid10/Plugin.Connectivity.pdb",
-        "lib/MonoAndroid10/Plugin.Connectivity.xml",
-        "lib/UAP10/Plugin.Connectivity.Abstractions.dll",
-        "lib/UAP10/Plugin.Connectivity.Abstractions.pdb",
-        "lib/UAP10/Plugin.Connectivity.Abstractions.xml",
-        "lib/UAP10/Plugin.Connectivity.XML",
-        "lib/UAP10/Plugin.Connectivity.dll",
-        "lib/UAP10/Plugin.Connectivity.pdb",
-        "lib/UAP10/Plugin.Connectivity.pri",
-        "lib/UAP10/Plugin.Connectivity/Properties/Plugin.Connectivity.rd.xml",
-        "lib/Xamarin.Mac20/Plugin.Connectivity.Abstractions.dll",
-        "lib/Xamarin.Mac20/Plugin.Connectivity.Abstractions.pdb",
-        "lib/Xamarin.Mac20/Plugin.Connectivity.Abstractions.xml",
-        "lib/Xamarin.Mac20/Plugin.Connectivity.dll",
-        "lib/Xamarin.Mac20/Plugin.Connectivity.pdb",
-        "lib/Xamarin.Mac20/Plugin.Connectivity.xml",
-        "lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll",
-        "lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.pdb",
-        "lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.xml",
-        "lib/Xamarin.iOS10/Plugin.Connectivity.dll",
-        "lib/Xamarin.iOS10/Plugin.Connectivity.pdb",
-        "lib/Xamarin.iOS10/Plugin.Connectivity.xml",
-        "lib/XamarinTVOS/Plugin.Connectivity.Abstractions.dll",
-        "lib/XamarinTVOS/Plugin.Connectivity.Abstractions.pdb",
-        "lib/XamarinTVOS/Plugin.Connectivity.Abstractions.xml",
-        "lib/XamarinTVOS/Plugin.Connectivity.dll",
-        "lib/XamarinTVOS/Plugin.Connectivity.pdb",
-        "lib/XamarinTVOS/Plugin.Connectivity.xml",
-        "lib/net45/Plugin.Connectivity.Abstractions.dll",
-        "lib/net45/Plugin.Connectivity.Abstractions.pdb",
-        "lib/net45/Plugin.Connectivity.Abstractions.xml",
-        "lib/net45/Plugin.Connectivity.XML",
-        "lib/net45/Plugin.Connectivity.dll",
-        "lib/net45/Plugin.Connectivity.pdb",
-        "lib/netcoreapp2.0/Plugin.Connectivity.Abstractions.dll",
-        "lib/netcoreapp2.0/Plugin.Connectivity.Abstractions.pdb",
-        "lib/netcoreapp2.0/Plugin.Connectivity.Abstractions.xml",
-        "lib/netcoreapp2.0/Plugin.Connectivity.deps.json",
-        "lib/netcoreapp2.0/Plugin.Connectivity.dll",
-        "lib/netcoreapp2.0/Plugin.Connectivity.xml",
-        "lib/netstandard1.0/Plugin.Connectivity.Abstractions.dll",
-        "lib/netstandard1.0/Plugin.Connectivity.Abstractions.pdb",
-        "lib/netstandard1.0/Plugin.Connectivity.Abstractions.xml",
-        "lib/netstandard1.0/Plugin.Connectivity.deps.json",
-        "lib/netstandard1.0/Plugin.Connectivity.dll",
-        "lib/netstandard1.0/Plugin.Connectivity.pdb",
-        "lib/netstandard1.0/Plugin.Connectivity.xml",
-        "lib/tizen40/Plugin.Connectivity.Abstractions.dll",
-        "lib/tizen40/Plugin.Connectivity.Abstractions.pdb",
-        "lib/tizen40/Plugin.Connectivity.Abstractions.xml",
-        "lib/tizen40/Plugin.Connectivity.deps.json",
-        "lib/tizen40/Plugin.Connectivity.dll",
-        "xam.plugin.connectivity.3.2.0.nupkg.sha512",
-        "xam.plugin.connectivity.nuspec"
       ]
     },
     "Xam.Plugins.Android.ExoPlayer/2.8.8": {
@@ -3433,6 +3324,19 @@
         "xamarin.forms.nuspec"
       ]
     },
+    "Xamarin.GooglePlayServices.Ads/60.1142.1": {
+      "sha512": "ztonafv6RChuOQTIZG+bLnB9rxtVRmnwA/DsEYpGHb63AaO8z+z31VW0M1uA84b1LdgNXXZFOeO1sBwp3qF+uQ==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.ads/60.1142.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/MonoAndroid80/Xamarin.GooglePlayServices.Ads.targets",
+        "lib/MonoAndroid80/Xamarin.GooglePlayServices.Ads.dll",
+        "xamarin.googleplayservices.ads.60.1142.1.nupkg.sha512",
+        "xamarin.googleplayservices.ads.nuspec"
+      ]
+    },
     "Xamarin.GooglePlayServices.Ads.Lite/60.1142.1": {
       "sha512": "NEgd/llVHpoHKcT57c0wUN52NlJdwT6tK06VRDlBp4odU5jHw3KI3j6e9gm64x3gcfWGIrcL079aL6tJMoIhAg==",
       "type": "package",
@@ -3458,6 +3362,19 @@
         "lib/MonoAndroid80/Xamarin.GooglePlayServices.Basement.dll",
         "xamarin.googleplayservices.basement.60.1142.1.nupkg.sha512",
         "xamarin.googleplayservices.basement.nuspec"
+      ]
+    },
+    "Xamarin.GooglePlayServices.Gass/60.1142.1": {
+      "sha512": "tFgcAm3GJs1njhKpF6UcHl45ui+ge+9WkuYKf5kIAGpT4LTtrWqt948Vgq/zZCUkVpmzOxj6b9jgxlmeBHkPHw==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.gass/60.1142.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/MonoAndroid80/Xamarin.GooglePlayServices.Gass.targets",
+        "lib/MonoAndroid80/Xamarin.GooglePlayServices.Gass.dll",
+        "xamarin.googleplayservices.gass.60.1142.1.nupkg.sha512",
+        "xamarin.googleplayservices.gass.nuspec"
       ]
     },
     "EntityWorker.Core/3.0.7": {
@@ -3493,13 +3410,11 @@
   },
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v9.0": [
-      "FastDeepCloner >= 1.2.5",
-      "Plugin.InAppBilling >= 2.0.0",
       "Plugin.MediaManager >= 0.6.8",
       "Plugin.Permissions >= 3.0.0.12",
       "Rg.Plugins.Popup >= 1.1.5.188",
-      "Xam.Plugin.Connectivity >= 3.2.0",
-      "Xamarin.Android.Support.Compat >= 28.0.0.1",
+      "Xamarin.Android.Support.Core.Utils >= 28.0.0.1",
+      "Xamarin.Android.Support.CustomTabs >= 28.0.0.1",
       "Xamarin.Android.Support.Design >= 28.0.0.1",
       "Xamarin.Android.Support.v4 >= 28.0.0.1",
       "Xamarin.Android.Support.v7.AppCompat >= 28.0.0.1",
@@ -3508,11 +3423,10 @@
       "Xamarin.Auth >= 1.7.0",
       "Xamarin.Essentials >= 1.2.0",
       "Xamarin.Forms >= 4.1.0.581479",
-      "Xamarin.GooglePlayServices.Ads.Lite >= 60.1142.1",
+      "Xamarin.GooglePlayServices.Ads >= 60.1142.1",
       "YouTubeApi >= 1.0.0",
       "Youtube.Manager >= 1.0.0",
-      "Youtube.Manager.Models.Container >= 1.0.0",
-      "dotMorten.Xamarin.Forms.AutoSuggestBox >= 0.7.0"
+      "Youtube.Manager.Models.Container >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3566,14 +3480,6 @@
     "frameworks": {
       "monoandroid90": {
         "dependencies": {
-          "FastDeepCloner": {
-            "target": "Package",
-            "version": "[1.2.5, )"
-          },
-          "Plugin.InAppBilling": {
-            "target": "Package",
-            "version": "[2.0.0, )"
-          },
           "Plugin.Permissions": {
             "target": "Package",
             "version": "[3.0.0.12, )"
@@ -3582,11 +3488,11 @@
             "target": "Package",
             "version": "[1.1.5.188, )"
           },
-          "Xam.Plugin.Connectivity": {
+          "Xamarin.Android.Support.Core.Utils": {
             "target": "Package",
-            "version": "[3.2.0, )"
+            "version": "[28.0.0.1, )"
           },
-          "Xamarin.Android.Support.Compat": {
+          "Xamarin.Android.Support.CustomTabs": {
             "target": "Package",
             "version": "[28.0.0.1, )"
           },
@@ -3622,13 +3528,9 @@
             "target": "Package",
             "version": "[4.1.0.581479, )"
           },
-          "Xamarin.GooglePlayServices.Ads.Lite": {
+          "Xamarin.GooglePlayServices.Ads": {
             "target": "Package",
             "version": "[60.1142.1, )"
-          },
-          "dotMorten.Xamarin.Forms.AutoSuggestBox": {
-            "target": "Package",
-            "version": "[0.7.0, )"
           }
         }
       }

@@ -18,8 +18,21 @@
                         <DataTemplate>
                             <StackLayout x:Name="itemContainer" Style="{StaticResource FormFloatLeft}"
                                          VerticalOptions="Center">
-                                <Image Aspect="AspectFill" HeightRequest="45" WidthRequest="50"
-                                       Source="{ Binding Path=., Converter={StaticResource ImageSource}}" />
+                                <AbsoluteLayout WidthRequest="50">
+                                    <Image Aspect="AspectFill" HeightRequest="45" WidthRequest="50"  Source="{ Binding Path=., Converter={StaticResource ImageSource}}" />
+                                    <StackLayout BackgroundColor="Red"  IsVisible="{Binding Duration, Converter={StaticResource StringNullOrEmpty}}"
+                                               AbsoluteLayout.LayoutBounds="1,1,25,12"
+                                               AbsoluteLayout.LayoutFlags="PositionProportional">
+                                        <Label 
+                                                   HorizontalOptions="CenterAndExpand"
+                                                   LineBreakMode="NoWrap"
+                                                   FontAttributes="Bold"
+                                                   FontSize="8"
+                                                   TextColor="White"
+                                                   Text="{Binding Duration}" />
+                                    </StackLayout>
+                                </AbsoluteLayout>
+
                                 <Label Text="{Binding Title}" VerticalOptions="Start" HorizontalOptions="Start"
                                        Style="{StaticResource Header}" />
                             </StackLayout>

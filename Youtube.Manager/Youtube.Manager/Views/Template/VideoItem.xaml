@@ -45,6 +45,17 @@
                                                    TextColor="White" />
 
                                         </StackLayout>
+                                        <StackLayout BackgroundColor="Red"  IsVisible="{Binding Duration, Converter={StaticResource StringNullOrEmpty}}"
+                                               AbsoluteLayout.LayoutBounds="1,1,25,12"
+                                               AbsoluteLayout.LayoutFlags="PositionProportional">
+                                            <Label 
+                                                   HorizontalOptions="CenterAndExpand"
+                                                   LineBreakMode="NoWrap"
+                                                   FontAttributes="Bold"
+                                                   FontSize="8"
+                                                   TextColor="White"
+                                                   Text="{Binding Duration}" />
+                                        </StackLayout>
                                     </AbsoluteLayout>
                                     <StackLayout Orientation="Vertical">
                                         <Label Text="{Binding Title}" VerticalOptions="Start" HorizontalOptions="Start"

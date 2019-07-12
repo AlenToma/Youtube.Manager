@@ -50,7 +50,7 @@ namespace Youtube.Manager.Models.Container.DB_models.Library
             Author = video.Auther;
             Title = video.Title;
             DefaultThumbnailUrl = video.ThumpUrl;
-            Duration = video.Duration;
+            Duration = video.Duration ?? "";
             Views = "";
             TotalVideoViews = "";
             Description = video.Description;
@@ -107,9 +107,9 @@ namespace Youtube.Manager.Models.Container.DB_models.Library
                 return this;
 
             if (IsPlaylist)
-                _videos = ControllerRepository.Youtube(x => x.GetPlaylistVideosAsync(Id, 1, 30)).Await().ToList();
+                _videos = ControllerRepository.Youtube(x => x.GetPlaylistVideosAsync(Id, 1, 50)).Await().ToList();
             else if (IsChannel)
-                _videos = ControllerRepository.Youtube(x => x.GetChannelVideosAsync(Id, 1, 30)).Await().ToList();
+                _videos = ControllerRepository.Youtube(x => x.GetChannelVideosAsync(Id, 1, 50)).Await().ToList();
             return this;
         }
 

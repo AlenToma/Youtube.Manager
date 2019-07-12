@@ -519,14 +519,6 @@
       "frameworks": {
         "monoandroid90": {
           "dependencies": {
-            "FastDeepCloner": {
-              "target": "Package",
-              "version": "[1.2.5, )"
-            },
-            "Plugin.InAppBilling": {
-              "target": "Package",
-              "version": "[2.0.0, )"
-            },
             "Plugin.Permissions": {
               "target": "Package",
               "version": "[3.0.0.12, )"
@@ -535,11 +527,11 @@
               "target": "Package",
               "version": "[1.1.5.188, )"
             },
-            "Xam.Plugin.Connectivity": {
+            "Xamarin.Android.Support.Core.Utils": {
               "target": "Package",
-              "version": "[3.2.0, )"
+              "version": "[28.0.0.1, )"
             },
-            "Xamarin.Android.Support.Compat": {
+            "Xamarin.Android.Support.CustomTabs": {
               "target": "Package",
               "version": "[28.0.0.1, )"
             },
@@ -575,13 +567,9 @@
               "target": "Package",
               "version": "[4.1.0.581479, )"
             },
-            "Xamarin.GooglePlayServices.Ads.Lite": {
+            "Xamarin.GooglePlayServices.Ads": {
               "target": "Package",
               "version": "[60.1142.1, )"
-            },
-            "dotMorten.Xamarin.Forms.AutoSuggestBox": {
-              "target": "Package",
-              "version": "[0.7.0, )"
             }
           }
         }
