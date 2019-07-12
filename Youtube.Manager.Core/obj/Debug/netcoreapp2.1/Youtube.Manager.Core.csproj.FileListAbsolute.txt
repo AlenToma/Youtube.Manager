@@ -1,0 +1,6 @@
+D:\Projects\Youtube.Manager\Youtube.Manager.Core\bin\Debug\netcoreapp2.1\Youtube.Manager.Core.deps.json
+D:\Projects\Youtube.Manager\Youtube.Manager.Core\bin\Debug\netcoreapp2.1\Youtube.Manager.Core.dll
+D:\Projects\Youtube.Manager\Youtube.Manager.Core\obj\Debug\netcoreapp2.1\Youtube.Manager.Core.csprojAssemblyReference.cache
+D:\Projects\Youtube.Manager\Youtube.Manager.Core\obj\Debug\netcoreapp2.1\Youtube.Manager.Core.csproj.CoreCompileInputs.cache
+D:\Projects\Youtube.Manager\Youtube.Manager.Core\obj\Debug\netcoreapp2.1\Youtube.Manager.Core.AssemblyInfoInputs.cache
+D:\Projects\Youtube.Manager\Youtube.Manager.Core\obj\Debug\netcoreapp2.1\Youtube.Manager.Core.AssemblyInfo.cs

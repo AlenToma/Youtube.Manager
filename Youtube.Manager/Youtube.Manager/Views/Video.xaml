@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<manager:PopupBase
+    xmlns:manager="clr-namespace:Youtube.Manager"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Youtube.Manager.Views.Video"
+    xmlns:controls="clr-namespace:Youtube.Manager.Controls"
+    xmlns:template="clr-namespace:Youtube.Manager.Views.Template"
+    BackgroundColor="{StaticResource applicationColor}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <controls:YoutubeVideoView x:Name="yVideo" Grid.Row="0" />
+
+        <controls:ExpandableView x:Name="expandableViewPlayList" Grid.Row="1" VerticalOptions="FillAndExpand"
+                                 ExpandAnimationLength="600" TouchHandlerView="{x:Reference exPlayListHeader}">
+            <controls:ExpandableView.PrimaryView>
+                <StackLayout Style="{StaticResource expanse}" x:Name="exPlayListHeader">
+                    <AbsoluteLayout>
+                        <Image HeightRequest="30" WidthRequest="30" x:Name="imgPlayList" />
+                        <StackLayout Style="{StaticResource Dim}" HorizontalOptions="FillAndExpand"
+                                     AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1"
+                                     AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Label Text="{StaticResource PIdentifire}" HorizontalOptions="CenterAndExpand"
+                                   LineBreakMode="NoWrap" FontAttributes="Bold" FontSize="8" TextColor="White" />
+                        </StackLayout>
+                    </AbsoluteLayout>
+                    <Label Text="" x:Name="txtPlayTitle" Style="{StaticResource UnderText}" />
+                    <Image x:Name="playListArrow" Source="arrow.png" HeightRequest="16" WidthRequest="16" />
+                </StackLayout>
+            </controls:ExpandableView.PrimaryView>
+            <controls:ExpandableView.SecondaryViewTemplate>
+                <DataTemplate>
+                    <template:VideoItem x:Name="lstVidos" OnItemClick="lstPlaylistvideos_OnItemClick"
+                                        PageType="DisplayActionSheet" HeaderIsVisible="False" />
+                </DataTemplate>
+            </controls:ExpandableView.SecondaryViewTemplate>
+        </controls:ExpandableView>
+
+        <controls:ExpandableView x:Name="expandableView" Grid.Row="2" VerticalOptions="FillAndExpand"
+                                 TouchHandlerView="{x:Reference exHeader}" ExpandAnimationLength="600">
+            <controls:ExpandableView.PrimaryView>
+                <StackLayout Style="{StaticResource expanse}" x:Name="exHeader">
+                    <Image HeightRequest="30" WidthRequest="30" x:Name="imgVideo" />
+                    <Label Text="" x:Name="txtTitle" Style="{StaticResource UnderText}" />
+                    <Image x:Name="arrow" Source="arrow.png" HeightRequest="16" WidthRequest="16" />
+                </StackLayout>
+            </controls:ExpandableView.PrimaryView>
+            <controls:ExpandableView.SecondaryViewTemplate>
+                <DataTemplate>
+                    <template:VideoItem x:Name="lstVidos" OnItemClick="LstVidos_OnItemClick"
+                                        PageType="DisplayActionSheet" HeaderIsVisible="False" />
+                </DataTemplate>
+            </controls:ExpandableView.SecondaryViewTemplate>
+        </controls:ExpandableView>
+    </Grid>
+</manager:PopupBase>

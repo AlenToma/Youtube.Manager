@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="EntityMigration\SQL\User_Suggestion.sql" />
+    <None Remove="EntityMigration\SQL\VideoCategoryView.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="EntityMigration\SQL\Migrations\User_Suggestion.sql" />
+    <EmbeddedResource Include="EntityMigration\SQL\VideoCategoryView.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FastDeepCloner" Version="1.2.5" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Drawing.Common">
+      <Version>4.5.1</Version>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\EntityWorker.Core\Source\EntityWorker.Core\EntityWorker.Core.csproj" />
+    <ProjectReference Include="..\..\YoutubeExplode\YoutubeExplode\YoutubeExplode.csproj" />
+  </ItemGroup>
+
+</Project>

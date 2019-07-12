@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="Youtube.Manager" android:installLocation="auto">
+  <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+  <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+  <application android:label="Youtube.Manager.Android" android:name="android.support.multidex.MultiDexApplication" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true">
+    <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="Youtube.Manager" android:launchMode="singleTop" android:theme="@style/MainTheme" android:name="md51817d2a2c286bcffe5f34dac6b3350f3.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:label="OAuth2Activity" android:launchMode="singleTop" android:noHistory="true" android:name="md51817d2a2c286bcffe5f34dac6b3350f3.OAuth2Activity">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <data android:path="/oauth2redirect" />
+        <data android:scheme="com.googleusercontent.apps.564962228855-c7n1bm28vv6r6rv7gcr68seq4r13cugs" />
+      </intent-filter>
+    </activity>
+    <service android:isolatedProcess="false" android:label="YoutubeDownloadService" android:name="md5ee46005bde28190ad4c82c85a144b89c.FileService" />
+    <service android:exported="true" android:name="md5bc84c97450f22337f6e1991a43223866.MediaBrowserService">
+      <intent-filter>
+        <action android:name="android.media.browse.MediaBrowserService" />
+      </intent-filter>
+    </service>
+    <receiver android:enabled="true" android:exported="false" android:label="Connectivity Plugin Broadcast Receiver" android:name="md59628c2715c1bb8febcc7ae8402df0582.ConnectivityChangeBroadcastReceiver" />
+    <service android:name="md5dcb6eccdc824e0677ffae8ccdde42930.KeepAliveService" />
+    <activity android:label="Web Authenticator" android:name="md5538102cb7512c6dba0c04fe6c395414e.FormAuthenticatorActivity" />
+    <activity android:label="Web Authenticator" android:name="md5538102cb7512c6dba0c04fe6c395414e.WebAuthenticatorActivity" />
+    <activity android:label="@string/title_activity_webview" android:theme="@android:style/Theme.DeviceDefault" android:name="md5538102cb7512c6dba0c04fe6c395414e.WebViewActivity" />
+    <activity android:label="Web Authenticator Native Browser" android:launchMode="singleTop" android:name="md5538102cb7512c6dba0c04fe6c395414e.WebAuthenticatorNativeBrowserActivity" />
+    <receiver android:name="md5538102cb7512c6dba0c04fe6c395414e.CustomTabsActionsBroadcastReceiver" />
+    <receiver android:enabled="true" android:exported="false" android:label="Essentials Battery Broadcast Receiver" android:name="md5d630c3d3bfb5f5558520331566132d97.BatteryBroadcastReceiver" />
+    <receiver android:enabled="true" android:exported="false" android:label="Essentials Energy Saver Broadcast Receiver" android:name="md5d630c3d3bfb5f5558520331566132d97.EnergySaverBroadcastReceiver" />
+    <receiver android:enabled="true" android:exported="false" android:label="Essentials Connectivity Broadcast Receiver" android:name="md5d630c3d3bfb5f5558520331566132d97.ConnectivityBroadcastReceiver" />
+    <provider android:authorities="Youtube.Manager.fileProvider" android:exported="false" android:grantUriPermissions="true" android:name="xamarin.essentials.fileProvider">
+      <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/xamarin_essentials_fileprovider_file_paths" />
+    </provider>
+    <receiver android:enabled="true" android:exported="false" android:name="md51558244f76c53b6aeda52c8a337f2c37.PowerSaveModeBroadcastReceiver" />
+    <provider android:name="mono.android.MultiDexLoader" android:exported="false" android:initOrder="1999999999" android:authorities="Youtube.Manager.mono.android.MultiDexLoader.__mono_init__" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="1999999998" android:authorities="Youtube.Manager.mono.MonoRuntimeProvider.__mono_init__" />
+    <!--suppress ExportedReceiver-->
+    <receiver android:name="mono.android.Seppuku">
+      <intent-filter>
+        <action android:name="mono.android.intent.action.SEPPUKU" />
+        <category android:name="mono.android.intent.category.SEPPUKU.Youtube.Manager" />
+      </intent-filter>
+    </receiver>
+    <!--Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+    <activity android:name="com.google.android.gms.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:theme="@android:style/Theme.Translucent" android:exported="false" />
+    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+  </application>
+  <application android:name="android.support.multidex.MultiDexApplication"></application>
+</manifest>

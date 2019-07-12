@@ -1,0 +1,12 @@
+E:\Projects\Youtube.Manager\Youtube.Manager.Core\bin\Debug\netcoreapp2.0\Youtube.Manager.Core.deps.json
+E:\Projects\Youtube.Manager\Youtube.Manager.Core\bin\Debug\netcoreapp2.0\Youtube.Manager.Core.dll
+E:\Projects\Youtube.Manager\Youtube.Manager.Core\bin\Debug\netcoreapp2.0\Youtube.Manager.Core.pdb
+E:\Projects\Youtube.Manager\Youtube.Manager.Core\bin\Debug\netcoreapp2.0\YoutubeExtractor.dll
+E:\Projects\Youtube.Manager\Youtube.Manager.Core\bin\Debug\netcoreapp2.0\YoutubeExtractor.pdb
+E:\Projects\Youtube.Manager\Youtube.Manager.Core\obj\Debug\netcoreapp2.0\Youtube.Manager.Core.csprojAssemblyReference.cache
+E:\Projects\Youtube.Manager\Youtube.Manager.Core\obj\Debug\netcoreapp2.0\Youtube.Manager.Core.csproj.CoreCompileInputs.cache
+E:\Projects\Youtube.Manager\Youtube.Manager.Core\obj\Debug\netcoreapp2.0\Youtube.Manager.Core.AssemblyInfoInputs.cache
+E:\Projects\Youtube.Manager\Youtube.Manager.Core\obj\Debug\netcoreapp2.0\Youtube.Manager.Core.AssemblyInfo.cs
+E:\Projects\Youtube.Manager\Youtube.Manager.Core\obj\Debug\netcoreapp2.0\Youtube.Manager.Core.csproj.CopyComplete
+E:\Projects\Youtube.Manager\Youtube.Manager.Core\obj\Debug\netcoreapp2.0\Youtube.Manager.Core.dll
+E:\Projects\Youtube.Manager\Youtube.Manager.Core\obj\Debug\netcoreapp2.0\Youtube.Manager.Core.pdb

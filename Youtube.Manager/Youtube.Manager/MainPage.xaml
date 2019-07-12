@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<manager:SafeContentPage
+    xmlns:manager="clr-namespace:Youtube.Manager"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Youtube.Manager.Views;assembly=Youtube.Manager"
+    xmlns:controls="clr-namespace:Youtube.Manager.Controls"
+    xmlns:forms="clr-namespace:dotMorten.Xamarin.Forms;assembly=dotMorten.Xamarin.Forms.AutoSuggestBox"
+    xmlns:ads="clr-namespace:Youtube.Manager.Controls.Ads"
+    x:Class="Youtube.Manager.MainPage"
+    BackgroundColor="{StaticResource applicationColor}">
+    <manager:SafeContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <controls:Toolbar x:Name="toolbar" HorizontalOptions="FillAndExpand" ItemClicked="Toolbar_ItemClicked">
+                <controls:Toolbar.ToolBarItems>
+                    <controls:ToolBarItem Icon="coinCounter.png" Float="Right" Identifier="DownloadCoin"></controls:ToolBarItem>
+                </controls:Toolbar.ToolBarItems>
+            </controls:Toolbar>
+            <Frame Style="{StaticResource FrameContainer}" BackgroundColor="{StaticResource barBackgroundColor}">
+                <StackLayout Style="{StaticResource FormFloatLeft}" x:Name="searchPanel">
+                    <Image Source="Search_.png" HeightRequest="16" WidthRequest="16">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <forms:AutoSuggestBox x:Name="_txtSearch" PlaceholderText="{StaticResource VSearch}" HorizontalOptions="FillAndExpand"
+                                          TextChanged="_txtSearch_TextChanged" QuerySubmitted="_txtSearch_QuerySubmitted"></forms:AutoSuggestBox>
+                </StackLayout>
+            </Frame>
+            <controls:TappedView x:Name="tappedNavigation">
+                <controls:TappedView.TabContents>
+                    <controls:TabContent>
+                        <controls:TabContent.PageContent>
+                            <local:Home />
+                        </controls:TabContent.PageContent>
+                    </controls:TabContent>
+                    <controls:TabContent>
+                        <controls:TabContent.PageContent>
+                            <local:User />
+                        </controls:TabContent.PageContent>
+                    </controls:TabContent>
+                </controls:TappedView.TabContents>
+            </controls:TappedView>
+        </StackLayout>
+    </manager:SafeContentPage.Content>
+</manager:SafeContentPage>

@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net451'">
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\YoutubeExplode\YoutubeExplode\YoutubeExplode.csproj" />
+    <ProjectReference Include="..\Youtube.Manager.Models\Youtube.Manager.Models.Container.csproj" />
+  </ItemGroup>
+
+</Project>

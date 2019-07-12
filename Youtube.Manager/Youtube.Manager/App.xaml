@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Youtube.Manager.App">
+
+    <Application.Resources>
+        <Color x:Key="applicationColor">#1b1a1a</Color>
+        <Color x:Key="barBackgroundColor">#353535</Color>
+        <Color x:Key="text">#fff</Color>
+        <Color x:Key="pressed">#0099cc</Color>
+        <Color x:Key="SelectedItem">#6f6f6f</Color>
+
+        <ResourceDictionary>
+            <x:String x:Key="DownloadMax">You can only download 5 videos at the same time, please wait until completion of the other five</x:String>
+            <x:String x:Key="PChoose">Choose Playlist</x:String>
+            <x:String x:Key="Close">Close</x:String>
+            <x:String x:Key="Create">Create new</x:String>
+            <x:String x:Key="Cancel">Cancel</x:String>
+            <x:String x:Key="Save">Save</x:String>
+            <x:String x:Key="Download">Download</x:String>
+            <x:String x:Key="PDownload">Download PlayList</x:String>
+            <x:String x:Key="VDownload">Download Video</x:String>
+            <x:String x:Key="VSDownload">Download Videos</x:String>
+            <x:String x:Key="Play">Play</x:String>
+            <x:String x:Key="Ok">OK</x:String>
+            <x:String x:Key="Yes">Yes</x:String>
+            <x:String x:Key="No">No</x:String>
+            <x:String x:Key="AdsButton">Watch ads and earn a coin</x:String>
+            <x:String x:Key="Buy">Buy</x:String>
+            <x:String x:Key="SEK">SEK</x:String>
+            <x:String x:Key="USD">USD</x:String>
+            <x:String x:Key="Amount">100</x:String>
+            <x:String x:Key="AmountMony">10.60</x:String>
+            <x:String x:Key="Infinity">∞</x:String>
+
+            <x:String x:Key="PEdit">Edit/Create Playlist</x:String>
+            <x:String x:Key="PPlaceHolderName">Playlist Name</x:String>
+            <x:String x:Key="VP">Video Properties</x:String>
+            <x:String x:Key="VSearch">Search Videos</x:String>
+            <x:String x:Key="PCreate">Create a playlist</x:String>
+            <x:String x:Key="PIdentifire">((+))</x:String>
+            <x:String x:Key="NotLoggedIn">Has to be loggedIn to be able to download videos</x:String>
+            <x:String x:Key="GoogleAuthenticationError">Somthing went wrong, please try another time</x:String>
+            <x:String x:Key="LoginError">Login Required</x:String>
+            <x:String x:Key="MyPlaylist">My Playlists</x:String>
+            <x:String x:Key="AppRecommendation">Other people playlist</x:String>
+            <x:String x:Key="UserSearchRecommendation">Recommendation based on most searched videos</x:String>
+            <x:String x:Key="DownloadRequired">You need to redownload the selected video to be able to play it</x:String>
+            <x:String x:Key="DeleteOperation">Delete?</x:String>
+            <x:String x:Key="VideoDelete">You are about to remove this video from your playlist. Are you sure?</x:String>
+            <x:String x:Key="PlayListDelete">You are about to remove this playlist and all its content. Are you sure?</x:String>
+            <x:String x:Key="BackgroundModeMessage">Background mode audio is possible. with your own playlist only</x:String>
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="#353535" />
+                <Setter Property="BarTextColor" Value="#fff" />
+            </Style>
+
+            <Style TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="#1b1a1a" />
+            </Style>
+
+            <Style TargetType="ListView">
+                <Setter Property="BackgroundColor" Value="#1b1a1a" />
+            </Style>
+
+            <Style TargetType="TabbedPage">
+                <Setter Property="BackgroundColor" Value="#1b1a1a" />
+
+            </Style>
+
+        </ResourceDictionary>
+
+        <Style x:Key="Content" TargetType="ContentPage">
+            <Setter Property="BackgroundColor" Value="Black" />
+        </Style>
+
+        <Style x:Key="Form" TargetType="StackLayout">
+            <Setter Property="Padding" Value="5,1,0,5" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="Margin" Value="0" />
+        </Style>
+
+        <Style x:Key="FormFloatLeft" TargetType="StackLayout" BasedOn="{StaticResource Form}">
+            <Setter Property="Orientation" Value="Horizontal" />
+        </Style>
+
+
+        <Style x:Key="LayoutFloatLeft" TargetType="RelativeLayout">
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            <Setter Property="Margin" Value="0" />
+        </Style>
+
+
+        <Style x:Key="ItemContainer" TargetType="StackLayout" BasedOn="{StaticResource Form}">
+            <Setter Property="Orientation" Value="Vertical" />
+        </Style>
+
+
+        <Style x:Key="expanse" TargetType="StackLayout" BasedOn="{StaticResource FormFloatLeft}">
+            <Setter Property="Margin" Value="5,0,5,5" />
+            <Setter Property="MinimumWidthRequest" Value="60" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="BackgroundColor" Value="{StaticResource barBackgroundColor}" />
+
+        </Style>
+
+        <Style x:Key="ButtonContainer" TargetType="Button">
+            <Setter Property="Padding" Value="5,0,5,0" />
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="ContentLayout" Value="Left,1" />
+            <Setter Property="TextColor" Value="{StaticResource text}" />
+        </Style>
+
+        <Style x:Key="SelectedButton" TargetType="Button" BasedOn="{StaticResource ButtonContainer}">
+            <Setter Property="BackgroundColor" Value="{StaticResource pressed}" />
+        </Style>
+
+        <Style x:Key="Icon" TargetType="Button" BasedOn="{StaticResource ButtonContainer}">
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="WidthRequest" Value="50" />
+            <Setter Property="Margin" Value="0,0,10,0" />
+        </Style>
+
+
+        <Style x:Key="BaseText" TargetType="Label">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+        </Style>
+
+
+        <Style x:Key="Notify" TargetType="Label" BasedOn="{StaticResource BaseText}">
+            <Setter Property="TextColor" Value="Red" />
+            <Setter Property="LineBreakMode" Value="TailTruncation" />
+        </Style>
+        
+        
+        <Style x:Key="UnderText" TargetType="Label" BasedOn="{StaticResource BaseText}">
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="TextColor" Value="#e6e6e6" />
+            <Setter Property="FontAttributes" Value="None" />
+            <Setter Property="LineBreakMode" Value="TailTruncation" />
+        </Style>
+
+        <Style x:Key="Log" TargetType="Label" BasedOn="{StaticResource UnderText}">
+            <Setter Property="FontSize" Value="10" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        </Style>
+
+        <Style x:Key="Header" TargetType="Label" BasedOn="{StaticResource BaseText}">
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="LineBreakMode" Value="TailTruncation" />
+        </Style>
+
+        <Style x:Key="HeaderContainer" TargetType="Label" BasedOn="{StaticResource BaseText}">
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="LineBreakMode" Value="TailTruncation" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="Margin" Value="5,0,0,0" />
+        </Style>
+
+        <Style x:Key="SearchEntry" TargetType="Entry">
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="FontSize" Value="10" />
+            <Setter Property="TextColor" Value="#e6e6e6" />
+            <Setter Property="FontAttributes" Value="None" />
+            <Setter Property="PlaceholderColor" Value="#e6e6e6" />
+        </Style>
+
+        <Style x:Key="Picker" TargetType="Picker">
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="FontSize" Value="10" />
+            <Setter Property="FontAttributes" Value="None" />
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="TextColor" Value="{StaticResource applicationColor}" />
+        </Style>
+
+        <Style x:Key="FrameContainer" TargetType="Frame">
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="OutlineColor" Value="DarkRed" />
+            <Setter Property="HasShadow" Value="True" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <!--<Setter Property="BackgroundColor" Value="White"/>-->
+            <Setter Property="BackgroundColor" Value="{StaticResource barBackgroundColor}" />
+
+
+        </Style>
+
+        <Style x:Key="PopUpCenter" TargetType="StackLayout">
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="Padding" Value="40" />
+        </Style>
+
+        <Style x:Key="Dim" TargetType="StackLayout" BasedOn="{StaticResource FormFloatLeft}">
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="BackgroundColor" Value="#66000000" />
+            <Setter Property="Padding" Value="10,12,10,10" />
+            <Setter Property="AbsoluteLayout.LayoutBounds" Value="0,45,1,50" />
+            <Setter Property="AbsoluteLayout.LayoutFlags" Value="PositionProportional,WidthProportional" />
+        </Style>
+
+
+    </Application.Resources>
+</Application>

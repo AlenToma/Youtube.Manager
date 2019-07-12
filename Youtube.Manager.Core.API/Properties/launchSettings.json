@@ -1,0 +1,34 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/Youtube.Manager.Core.API",
+      "sslPort": 0
+    },
+    "iisExpress": {
+      "applicationUrl": "http://youtubemanager.ddns.net/Youtube.Manager.Core.API",
+      "sslPort": 44330
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "nativeDebugging": true
+    },
+    "Youtube.Manager.Core.API": {
+      "commandName": "IIS",
+      "workingDirectory": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core.API",
+      "launchBrowser": true,
+      "launchUrl": "http://localhost/Youtube.Manager.Core.API",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://youtubemanager.ddns.net/Youtube.Manager.Core.API"
+    }
+  }
+}
