@@ -1,1 +1,0 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Youtube.Manager.API.WebApiApplication" Language="C#" %>

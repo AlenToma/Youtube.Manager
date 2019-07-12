@@ -1,8 +1,0 @@
-E:\Projects\Youtube.Manager\Youtube.Manager\Youtube.Manager.iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
-E:\Projects\Youtube.Manager\Youtube.Manager\Youtube.Manager.iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
-E:\Projects\Youtube.Manager\Youtube.Manager\Youtube.Manager.iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
-E:\Projects\Youtube.Manager\Youtube.Manager\Youtube.Manager.iOS\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
-E:\Projects\Youtube.Manager\Youtube.Manager\Youtube.Manager.iOS\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
-E:\Projects\Youtube.Manager\Youtube.Manager\Youtube.Manager.iOS\obj\iPhoneSimulator\Debug\optimized\
-E:\Projects\Youtube.Manager\Youtube.Manager\Youtube.Manager.iOS\obj\iPhoneSimulator\Debug\Youtube.Manager.iOS.csprojAssemblyReference.cache
-E:\Projects\Youtube.Manager\Youtube.Manager\Youtube.Manager.iOS\obj\iPhoneSimulator\Debug\Youtube.Manager.iOS.csproj.CoreCompileInputs.cache
