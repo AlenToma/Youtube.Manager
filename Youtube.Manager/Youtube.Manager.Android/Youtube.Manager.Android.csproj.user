@@ -3,5 +3,6 @@
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
     <SelectedDevice>Samsung SM-G960F</SelectedDevice>
+    <DefaultDevice>my_device</DefaultDevice>
   </PropertyGroup>
 </Project>

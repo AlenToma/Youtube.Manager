@@ -1,4 +1,5 @@
 ﻿using Android.Gms.Ads.Reward;
+using Youtube.Manager.Models.Container;
 
 namespace Youtube.Manager.Droid.Models.Ads.VideoAds
 {
@@ -19,7 +20,8 @@ namespace Youtube.Manager.Droid.Models.Ads.VideoAds
 
         public void OnRewarded(IRewardItem reward)
         {
-            UserData.CurrentUser.DownloadCoins++;
+            var amount = decimal.Parse(ControllerRepository.Db(x => x.GetSetting("VideoRewardAmount")).Value);
+            UserData.CurrentUser.DownloadCoins += amount;
             UserData.SaveUserChanges();
         }
 

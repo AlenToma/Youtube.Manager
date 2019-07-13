@@ -7,8 +7,8 @@ using Youtube.Manager.Helper;
 using Youtube.Manager.Models.Container;
 using Youtube.Manager.Models.Container.Interface;
 using Youtube.Manager.Models.Container.Interface.API;
-using Youtube.Manager.Models.views;
 using Youtube.Manager.Views;
+using Youtube.Manager.Views.Template;
 
 namespace Youtube.Manager
 {
@@ -30,7 +30,7 @@ namespace Youtube.Manager
             if (!this.UserIsLogedIn())
                 return;
             if (UserData.CurrentUser.UserType == UserType.User)
-                toolbar.GetItemByIdentifier("DownloadCoin").Text = UserData.CurrentUser.DownloadCoins.ToString();
+                toolbar.GetItemByIdentifier("DownloadCoin").Text = UserData.CurrentUser.DownloadCoins.ToString("C2");
             else toolbar.GetItemByIdentifier("DownloadCoin").Text = "Infinity".GetString();
             toolbar.Refresh();
         }
@@ -80,7 +80,7 @@ namespace Youtube.Manager
             switch (arg1.Identifier)
             {
                 case "DownloadCoin":
-                    new BuyCoins();
+                    new BuyCoins().Open();
                     break;
             }
         }

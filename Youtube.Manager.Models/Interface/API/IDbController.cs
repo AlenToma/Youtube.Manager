@@ -9,6 +9,8 @@ namespace Youtube.Manager.Models.Container.Interface.API
     [Route(url: "api/")]
     public interface IDbController
     {
+        List<ProductLink> GetProductLinks(string product_Id = null);
+        ApplicationSettings GetSetting(string key);
         User LogIn(string email, string imageUrl, string password);
         Task Vote(VideoSearchType type, Ratingtype ratingtype, long id, long userid);
         List<RatingModelView> GetItemRating(VideoSearchType type, List<long> ids);

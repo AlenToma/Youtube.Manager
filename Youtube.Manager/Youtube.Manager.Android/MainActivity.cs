@@ -23,7 +23,7 @@ namespace Youtube.Manager.Droid
 {
     [Activity(
         Label = "Youtube.Manager",
-        Icon = "@mipmap/icon",
+        Icon = "@mipmap/ic_launcher",
         Theme = "@style/MainTheme",
         MainLauncher = true,
         LaunchMode = LaunchMode.SingleTop,
@@ -109,7 +109,7 @@ namespace Youtube.Manager.Droid
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
-
+            (Methods.AppSettings as AppSettings).OnActivityResult(requestCode, resultCode, data);
             if (requestCode == PickImageId)
             {
                 if (resultCode == Result.Ok && data != null)

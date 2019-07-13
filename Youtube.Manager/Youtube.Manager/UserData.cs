@@ -1,17 +1,14 @@
 ﻿using Acr.UserDialogs;
-using Rg.Plugins.Popup.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Xamarin.Forms;
-using Youtube.Manager.Controls;
 using Youtube.Manager.Helper;
 using Youtube.Manager.Models.Container;
 using Youtube.Manager.Models.Container.DB_models;
 using Youtube.Manager.Models.Container.DB_models.Library;
 using Youtube.Manager.Models.Container.Interface.API;
-using Youtube.Manager.Models.views;
+using Youtube.Manager.Views.Template;
 
 namespace Youtube.Manager
 {
@@ -45,14 +42,12 @@ namespace Youtube.Manager
 
         public static bool CanDownload(bool showAlternative = false)
         {
-            if (CurrentUser.DownloadCoins > 0 || CurrentUser.UserType == UserType.Primary)
+            if (CurrentUser.DownloadCoins >= 1 || CurrentUser.UserType == UserType.Premium)
                 return true;
 
             if (showAlternative)
             {
-
-                new BuyCoins();
-
+                new BuyCoins().Open();
             }
             return false;
         }

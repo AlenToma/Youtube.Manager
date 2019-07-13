@@ -48,7 +48,7 @@ namespace Youtube.Manager.Core.API.Controller
         {
             using (var db = new DbRepository())
             {
-                 db.Save(user).SaveChanges();
+                db.Save(user).SaveChanges();
                 return user;
             }
         }
@@ -206,6 +206,20 @@ namespace Youtube.Manager.Core.API.Controller
                     db.Save(video).SaveChanges();
                 }
             }
+        }
+
+        [HttpGet]
+        public ApplicationSettings GetSetting(string key)
+        {
+            using (var db = new DbRepository())
+                return db.Get<ApplicationSettings>().Where(x => x.Key.Contains(key)).ExecuteFirstOrDefault();
+        }
+
+        [HttpGet]
+        public List<ProductLink> GetProductLinks(string product_Id = null)
+        {
+            using (var db = new DbRepository())
+                return db.Get<ProductLink>().Where(x => string.IsNullOrEmpty(product_Id) || x.Product_Id == product_Id).Execute();
         }
     }
 }

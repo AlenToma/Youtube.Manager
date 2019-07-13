@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Youtube.Manager.Models.Container.DB_models.Library;
 
 namespace Youtube.Manager.Models.Container.Interface
 {
@@ -48,5 +50,24 @@ namespace Youtube.Manager.Models.Container.Interface
         /// Request new VideoAdd
         /// </summary>
         void ReguastNewAdd();
+
+        /// <summary>
+        /// the service is avilable
+        /// </summary>
+        /// <returns></returns>
+        Task<bool> CanPurchase();
+
+        /// <summary>
+        /// Buy the item
+        /// </summary>
+        /// <param name="appBillingProduct"></param>
+        /// <returns></returns>
+        Task<bool> Buy(AppBillingProduct appBillingProduct);
+
+        /// <summary>
+        /// Get products to buy
+        /// </summary>
+        /// <returns></returns>
+        Task<List<AppBillingProduct>> GetProducts();
     }
 }

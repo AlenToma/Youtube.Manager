@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using EntityWorker.Core.Interface;
 using EntityWorker.Core.InterFace;
 using EntityWorker.Core.Object.Library;
@@ -14,7 +12,8 @@ namespace Youtube.Manager.Models.Container
         {
             return new List<Migration>()
             {
-                new StartMigration()
+                new StartMigration(),
+                new ApplicationSettingsMigration()
             };
         }
     }

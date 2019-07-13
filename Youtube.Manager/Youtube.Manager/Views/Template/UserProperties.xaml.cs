@@ -13,6 +13,9 @@ namespace Youtube.Manager.Views.Template
         public UserProperties()
         {
             InitializeComponent();
+#if DEBUG
+            stkUserlogin.IsVisible = true;
+#endif
         }
 
         private async void BtnLogs_ClickedAsync(object sender, EventArgs e)
@@ -55,7 +58,7 @@ namespace Youtube.Manager.Views.Template
                     BackgroundColor = Color.White,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
                     VerticalOptions = LayoutOptions.FillAndExpand,
-                    Padding= 5
+                    Padding = 5
                 };
                 var scroll = new ScrollView()
                 {
@@ -69,7 +72,7 @@ namespace Youtube.Manager.Views.Template
                     HorizontalOptions = LayoutOptions.FillAndExpand,
                     VerticalOptions = LayoutOptions.Start,
                     Style = (Style)Application.Current.Resources["BaseText"],
-                    
+
                 };
                 scroll.Content = grid;
                 grid.Children.Add(ed, 0, 0);
@@ -82,7 +85,7 @@ namespace Youtube.Manager.Views.Template
 
         private async void _btnChangeLogin_Clicked(object sender, EventArgs e)
         {
-           await UserData.LogIn(_txtEmail.Text);
+            await UserData.LogIn(_txtEmail.Text);
         }
     }
 }

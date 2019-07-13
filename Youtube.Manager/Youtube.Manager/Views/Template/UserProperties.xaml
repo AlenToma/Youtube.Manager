@@ -12,7 +12,7 @@
             <StackLayout>
                 <controls:CustomButton Text="View Log" Style="{StaticResource ButtonContainer}" x:Name="btnLogs" Clicked="BtnLogs_ClickedAsync" />
 
-                <StackLayout>
+                <StackLayout x:Name="stkUserlogin" IsVisible="False">
                     <Label>Change log in test</Label>
                     <Entry x:Name="_txtEmail" Text="alen.toma.nuget@gmail.com" ></Entry>
 

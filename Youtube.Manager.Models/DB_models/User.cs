@@ -13,7 +13,7 @@ namespace Youtube.Manager.Models.Container.DB_models
 
         public string Picture { get; set; }
 
-        public long DownloadCoins { get; set; }
+        public decimal DownloadCoins { get; set; }
 
         [Stringify]
         public UserType UserType { get; set; }

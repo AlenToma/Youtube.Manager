@@ -28,10 +28,6 @@
             <x:String x:Key="No">No</x:String>
             <x:String x:Key="AdsButton">Watch ads and earn a coin</x:String>
             <x:String x:Key="Buy">Buy</x:String>
-            <x:String x:Key="SEK">SEK</x:String>
-            <x:String x:Key="USD">USD</x:String>
-            <x:String x:Key="Amount">100</x:String>
-            <x:String x:Key="AmountMony">10.60</x:String>
             <x:String x:Key="Infinity">∞</x:String>
 
             <x:String x:Key="PEdit">Edit/Create Playlist</x:String>

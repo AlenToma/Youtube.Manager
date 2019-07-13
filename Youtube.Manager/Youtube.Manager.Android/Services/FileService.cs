@@ -47,8 +47,8 @@ namespace Youtube.Manager.Droid.Services
             if (Build.VERSION.SdkInt >= BuildVersionCodes.O) StartForeground(NotificationId, nb.Build());
 
             // dec DownloadCoins
-            if (UserData.CurrentUser.UserType != UserType.Primary)
-                UserData.CurrentUser.DownloadCoins--;
+            if (UserData.CurrentUser.UserType != UserType.Premium)
+                UserData.CurrentUser.DownloadCoins -= 1;
             var _downlodFile = new DownlodFile(Methods.AppSettings.Logger, url, directory, fileName, procent =>
             {
                 nb.SetContentText("")
@@ -76,8 +76,8 @@ namespace Youtube.Manager.Droid.Services
             }, e =>
             {
                 // faild no download was made, inc DownloadCoins
-                if (UserData.CurrentUser.UserType != UserType.Primary)
-                    UserData.CurrentUser.DownloadCoins++;
+                if (UserData.CurrentUser.UserType != UserType.Premium)
+                    UserData.CurrentUser.DownloadCoins += 1;
                 nb.SetProgress(0, 0, false).SetContentText("Error: Something went wrong.\n Please try agen later.");
                 NotificationHelper.Notify(NotificationId, nb);
                 ObjectCacher.RandomIdCacher.Remove(NotificationId);

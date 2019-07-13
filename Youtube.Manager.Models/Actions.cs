@@ -35,6 +35,12 @@ namespace Youtube.Manager.Models.Container
 
         private static readonly TaskFactory _myTaskFactory = new TaskFactory(CancellationToken.None, TaskCreationOptions.None, TaskContinuationOptions.None, TaskScheduler.Default);
 
+        public static T Astype<T>(this object item)
+        {
+            return item.ToType<T>();
+        }
+
+
         public static T Await<T>(this Task<T> task)
         {
             T result = default(T);

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using Xamarin.Forms;
 using Youtube.Manager.Controls;
 using Youtube.Manager.Helper;

@@ -99,6 +99,23 @@
           "lib/monoandroid44/Plugin.CurrentActivity.dll": {}
         }
       },
+      "Plugin.InAppBilling/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1",
+          "Plugin.CurrentActivity": "2.1.0.2"
+        },
+        "compile": {
+          "lib/MonoAndroid10/Plugin.InAppBilling.Abstractions.dll": {},
+          "lib/MonoAndroid10/Plugin.InAppBilling.VendingLibrary.dll": {},
+          "lib/MonoAndroid10/Plugin.InAppBilling.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Plugin.InAppBilling.Abstractions.dll": {},
+          "lib/MonoAndroid10/Plugin.InAppBilling.VendingLibrary.dll": {},
+          "lib/MonoAndroid10/Plugin.InAppBilling.dll": {}
+        }
+      },
       "Plugin.MediaManager.Forms/0.6.7": {
         "type": "package",
         "dependencies": {
@@ -1558,6 +1575,53 @@
         "lib/monoandroid44/Plugin.CurrentActivity.xml",
         "plugin.currentactivity.2.1.0.2.nupkg.sha512",
         "plugin.currentactivity.nuspec",
+        "readme.txt"
+      ]
+    },
+    "Plugin.InAppBilling/2.0.0": {
+      "sha512": "NAuSohkp1QP4Z9WMGi1NhZBDomfKNgKgLCnoheRBJ3NRv+R4qi92LtO3hJWT2rcxl+HvPc/CgIhh4uD6MNNH0A==",
+      "type": "package",
+      "path": "plugin.inappbilling/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Plugin.InAppBilling.Abstractions.dll",
+        "lib/MonoAndroid10/Plugin.InAppBilling.Abstractions.pdb",
+        "lib/MonoAndroid10/Plugin.InAppBilling.Abstractions.xml",
+        "lib/MonoAndroid10/Plugin.InAppBilling.VendingLibrary.dll",
+        "lib/MonoAndroid10/Plugin.InAppBilling.VendingLibrary.pdb",
+        "lib/MonoAndroid10/Plugin.InAppBilling.VendingLibrary.xml",
+        "lib/MonoAndroid10/Plugin.InAppBilling.XML",
+        "lib/MonoAndroid10/Plugin.InAppBilling.dll",
+        "lib/MonoAndroid10/Plugin.InAppBilling.pdb",
+        "lib/UAP10/Plugin.InAppBilling.Abstractions.dll",
+        "lib/UAP10/Plugin.InAppBilling.Abstractions.pdb",
+        "lib/UAP10/Plugin.InAppBilling.Abstractions.xml",
+        "lib/UAP10/Plugin.InAppBilling.XML",
+        "lib/UAP10/Plugin.InAppBilling.dll",
+        "lib/UAP10/Plugin.InAppBilling.pdb",
+        "lib/UAP10/Plugin.InAppBilling.pri",
+        "lib/Xamarin.iOS10/Plugin.InAppBilling.Abstractions.dll",
+        "lib/Xamarin.iOS10/Plugin.InAppBilling.Abstractions.pdb",
+        "lib/Xamarin.iOS10/Plugin.InAppBilling.Abstractions.xml",
+        "lib/Xamarin.iOS10/Plugin.InAppBilling.XML",
+        "lib/Xamarin.iOS10/Plugin.InAppBilling.dll",
+        "lib/Xamarin.iOS10/Plugin.InAppBilling.pdb",
+        "lib/netstandard1.0/Plugin.InAppBilling.Abstractions.dll",
+        "lib/netstandard1.0/Plugin.InAppBilling.Abstractions.pdb",
+        "lib/netstandard1.0/Plugin.InAppBilling.Abstractions.xml",
+        "lib/netstandard1.0/Plugin.InAppBilling.deps.json",
+        "lib/netstandard1.0/Plugin.InAppBilling.dll",
+        "lib/netstandard1.0/Plugin.InAppBilling.pdb",
+        "lib/netstandard1.0/Plugin.InAppBilling.xml",
+        "lib/xamarintvos/Plugin.InAppBilling.Abstractions.dll",
+        "lib/xamarintvos/Plugin.InAppBilling.Abstractions.pdb",
+        "lib/xamarintvos/Plugin.InAppBilling.Abstractions.xml",
+        "lib/xamarintvos/Plugin.InAppBilling.dll",
+        "lib/xamarintvos/Plugin.InAppBilling.pdb",
+        "lib/xamarintvos/Plugin.InAppBilling.xml",
+        "plugin.inappbilling.2.0.0.nupkg.sha512",
+        "plugin.inappbilling.nuspec",
         "readme.txt"
       ]
     },
@@ -3410,6 +3474,7 @@
   },
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v9.0": [
+      "Plugin.InAppBilling >= 2.0.0",
       "Plugin.MediaManager >= 0.6.8",
       "Plugin.Permissions >= 3.0.0.12",
       "Rg.Plugins.Popup >= 1.1.5.188",
@@ -3480,6 +3545,10 @@
     "frameworks": {
       "monoandroid90": {
         "dependencies": {
+          "Plugin.InAppBilling": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
           "Plugin.Permissions": {
             "target": "Package",
             "version": "[3.0.0.12, )"
