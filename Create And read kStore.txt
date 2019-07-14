@@ -1,0 +1,6 @@
+E:\Projects\Youtube.Manager\Youtube.Manager\Youtube.Manager.Droid\Keystore
+
+keytool -list -v -keystore "C:\Users\alent\AppData\Local\Xamarin\Mono for Android\Keystore\Youtube.Manager\Youtube.Manager.keystore" -alias Youtube.Manager -storepass Iraki4mo -keypass Iraki4mo
+
+
+keytool -genkey -v -keystore "E:\Projects\Youtube.Manager\Youtube.Manager\Youtube.Manager.Droid\Keystore\release.keystore" -alias com.youtube.manager -keyalg RSA -keysize 2048 -validity 10000 -storepass Iraki4mo -keypass Iraki4mo

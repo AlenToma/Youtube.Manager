@@ -1,11 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using Youtube.Manager.Models.Container.DB_models;
 using Youtube.Manager.Models.Container.DB_models.Library;
 
 namespace Youtube.Manager.Models.Container.Interface
 {
     public interface IMainActivity
     {
+
+        Action<User, string> OnLoginComplete { get; set; }
+
         /// <summary>
         /// Activate Google login
         /// </summary>

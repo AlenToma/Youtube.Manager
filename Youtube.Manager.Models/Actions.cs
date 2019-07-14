@@ -2,8 +2,10 @@
 using System.IO;
 using System.Text.RegularExpressions;
 using EntityWorker.Core.Helper;
+#if NETCOREAPP2_2
 using System.Drawing;
 using System.Drawing.Drawing2D;
+#endif
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
@@ -43,7 +45,7 @@ namespace Youtube.Manager.Models.Container
 
         public static T Await<T>(this Task<T> task)
         {
-            T result = default(T);
+            T result = default;
             if (task == null)
                 return result;
             _myTaskFactory.StartNew(new Func<Task>(async () =>
@@ -144,7 +146,7 @@ namespace Youtube.Manager.Models.Container
             var value = v.Value;
             var result = string.Empty;
             var negative = value < 0;
-            if (negative) value = value * -1;
+            if (negative) value *= -1;
 
             if (value < 1000)
             {
@@ -179,6 +181,7 @@ namespace Youtube.Manager.Models.Container
             return Math.Truncate(value * pow) / pow;
         }
 
+#if NETCOREAPP2_2
         public static Bitmap GetImage(string filename)
         {
             using (var client = new System.Net.WebClient())
@@ -282,7 +285,7 @@ namespace Youtube.Manager.Models.Container
                 //return base64String;
             }
         }
-
+#endif
 
     }
 }

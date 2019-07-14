@@ -53,11 +53,10 @@ namespace Youtube.Manager.Views
                 .SetDuration(TimeSpan.FromSeconds(8))
                 .SetMessageTextColor(Color.Red)
                 .SetBackgroundColor(Color.WhiteSmoke)
-                .SetPosition(ToastPosition.Top);
+                .SetPosition(ToastPosition.Bottom);
                 UserDialogs.Instance.Toast(config);
 
             }
-
             // start the ads
             //await Methods.ReguastNewAdd?.Invoke();
         }

@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "564962228855",
+    "firebase_url": "https://managercore.firebaseio.com",
+    "project_id": "youtubemanagercore",
+    "storage_bucket": "youtubemanagercore.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:564962228855:android:06b1168fe98185ad",
+        "android_client_info": {
+          "package_name": "com.youtube.manager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "564962228855-tks2vg09noni8np6br6umk93vt71p74r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.youtube.manager",
+            "certificate_hash": "d0ce06e679c2ff2ead1df0d7592a93b1f33d2150"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCArA6U38Ld4lOaL9YtQNGdeQUErIItuJ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "564962228855-pd8i2j9vvg80m16vqfh98es9cn2frtci.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

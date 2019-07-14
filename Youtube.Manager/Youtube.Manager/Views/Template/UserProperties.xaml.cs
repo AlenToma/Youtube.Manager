@@ -20,11 +20,24 @@ namespace Youtube.Manager.Views.Template
 
         private async void BtnLogs_ClickedAsync(object sender, EventArgs e)
         {
+            if (!await Methods.AppSettings.ValidateStoragePermission())
+                return;
+
+            var stkContainer = new StackLayout()
+            {
+                Style = (Style)Application.Current.Resources["PopUpCenter"],
+                BackgroundColor = Color.Blue
+            };
+
+            var btnClear = new CustomButton()
+            {
+                Text = "Clear logs"
+            };
+
+
             var horizontalList = new HorizontalList();
             horizontalList.ItemTemplate = new DataTemplate(() =>
             {
-
-
                 var stk = new StackLayout { Style = (Style)Application.Current.Resources["FormFloatLeft"] };
                 var lblNr = new Label
                 {
@@ -44,12 +57,19 @@ namespace Youtube.Manager.Views.Template
                 stk.Children.Add(lblText);
                 return stk;
             });
+            stkContainer.Children.Add(btnClear);
+            stkContainer.Children.Add(horizontalList);
+
 
             var popUpPage = new PopupBase();
-            popUpPage.Content = horizontalList;
-            popUpPage.BackgroundColor = Color.Blue;
+            popUpPage.Content = stkContainer;
+            popUpPage.BackgroundColor = Color.Transparent;
             horizontalList.ItemsSource = Methods.AppSettings.Logger.GetLog().Select((x, i) => new { Number = i + 1, Content = x }).ToList();
-
+            btnClear.Clicked += new EventHandler((o, s) =>
+            {
+                Methods.AppSettings.Logger?.Clear();
+                horizontalList.ItemsSource = Methods.AppSettings.Logger.GetLog().Select((x, i) => new { Number = i + 1, Content = x }).ToList();
+            });
             horizontalList.SelectedItemChanged += new EventHandler(async (s, o) =>
             {
                 var pop = new PopupBase();

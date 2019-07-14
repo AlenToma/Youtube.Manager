@@ -29,11 +29,12 @@ namespace Youtube.Manager
             ControllerRepository.Db(x => x.LogIn(email, imageUrl, password), (x, data) => { CurrentUser = data; info = x; });
             if (CurrentUser != null)
             {
-                await Methods.AppSettings.ValidateStoragePermission();
+              
                 Methods.AppSettings.UserLocalSettings.UserName = CurrentUser.Email;
                 Methods.AppSettings.UserLocalSettings.Password = CurrentUser.Password;
                 Methods.AppSettings.UserLocalSettings.Image = CurrentUser.Picture;
             }
+         
 
             await LoadUserData(true);
             await info.ExecuteTrigger();

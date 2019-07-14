@@ -28,20 +28,6 @@
                                  StatusChanged="ExpandableViewPlayList_IsExpandChanged">
             <controls:ExpandableView.PrimaryView>
                 <StackLayout Style="{StaticResource expanse}" x:Name="exPlayListHeader">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="30" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="40" />
-                        </Grid.ColumnDefinitions>
-                        <controls:CustomButton ImageSource="cancel.png"
-                                               Style="{StaticResource ButtonContainer}"
-                                               Grid.Column="0"
-                                               Grid.Row="0"
-                                               x:Name="btnRemovePlayList"
-                                               Clicked="BtnRemovePlayList_Clicked" />
-                    </Grid>
                     <Label Text="" x:Name="txtPlayTitle" Style="{StaticResource UnderText}" />
                     <Image x:Name="playListArrow" Source="arrow.png" HeightRequest="16" WidthRequest="16" />
                 </StackLayout>

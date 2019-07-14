@@ -295,8 +295,5 @@ namespace Youtube.Manager.Views
             }
         }
 
-        private void BtnRemovePlayList_Clicked(object sender, EventArgs e)
-        {
-        }
     }
 }

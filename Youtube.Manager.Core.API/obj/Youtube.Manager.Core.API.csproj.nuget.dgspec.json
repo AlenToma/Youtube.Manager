@@ -262,6 +262,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
+          "netcoreapp2.2",
           "netstandard2.0"
         ],
         "sources": {
@@ -269,6 +270,16 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "E:\\Projects\\EntityWorker.Core\\Source\\EntityWorker.Core\\EntityWorker.Core.csproj": {
+                "projectPath": "E:\\Projects\\EntityWorker.Core\\Source\\EntityWorker.Core\\EntityWorker.Core.csproj"
+              },
+              "E:\\Projects\\YoutubeExplode\\YoutubeExplode\\YoutubeExplode.csproj": {
+                "projectPath": "E:\\Projects\\YoutubeExplode\\YoutubeExplode\\YoutubeExplode.csproj"
+              }
+            }
+          },
           "netstandard2.0": {
             "projectReferences": {
               "E:\\Projects\\EntityWorker.Core\\Source\\EntityWorker.Core\\EntityWorker.Core.csproj": {
@@ -287,6 +298,37 @@
         }
       },
       "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "FastDeepCloner": {
+              "target": "Package",
+              "version": "[1.2.5, )"
+            },
+            "Microsoft.CSharp": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[4.5.1, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        },
         "netstandard2.0": {
           "dependencies": {
             "FastDeepCloner": {
@@ -306,10 +348,6 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.2, )"
-            },
-            "System.Drawing.Common": {
-              "target": "Package",
-              "version": "[4.5.1, )"
             }
           },
           "imports": [

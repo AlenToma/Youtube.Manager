@@ -130,7 +130,7 @@ namespace Youtube.Manager.Controls
                 ItemScrollView.Content = ItemsStackLayout;
                 StackContainer.Children.Add(ItemScrollView);
             }
-
+            SaveScroll();
             ItemsStackLayout.Children.Clear();
 
             if (!HasItems)
@@ -147,6 +147,7 @@ namespace Youtube.Manager.Controls
                     lstViews.ForEach(x => ItemsStackLayout.Children.Add(x));
                     if (SelectedItem != null)
                         SetUiSelection(SelectedItem, true);
+                    else SetScroll();
 
                     LoaderIndicator.IsVisible = false;
                 });
@@ -224,6 +225,19 @@ namespace Youtube.Manager.Controls
             var handler = SelectedItemChanged;
             if (handler != null && triggerOnChange)
                 handler(this, EventArgs.Empty);
+        }
+
+        private double ScrollPosition;
+        private void SaveScroll()
+        {
+            ScrollPosition = ListOrientation == StackOrientation.Vertical ? ItemScrollView.ScrollY : ItemScrollView.ScrollX;
+        }
+
+        private void SetScroll()
+        {
+            if (ListOrientation == StackOrientation.Vertical)
+                ItemScrollView.ScrollToAsync(0, ScrollPosition, false);
+            else ItemScrollView.ScrollToAsync(ScrollPosition, 0, false);
         }
 
         public async void SetUiSelection(object selectedItem, bool scrollToSelectedItem = false)

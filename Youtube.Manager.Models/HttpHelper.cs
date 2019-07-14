@@ -21,7 +21,7 @@ namespace Youtube.Manager.Models.Container
     {
         private static readonly HttpClient client;
 
-        public static string BaseUrl = "http://youtubemanager.ddns.net/Youtube.Manager.Core.API";
+        public static string BaseUrl = "http://youtubemanager.ddns.net/Youtube.Manager.API";
         static HttpHelper()
         {
             try

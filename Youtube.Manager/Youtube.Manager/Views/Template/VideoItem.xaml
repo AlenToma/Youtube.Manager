@@ -45,7 +45,7 @@
                                                    TextColor="White" />
 
                                         </StackLayout>
-                                        <StackLayout BackgroundColor="Red"  IsVisible="{Binding Duration, Converter={StaticResource StringNullOrEmpty}}"
+                                        <StackLayout BackgroundColor="Red"  IsVisible="{Binding IsPlaylist, Converter={StaticResource Invert}}"
                                                AbsoluteLayout.LayoutBounds="1,1,25,12"
                                                AbsoluteLayout.LayoutFlags="PositionProportional">
                                             <Label 

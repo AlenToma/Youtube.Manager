@@ -221,5 +221,11 @@ namespace Youtube.Manager.Core.API.Controller
             using (var db = new DbRepository())
                 return db.Get<ProductLink>().Where(x => string.IsNullOrEmpty(product_Id) || x.Product_Id == product_Id).Execute();
         }
+
+        [HttpGet]
+        public string GetPath()
+        {
+            return Actions.ImageRootPath;
+        }
     }
 }

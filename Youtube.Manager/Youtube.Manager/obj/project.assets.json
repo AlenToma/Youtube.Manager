@@ -98,7 +98,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Plugin.MediaManager/0.6.7": {
+      "Plugin.MediaManager/0.7.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/MediaManager.dll": {}
@@ -107,10 +107,10 @@
           "lib/netstandard2.0/MediaManager.dll": {}
         }
       },
-      "Plugin.MediaManager.Forms/0.6.7": {
+      "Plugin.MediaManager.Forms/0.7.2": {
         "type": "package",
         "dependencies": {
-          "Plugin.MediaManager": "0.6.7",
+          "Plugin.MediaManager": "0.7.2",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "compile": {
@@ -167,15 +167,6 @@
         },
         "compile": {
           "ref/netstandard1.3/_._": {}
-        }
-      },
-      "System.Drawing.Common/4.5.1": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Drawing.Common.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Drawing.Common.dll": {}
         }
       },
       "System.Globalization/4.3.0": {
@@ -358,15 +349,6 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
-      "Xamarin.Auth/1.7.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard1.6/Xamarin.Auth.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.6/Xamarin.Auth.dll": {}
-        }
-      },
       "Xamarin.Forms/4.1.0.581479": {
         "type": "package",
         "compile": {
@@ -406,7 +388,6 @@
           "FastDeepCloner": "1.2.5",
           "Microsoft.CSharp": "4.5.0",
           "Newtonsoft.Json": "12.0.2",
-          "System.Drawing.Common": "4.5.1",
           "YoutubeExplode": "4.7.4"
         },
         "compile": {
@@ -777,20 +758,21 @@
         "newtonsoft.json.nuspec"
       ]
     },
-    "Plugin.MediaManager/0.6.7": {
-      "sha512": "c+El9zxbeIh8WCimp5Wz48kFX21ERya4h8XUWc6XLJuOBMZC9s6nHF9aDR90/fEiWvTPJ8YwcYvo71BcE+dMVQ==",
+    "Plugin.MediaManager/0.7.2": {
+      "sha512": "uG26qcgLt1yL008OFxT+FxwSO9hMHa3N80QWYFTVtZEzFQJx+DYMqdRRjrxqx165FC7wdPZfEaOOvnwhEanI9w==",
       "type": "package",
-      "path": "plugin.mediamanager/0.6.7",
+      "path": "plugin.mediamanager/0.7.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
         "lib/monoandroid90/MediaManager.dll",
+        "lib/monoandroid90/MediaManager.dll.mdb",
         "lib/monoandroid90/MediaManager.pdb",
         "lib/monoandroid90/MediaManager.xml",
-        "lib/net471/MediaManager.dll",
-        "lib/net471/MediaManager.pdb",
-        "lib/net471/MediaManager.xml",
+        "lib/net472/MediaManager.dll",
+        "lib/net472/MediaManager.pdb",
+        "lib/net472/MediaManager.xml",
         "lib/netstandard2.0/MediaManager.dll",
         "lib/netstandard2.0/MediaManager.pdb",
         "lib/netstandard2.0/MediaManager.xml",
@@ -812,25 +794,26 @@
         "lib/xamarintvos10/MediaManager.dll",
         "lib/xamarintvos10/MediaManager.pdb",
         "lib/xamarintvos10/MediaManager.xml",
-        "plugin.mediamanager.0.6.7.nupkg.sha512",
+        "plugin.mediamanager.0.7.2.nupkg.sha512",
         "plugin.mediamanager.nuspec",
         "readme.txt"
       ]
     },
-    "Plugin.MediaManager.Forms/0.6.7": {
-      "sha512": "EJ2Uf5PCY79HXAskGs6n+7eBCYwsBTQCAZ1JAn16D5/toqPPULPCcrRUS9IjZiZFbDHRgBGsQCpKsdTmVZPpRA==",
+    "Plugin.MediaManager.Forms/0.7.2": {
+      "sha512": "IMUMoF/AWtx6IybEcqBSwjG3CJOTGY8qJ7WicYPAYAVJSjyXU8cvGSYqOyEIcuzKOt2lHMiCcYgP7CZslJppbg==",
       "type": "package",
-      "path": "plugin.mediamanager.forms/0.6.7",
+      "path": "plugin.mediamanager.forms/0.7.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
         "lib/monoandroid90/MediaManager.Forms.dll",
+        "lib/monoandroid90/MediaManager.Forms.dll.mdb",
         "lib/monoandroid90/MediaManager.Forms.pdb",
         "lib/monoandroid90/MediaManager.Forms.xml",
-        "lib/net471/MediaManager.Forms.dll",
-        "lib/net471/MediaManager.Forms.pdb",
-        "lib/net471/MediaManager.Forms.xml",
+        "lib/net472/MediaManager.Forms.dll",
+        "lib/net472/MediaManager.Forms.pdb",
+        "lib/net472/MediaManager.Forms.xml",
         "lib/netstandard2.0/MediaManager.Forms.dll",
         "lib/netstandard2.0/MediaManager.Forms.pdb",
         "lib/netstandard2.0/MediaManager.Forms.xml",
@@ -850,7 +833,7 @@
         "lib/xamarintvos10/MediaManager.Forms.dll",
         "lib/xamarintvos10/MediaManager.Forms.pdb",
         "lib/xamarintvos10/MediaManager.Forms.xml",
-        "plugin.mediamanager.forms.0.6.7.nupkg.sha512",
+        "plugin.mediamanager.forms.0.7.2.nupkg.sha512",
         "plugin.mediamanager.forms.nuspec",
         "readme.txt"
       ]
@@ -1043,39 +1026,6 @@
         "ref/xamarinwatchos10/_._",
         "system.diagnostics.debug.4.3.0.nupkg.sha512",
         "system.diagnostics.debug.nuspec"
-      ]
-    },
-    "System.Drawing.Common/4.5.1": {
-      "sha512": "GiyeGi/v4xYDz1vCNFwFvhz9k1XddOG7VD3jxRqzRBCbTHji+s3HxxbxtoymuK4OadEpgotI8zQ5+GEEH9sUEQ==",
-      "type": "package",
-      "path": "system.drawing.common/4.5.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net461/System.Drawing.Common.dll",
-        "lib/netstandard2.0/System.Drawing.Common.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net461/System.Drawing.Common.dll",
-        "ref/netstandard2.0/System.Drawing.Common.dll",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
-        "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
-        "system.drawing.common.4.5.1.nupkg.sha512",
-        "system.drawing.common.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
       ]
     },
     "System.Globalization/4.3.0": {
@@ -2039,31 +1989,6 @@
         "system.threading.tasks.nuspec"
       ]
     },
-    "Xamarin.Auth/1.7.0": {
-      "sha512": "F5yMDdHmcBRochGOeeyIRJ2fangsCEodSbOwg4TQT5kJnsT/CjP6ieXbFfFF9ccni66EgbQ7NTTjvajUlD3IGQ==",
-      "type": "package",
-      "path": "xamarin.auth/1.7.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/MonoAndroid10/Xamarin.Auth.dll",
-        "lib/MonoAndroid10/Xamarin.Auth.dll.mdb",
-        "lib/MonoAndroid10/Xamarin.Auth.pdb",
-        "lib/Xamarin.iOS10/Xamarin.Auth.dll",
-        "lib/Xamarin.iOS10/Xamarin.Auth.pdb",
-        "lib/netstandard1.0/Xamarin.Auth.dll",
-        "lib/netstandard1.6/Xamarin.Auth.dll",
-        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+XamarinIOS10/Xamarin.Auth.dll",
-        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+XamarinIOS10/Xamarin.Auth.pdb",
-        "lib/uap10.0/Xamarin.Auth.dll",
-        "lib/uap10.0/Xamarin.Auth.pdb",
-        "lib/uap10.0/Xamarin.Auth.pri",
-        "lib/uap10.0/Xamarin.Auth/WebAuthenticatorPage.xbf",
-        "lib/uap10.0/Xamarin.Auth/Xamarin.Auth.xr.xml",
-        "xamarin.auth.1.7.0.nupkg.sha512",
-        "xamarin.auth.nuspec"
-      ]
-    },
     "Xamarin.Forms/4.1.0.581479": {
       "sha512": "wrO8AOW1xsFoGgT1SUvJ9OEeqAduJOm0xezZGNe0rCiAv2N9Qc/n5uywhlSia1s1k+Zy/hOrhZ4b7/EM6z9oog==",
       "type": "package",
@@ -2331,9 +2256,8 @@
       "Acr.UserDialogs >= 7.0.4",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.2",
-      "Plugin.MediaManager.Forms >= 0.6.7",
+      "Plugin.MediaManager.Forms >= 0.7.2",
       "Rg.Plugins.Popup >= 1.1.5.188",
-      "Xamarin.Auth >= 1.7.0",
       "Xamarin.Forms >= 4.1.0.581479",
       "Youtube.Manager.Models.Container >= 1.0.0",
       "dotMorten.Xamarin.Forms.AutoSuggestBox >= 0.7.0"
@@ -2403,15 +2327,11 @@
           },
           "Plugin.MediaManager.Forms": {
             "target": "Package",
-            "version": "[0.6.7, )"
+            "version": "[0.7.2, )"
           },
           "Rg.Plugins.Popup": {
             "target": "Package",
             "version": "[1.1.5.188, )"
-          },
-          "Xamarin.Auth": {
-            "target": "Package",
-            "version": "[1.7.0, )"
           },
           "Xamarin.Forms": {
             "target": "Package",

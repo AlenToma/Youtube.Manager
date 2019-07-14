@@ -4827,7 +4827,7 @@
       },
       "Youtube.Manager.Models.Container/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
           "EntityWorker.Core": "3.0.7",
           "FastDeepCloner": "1.2.5",
