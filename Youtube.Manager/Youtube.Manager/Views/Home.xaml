@@ -15,7 +15,7 @@
                              Constant=0}"
                                   VerticalOptions="FillAndExpand" Orientation="Vertical">
                 <StackLayout>
-                    <!--<ads:BannerAddView x:Name="adsBanner" HorizontalOptions="FillAndExpand" BackgroundColor="Red" MinimumHeightRequest="200" MinimumWidthRequest="200"></ads:BannerAddView>-->
+                    <ads:BannerAddView x:Name="adsBanner" HorizontalOptions="FillAndExpand" BackgroundColor="Red" MinimumHeightRequest="200" MinimumWidthRequest="200"></ads:BannerAddView>
                     <controls:HorizontalList x:Name="myPlaylist" ListOrientation="Horizontal" SelectedItemChanged="MyPlaylist_SelectedItemChanged">
                         <controls:HorizontalList.Header>
                             <StackLayout>

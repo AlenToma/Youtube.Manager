@@ -26,7 +26,7 @@
             <x:String x:Key="Ok">OK</x:String>
             <x:String x:Key="Yes">Yes</x:String>
             <x:String x:Key="No">No</x:String>
-            <x:String x:Key="AdsButton">Watch ads and earn a coin</x:String>
+            <x:String x:Key="AdsButton">Watch ads and earn a coins</x:String>
             <x:String x:Key="Buy">Buy</x:String>
             <x:String x:Key="Infinity">∞</x:String>
 

@@ -36,6 +36,12 @@ namespace Youtube.Manager.Droid.Models.Settings
 
         public string YoutubeDeveloperKey { get; }
 
+        public string BannerAdd { get; }
+
+        public string RewardAddId { get; }
+
+        public string AdsApplicationIds { get; set; }
+
         public Action<User, string> OnLoginComplete { get; set; }
 
 
@@ -52,8 +58,10 @@ namespace Youtube.Manager.Droid.Models.Settings
                 .AddScope(new Scope(Android.Gms.Common.Scopes.Profile))
                 .Build();
             YoutubeDeveloperKey = ControllerRepository.Db(x => x.GetSetting("YoutubeDeveloperKey")).Value;
-            var adsApplicationIds = ControllerRepository.Db(x => x.GetSetting("AdsApplicationIds")).Value;
-            MobileAds.Initialize(context, adsApplicationIds); // Ads
+            AdsApplicationIds = ControllerRepository.Db(x => x.GetSetting("AdsApplicationIds")).Value;
+            BannerAdd= ControllerRepository.Db(x => x.GetSetting("BannerAdd")).Value;
+            RewardAddId = ControllerRepository.Db(x => x.GetSetting("RewardAddId")).Value; 
+            MobileAds.Initialize(context, AdsApplicationIds); // Ads
             mRewardedVideoAd = MobileAds.GetRewardedVideoAdInstance(context);
             mRewardedVideoAd.RewardedVideoAdListener = new RewardedVideoAdListener(mRewardedVideoAd);
             Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity = context as Activity;
@@ -159,7 +167,7 @@ namespace Youtube.Manager.Droid.Models.Settings
 
         public void ReguastNewAdd()
         {
-            var id = ControllerRepository.Db(x => x.GetSetting("RewardAddId")).Value;
+            var id = RewardAddId;
 #if DEBUG
             id = "ca-app-pub-3940256099942544/5224354917"; // TESTiD
 

@@ -8,6 +8,11 @@ namespace Youtube.Manager.Models.Container.Interface
 {
     public interface IMainActivity
     {
+        string BannerAdd { get; }
+
+        string RewardAddId { get; }
+
+        string AdsApplicationIds { get; }
 
         string YoutubeDeveloperKey { get; }
 

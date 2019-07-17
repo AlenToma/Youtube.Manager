@@ -35,7 +35,7 @@ namespace Youtube.Manager.Views
             if (!this.UserIsLogedIn())
                 return;
 
-        
+
             var l = await this.StartLoading();
             myPlaylist.ItemsSource = UserData.VideoCategoryViews;
             myPlaylist.Header.IsVisible = myPlaylist.HasItems;
@@ -43,7 +43,7 @@ namespace Youtube.Manager.Views
             playListSuggesting.Header.IsVisible = playListSuggesting.HasItems;
             playListUserSeach.ItemsSource = ControllerRepository.Youtube(x => x.SearchAsync(UserData.CurrentUser.EntityId.Value, "", 10, 1, null, VideoSearchType.Recommendation)).Await()?.ToItemList();
             playListUserSeach.Header.IsVisible = playListUserSeach.HasItems;
-            //adsBanner.IsVisible = UserData.CurrentUser.UserType != UserType.Premium;
+            adsBanner.IsVisible = UserData.CurrentUser.UserType != UserType.Premium;
             l.EndLoading();
 
             if (!myPlaylist.HasItems && !UserData.Notified)

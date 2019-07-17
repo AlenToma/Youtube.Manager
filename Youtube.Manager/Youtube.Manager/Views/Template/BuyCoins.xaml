@@ -24,7 +24,7 @@
                                    x:Name="_btnStartAds" 
                                    Clicked="_btnStartAds_Clicked" />
 
-            <controls:HorizontalList x:Name="_products">
+            <controls:HorizontalList x:Name="_products" ListOrientation="Vertical">
                 <controls:HorizontalList.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Style="{StaticResource FormFloatLeft}">

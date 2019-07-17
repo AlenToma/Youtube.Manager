@@ -39,6 +39,7 @@
     <DocumentationFile>
     </DocumentationFile>
     <Optimize>false</Optimize>
+    <DefineConstants>DEBUG</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <AotAssemblies>false</AotAssemblies>

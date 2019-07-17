@@ -46,7 +46,7 @@ namespace Youtube.Manager.Views.Template
             if (r)
                 await this.Close();
 
-            await Application.Current.MainPage.DisplayAlert("", "Something wen wrong, the operation did not failed. \n Please try agen later", "Ok".GetString());
+            await Application.Current.MainPage.DisplayAlert("", "Something went wrong, the operation did not failed. \n Please try agen later", "Ok".GetString());
         }
     }
 }

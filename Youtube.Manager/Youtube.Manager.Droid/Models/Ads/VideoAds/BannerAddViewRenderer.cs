@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Youtube.Manager.Controls.Ads;
 using Youtube.Manager.Droid.Models.Ads.VideoAds;
+using Youtube.Manager.Helper;
 using Youtube.Manager.Models.Container;
 
 [assembly: ExportRenderer(typeof(BannerAddView), typeof(BannerAddViewRenderer))]
@@ -12,13 +13,11 @@ namespace Youtube.Manager.Droid.Models.Ads.VideoAds
 
     public class BannerAddViewRenderer : ViewRenderer
     {
-
         private AdView adView;
         public BannerAddViewRenderer(Context context) : base(context)
         {
 
         }
-
 
         /// <summary>
         /// reload the view and hit up google admob 
@@ -27,7 +26,7 @@ namespace Youtube.Manager.Droid.Models.Ads.VideoAds
         protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.View> e)
         {
             base.OnElementChanged(e);
-            var id = ControllerRepository.Db(x => x.GetSetting("BannerAdd")).Value;
+            var id = Methods.AppSettings.BannerAdd;
 #if DEBUG
             id = "ca-app-pub-3940256099942544/6300978111"; // TESTiD
 
