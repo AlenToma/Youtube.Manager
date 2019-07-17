@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using YoutubeExplode.Models;
 
 namespace Youtube.Manager.Models.Container.DB_models.Library
 {
@@ -27,26 +26,11 @@ namespace Youtube.Manager.Models.Container.DB_models.Library
             }
         }
 
-        public VideoWrapper(Video video)
-        {
-            VideoType = video.VideoType.ToString();
-            Author = video.Author;
-            UploadDate = video.UploadDate;
-            Title = video.Title;
-            DefaultThumbnailUrl = video.Thumbnails.HighResUrl;
-            Duration = video.Duration.TotalHours >= 1 ? video.Duration.ToString("c") : string.Format("{0:mm}:{1:ss}", video.Duration, video.Duration);
-            Views = video.Views;
-            TotalVideoViews = video.TotalVideoViews;
-            Description = video.Description;
-            Id = video.Id;
-            IsPlaylist = video.VideoType == YoutubeExplode.Models.VideoType.Playlist;
-            IsChannel = video.VideoType == YoutubeExplode.Models.VideoType.Channel;
-            IsVideo = video.VideoType == YoutubeExplode.Models.VideoType.Video;
-        }
+  
 
         public VideoWrapper(VideoData video)
         {
-            VideoType = YoutubeExplode.Models.VideoType.Video.ToString();
+            VideoType = "Video";
             Author = video.Auther;
             Title = video.Title;
             DefaultThumbnailUrl = video.ThumpUrl;

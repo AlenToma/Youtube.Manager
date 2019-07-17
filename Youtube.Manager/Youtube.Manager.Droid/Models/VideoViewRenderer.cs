@@ -34,9 +34,10 @@ namespace Youtube.Manager.Droid.Models
         private ImageView youtube_button_prev;
         private MediaManager.Platforms.Android.Video.VideoView videoView;
         private LocalVideoView element;
-        private List<MediaItem> mediaItems = new List<MediaItem>();
+        private readonly List<IMediaItem> mediaItems = new List<IMediaItem>();
         private IPlaybackManager PlaybackController => CrossMediaManager.Current;
         private IMediaManager MediaPlayer => CrossMediaManager.Current;
+
 
         private bool aborted;
         private long Duration
@@ -98,7 +99,7 @@ namespace Youtube.Manager.Droid.Models
 
         private void ToggleView(bool? value = null)
         {
-            var isVisiable = value.HasValue ? value.Value : !(video_current_time.Visibility == ViewStates.Visible);
+            var isVisiable = value ?? !(video_current_time.Visibility == ViewStates.Visible);
             if (!isVisiable)
                 video_current_time.Visibility =
                     video_title.Visibility =
@@ -147,6 +148,7 @@ namespace Youtube.Manager.Droid.Models
             element.Play = () => PlaybackController.Play();
             element.Abort = () => aborted = true;
             element.Reset = () => aborted = false;
+            element.PlayQueueItem = PlayQueueItem;
             element.GetCurrentMedia = () => MediaPlayer.MediaQueue.Current != null ? new Youtube.Manager.Models.Container.MediaItem(MediaPlayer.MediaQueue.Current.MediaUri) { Title = MediaPlayer.MediaQueue.Current.Title } : null;
             seeker.ProgressChanged += Seeker_ProgressChanged;
             youtube_button_prev.Click += (sender, e) =>
@@ -245,6 +247,18 @@ namespace Youtube.Manager.Droid.Models
             c = Math.Round(Convert.ToDouble(c)); //round to a whole number
             video_duration.SetTextKeepState(formatTime(d));
             seeker.Progress = (int)c;
+        }
+
+
+        public async void PlayQueueItem(int index)
+        {
+            var item = mediaItems != null && mediaItems.Count > index && index >= 0 ? mediaItems[index] : null;
+            if (item != null)
+            {
+                var v = await MediaPlayer.PlayQueueItem(item);
+            }
+
+            await Task.Delay(TimeSpan.FromSeconds(1));
         }
 
         /// <summary>

@@ -26,10 +26,6 @@ namespace Youtube.Manager.Models.Container
 
         public static string ImageRootPath => Path.Combine(ApplicationRootPath, "UploadedImages");
 
-        public const string AndroidClientId = "564962228855-c7n1bm28vv6r6rv7gcr68seq4r13cugs";
-        public const string SecretKey = "0TLbop3aVDGdw0o0qZjDs_AD";
-        public const string YoutubeDeveloperKey = "AIzaSyDxInpTZIjrmhlEz2oSeIw7WX0GXRH0He8";
-
         public const string SystemYoutubeUserName = "Youtube.Manager";
 
         public const string SystemYoutubePassword = "Youtube.Manager.Password";

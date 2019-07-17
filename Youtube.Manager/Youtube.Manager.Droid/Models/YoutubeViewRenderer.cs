@@ -154,7 +154,7 @@ namespace Youtube.Manager.Droid.Models
                         var vi = LayoutInflater.From(Context);
                         var controller = vi.Inflate(Resource.Layout.youtube_manager_controls, null);
                         youTubePlayerFragment = MainActivity.Current.SupportFragmentManager.FindFragmentById(Resource.Id.youtube_fragment) as YouTubePlayerSupportFragment;
-                        youTubePlayerFragment.Initialize(Actions.YoutubeDeveloperKey, this);
+                        youTubePlayerFragment.Initialize(Methods.AppSettings.YoutubeDeveloperKey, this);
                         youTubePlayerFragment.RetainInstance = true;
                         var relativeLayout = new ARelativeLayout(Context);
                         seeker = controller.FindViewById<SeekBar>(Resource.Id.seek_bar);
@@ -218,16 +218,22 @@ namespace Youtube.Manager.Droid.Models
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
+            try
             {
-                var tr = MainActivity.Current.SupportFragmentManager.BeginTransaction();
-                tr?.Remove(youTubePlayerFragment);
-                tr?.Commit();
-                youTubePlayerFragment?.Dispose();
-                YoutubePlayer?.Release();
-                YoutubePlayer?.Dispose();
+                if (disposing)
+                {
+                    var tr = MainActivity.Current.SupportFragmentManager.BeginTransaction();
+                    tr?.Remove(youTubePlayerFragment);
+                    tr?.Commit();
+                    youTubePlayerFragment?.Dispose();
+                    YoutubePlayer?.Release();
+                    YoutubePlayer?.Dispose();
+                }
             }
+            catch
+            {
 
+            }
             base.Dispose(disposing);
         }
 

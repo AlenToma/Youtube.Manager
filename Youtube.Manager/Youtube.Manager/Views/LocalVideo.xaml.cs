@@ -109,11 +109,10 @@ namespace Youtube.Manager.Views
 
             try
             {
-                _category = _category == null
-                    ? UserData.VideoCategoryViews.Find(x => x.EntityId == _category_Id)
-                    : _category;
+                _category = _category ?? UserData.VideoCategoryViews.Find(x => x.EntityId == _category_Id)
+;
 
-                _videos = _videos == null ? ControllerRepository.Db(x => x.GetVideoData(null, _category_Id, null, 1)).Await() : _videos;
+                _videos = _videos ?? ControllerRepository.Db(x => x.GetVideoData(null, _category_Id, null, 1)).Await();
 
                 var directoryManager = UserData.DirectoryManager.Folder(_category.Name).Create();
 
@@ -193,40 +192,32 @@ namespace Youtube.Manager.Views
         {
             try
             {
-                if (video == null || !video.Playable) video = _videos.FirstOrDefault(x => x.Playable);
+
+
+                if (video == null || !video.Playable)
+                    video = _videos.FirstOrDefault(x => x.Playable);
+
+
                 if (video != null && video.Playable)
                 {
+                    var index = _videos.FindIndex(x => x == video);
                     var vd = new SafeValueType<string, MediaItem>();
-                    var begin = false;
+
                     foreach (var item in _videos)
                     {
-
-                        if (item == video)
-                            begin = true;
-
-                        if (begin && item.Playable)
+                        if (item.Playable)
                             vd.Add(item.LocalPath, new MediaItem(item.LocalPath)
                             {
                                 Title = item.Title,
                             });
-
                     }
 
-                    foreach (var item in _videos)
-                        if (item.Playable && !vd.ContainsKey(item.LocalPath))
-                        {
-
-                            vd.Add(item.LocalPath, new MediaItem(item.LocalPath)
-                            {
-                                Title = item.Title
-                            });
-
-                        }
                     CurrentVideo = video;
                     Device.BeginInvokeOnMainThread(() =>
                     {
-
-                        lVideo.PlayVideos(vd.Values.ToArray());
+                        if (!(lVideo.VideoSource?.Any(x => x.Url == video.LocalPath) ?? false))
+                            lVideo.PlayVideos(vd.Values.ToArray());
+                        else lVideo.PlayQueueItem(index);
                     });
                 }
 

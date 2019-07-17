@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:564962228855:android:06b1168fe98185ad",
         "android_client_info": {
-          "package_name": "com.youtube.manager"
+          "package_name": "com.alentoma.realm_of_youtube"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "564962228855-tks2vg09noni8np6br6umk93vt71p74r.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.youtube.manager",
+            "package_name": "com.alentoma.realm_of_youtube",
             "certificate_hash": "d0ce06e679c2ff2ead1df0d7592a93b1f33d2150"
           }
         }

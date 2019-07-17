@@ -27,6 +27,8 @@ namespace Youtube.Manager.Controls
 
         public Action Reset { get; set; }
 
+        public Action<int> PlayQueueItem { get; set; }
+
         public void PlayVideos(params MediaItem[] video)
         {
             if (video != null)

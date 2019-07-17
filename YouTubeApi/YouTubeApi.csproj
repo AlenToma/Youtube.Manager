@@ -137,7 +137,6 @@
   <ItemGroup>
     <None Include="Additions\AboutAdditions.txt" />
     <None Include="Jars\AboutJars.txt" />
-    <None Include="Jars\oldJar\YouTubeAndroidPlayerApi.jar.old" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

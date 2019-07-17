@@ -34,6 +34,8 @@ namespace Youtube.Manager.Droid.Models.Settings
 
         protected IRewardedVideoAd mRewardedVideoAd;
 
+        public string YoutubeDeveloperKey { get; }
+
         public Action<User, string> OnLoginComplete { get; set; }
 
 
@@ -49,8 +51,9 @@ namespace Youtube.Manager.Droid.Models.Settings
                 .AddApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .AddScope(new Scope(Android.Gms.Common.Scopes.Profile))
                 .Build();
-
-            MobileAds.Initialize(context, context.GetString(Resource.String.AdsApplicationIds)); // Ads
+            YoutubeDeveloperKey = ControllerRepository.Db(x => x.GetSetting("YoutubeDeveloperKey")).Value;
+            var adsApplicationIds = ControllerRepository.Db(x => x.GetSetting("AdsApplicationIds")).Value;
+            MobileAds.Initialize(context, adsApplicationIds); // Ads
             mRewardedVideoAd = MobileAds.GetRewardedVideoAdInstance(context);
             mRewardedVideoAd.RewardedVideoAdListener = new RewardedVideoAdListener(mRewardedVideoAd);
             Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity = context as Activity;
@@ -156,7 +159,7 @@ namespace Youtube.Manager.Droid.Models.Settings
 
         public void ReguastNewAdd()
         {
-            var id = _context.GetString(Resource.String.RewardAddId);
+            var id = ControllerRepository.Db(x => x.GetSetting("RewardAddId")).Value;
 #if DEBUG
             id = "ca-app-pub-3940256099942544/5224354917"; // TESTiD
 

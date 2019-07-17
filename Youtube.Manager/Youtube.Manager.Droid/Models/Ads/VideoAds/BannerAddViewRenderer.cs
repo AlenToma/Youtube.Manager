@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Youtube.Manager.Controls.Ads;
 using Youtube.Manager.Droid.Models.Ads.VideoAds;
+using Youtube.Manager.Models.Container;
 
 [assembly: ExportRenderer(typeof(BannerAddView), typeof(BannerAddViewRenderer))]
 namespace Youtube.Manager.Droid.Models.Ads.VideoAds
@@ -26,7 +27,7 @@ namespace Youtube.Manager.Droid.Models.Ads.VideoAds
         protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.View> e)
         {
             base.OnElementChanged(e);
-            var id = MainActivity.Current.GetString(Resource.String.BannerAdd);
+            var id = ControllerRepository.Db(x => x.GetSetting("BannerAdd")).Value;
 #if DEBUG
             id = "ca-app-pub-3940256099942544/6300978111"; // TESTiD
 

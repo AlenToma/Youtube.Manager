@@ -8,19 +8,19 @@ using Youtube.Manager.Models.Container.Interface;
 
 namespace Youtube.Manager.Controls
 {
-    public class MixVideoPlayer : StackLayout
+    public class MixVideoPlayer : RelativeLayout
     {
         public List<MediaItem> VideoSource = new List<MediaItem>();
 
-        private YoutubeVideoView youtubePlayer = new YoutubeVideoView();
+        private readonly YoutubeVideoView youtubePlayer = new YoutubeVideoView();
 
-        private LocalVideoView videoView = new LocalVideoView();
+        private readonly LocalVideoView videoView = new LocalVideoView();
 
-        public IPlayer CurrentPlayer { get; private set; }
+        public IPlayer Player { get; private set; }
 
         public Action<Exception> OnError
         {
-            get => CurrentPlayer.OnError;
+            get => Player.OnError;
             set
             {
                 videoView.OnError = value;
@@ -30,7 +30,7 @@ namespace Youtube.Manager.Controls
 
         public Action<bool> OnFullScrean
         {
-            get => CurrentPlayer.OnFullScrean;
+            get => Player.OnFullScrean;
             set
             {
                 videoView.OnFullScrean = value;
@@ -40,7 +40,7 @@ namespace Youtube.Manager.Controls
 
         public Action OnNext
         {
-            get => CurrentPlayer.OnNext;
+            get => Player.OnNext;
             set
             {
                 videoView.OnNext = value;
@@ -50,7 +50,7 @@ namespace Youtube.Manager.Controls
 
         public Action<MediaItem[]> OnPlayVideo
         {
-            get => CurrentPlayer.OnPlayVideo;
+            get => Player.OnPlayVideo;
             set
             {
                 videoView.OnPlayVideo = value;
@@ -60,7 +60,7 @@ namespace Youtube.Manager.Controls
 
         public Action OnPrev
         {
-            get => CurrentPlayer.OnPrev;
+            get => Player.OnPrev;
             set
             {
                 videoView.OnPrev = value;
@@ -70,7 +70,7 @@ namespace Youtube.Manager.Controls
 
         public Action OnVideoEnded
         {
-            get => CurrentPlayer.OnPrev;
+            get => Player.OnPrev;
             set
             {
                 videoView.OnVideoEnded = value;
@@ -80,7 +80,7 @@ namespace Youtube.Manager.Controls
 
         public Action<MediaItem> OnVideoStarted
         {
-            get => CurrentPlayer.OnVideoStarted;
+            get => Player.OnVideoStarted;
             set
             {
                 videoView.OnVideoStarted = value;
@@ -90,7 +90,7 @@ namespace Youtube.Manager.Controls
 
         public Action<bool> SetFullScrean
         {
-            get => CurrentPlayer.SetFullScrean;
+            get => Player.SetFullScrean;
             set
             {
                 videoView.SetFullScrean = value;
@@ -98,23 +98,30 @@ namespace Youtube.Manager.Controls
             }
         }
 
+
         public PlayerType PlayerType { get; set; }
 
-        public PlayerState State => CurrentPlayer?.State ?? PlayerState.Stopped;
+        public PlayerState State => Player?.State ?? PlayerState.Stopped;
 
-        public MediaItem CurrentMedia => CurrentPlayer?.GetCurrentMedia?.Invoke() ?? null;
+        public MediaItem CurrentMedia => Player?.GetCurrentMedia?.Invoke() ?? null;
 
         public void PlayVideos(params MediaItem[] videos)
         {
-            CurrentPlayer?.Reset();
+            Player?.Reset();
             if (videos != null)
                 VideoSource = videos.ToList();
             OnPlayVideo?.Invoke(videos);
         }
 
+
+        public void PlayQueueItem(int index)
+        {
+            Player.PlayQueueItem?.Invoke(index);
+        }
+
         public void PlayVideo(MediaItem video)
         {
-            CurrentPlayer?.Reset();
+            Player?.Reset();
             var index = -1;
             if (video != null && (VideoSource?.Any(x => x.Url == video.Url) ?? false))
             {
@@ -139,11 +146,10 @@ namespace Youtube.Manager.Controls
 
         public MixVideoPlayer()
         {
-            youtubePlayer.IsVisible = videoView.IsVisible = false;
             youtubePlayer.VerticalOptions = videoView.VerticalOptions = LayoutOptions.FillAndExpand;
             youtubePlayer.HorizontalOptions = videoView.HorizontalOptions = LayoutOptions.FillAndExpand;
-            this.Children.Add(youtubePlayer);
-            this.Children.Add(videoView);
+            this.Children.Insert(0, youtubePlayer);
+            this.Children.Insert(0, videoView);
             Methods.ApplicationPlayer = this;
         }
 
@@ -161,21 +167,21 @@ namespace Youtube.Manager.Controls
 
         public void SwitchPlayer(PlayerType playerType)
         {
-            if (playerType == PlayerType && CurrentPlayer != null)
+            if (playerType == PlayerType && Player != null)
                 return;
             var current = CurrentMedia;
-            CurrentPlayer?.Stop();
-            CurrentPlayer?.Abort();
+            Player?.Stop();
+            Player?.Abort();
             PlayerType = playerType;
             if (playerType == PlayerType.Youtube)
             {
-                CurrentPlayer = youtubePlayer;
+                Player = youtubePlayer;
                 youtubePlayer.IsVisible = true;
                 videoView.IsVisible = false;
             }
             else
             {
-                CurrentPlayer = videoView;
+                Player = videoView;
                 youtubePlayer.IsVisible = false;
                 videoView.IsVisible = true;
             }

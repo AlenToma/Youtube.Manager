@@ -15,13 +15,13 @@ namespace Youtube.Manager.Controls
 
             var loader = new ActivityIndicator()
             {
-                Color = Color.White,
+                Color = Color.Red,
                 IsRunning = true,
                 IsEnabled = true,
                 VerticalOptions = LayoutOptions.Center,
                 HorizontalOptions = LayoutOptions.Center,
-                HeightRequest = 70,
-                WidthRequest = 70
+                HeightRequest = 40,
+                WidthRequest = 40
             };
 
             this.Children.Add(loader);

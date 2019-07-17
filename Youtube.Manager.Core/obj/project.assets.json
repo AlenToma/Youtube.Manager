@@ -315,8 +315,7 @@
           "EntityWorker.Core": "3.0.7",
           "FastDeepCloner": "1.2.5",
           "Microsoft.CSharp": "4.5.0",
-          "Newtonsoft.Json": "12.0.2",
-          "YoutubeExplode": "4.7.4"
+          "Newtonsoft.Json": "12.0.2"
         },
         "compile": {
           "bin/placeholder/Youtube.Manager.Models.Container.dll": {}
@@ -1761,8 +1760,8 @@
     },
     "Youtube.Manager.Models.Container/1.0.0": {
       "type": "project",
-      "path": "../Youtube.Manager.Models/Youtube.Manager.Models.Container.csproj",
-      "msbuildProject": "../Youtube.Manager.Models/Youtube.Manager.Models.Container.csproj"
+      "path": "../Youtube.Manager.Models.Container/Youtube.Manager.Models.Container.csproj",
+      "msbuildProject": "../Youtube.Manager.Models.Container/Youtube.Manager.Models.Container.csproj"
     },
     "YoutubeExplode/4.7.4": {
       "type": "project",
@@ -1811,8 +1810,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Models\\Youtube.Manager.Models.Container.csproj": {
-              "projectPath": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Models\\Youtube.Manager.Models.Container.csproj"
+            "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Models.Container\\Youtube.Manager.Models.Container.csproj": {
+              "projectPath": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Models.Container\\Youtube.Manager.Models.Container.csproj"
             },
             "E:\\Projects\\YoutubeExplode\\YoutubeExplode\\YoutubeExplode.csproj": {
               "projectPath": "E:\\Projects\\YoutubeExplode\\YoutubeExplode\\YoutubeExplode.csproj"

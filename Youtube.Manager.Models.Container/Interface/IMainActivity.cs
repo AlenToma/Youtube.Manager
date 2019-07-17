@@ -9,6 +9,11 @@ namespace Youtube.Manager.Models.Container.Interface
     public interface IMainActivity
     {
 
+        string YoutubeDeveloperKey { get; }
+
+        /// <summary>
+        /// when the login is completed
+        /// </summary>
         Action<User, string> OnLoginComplete { get; set; }
 
         /// <summary>

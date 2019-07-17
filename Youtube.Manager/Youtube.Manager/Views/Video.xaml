@@ -14,7 +14,8 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <controls:YoutubeVideoView x:Name="yVideo" Grid.Row="0" />
+        <!--<controls:YoutubeVideoView x:Name="yVideo" Grid.Row="0" />-->
+        <controls:MixVideoPlayer Grid.Row="0" x:Name="yVideo" PlayerType="Youtube" />
 
         <controls:ExpandableView x:Name="expandableViewPlayList" Grid.Row="1" VerticalOptions="FillAndExpand"
                                  ExpandAnimationLength="600" TouchHandlerView="{x:Reference exPlayListHeader}">

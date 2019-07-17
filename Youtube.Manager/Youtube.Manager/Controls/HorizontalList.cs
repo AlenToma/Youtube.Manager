@@ -99,7 +99,7 @@ namespace Youtube.Manager.Controls
 
         public event EventHandler SelectedItemChanged;
 
-
+        private Task currentTask;
         protected virtual void SetItems()
         {
             if (Header != null && Header.IsVisible && ItemScrollView == null) StackContainer.Children.Add(Header);
@@ -136,7 +136,10 @@ namespace Youtube.Manager.Controls
             if (!HasItems)
                 return;
             LoaderIndicator.IsVisible = true;
-            Task.Run(() =>
+            if (currentTask != null && !currentTask.IsCompleted)
+                currentTask.Dispose();
+
+            currentTask = Task.Run(() =>
             {
                 var lstViews = new List<View>();
                 foreach (var item in ItemsSource)

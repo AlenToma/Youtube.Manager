@@ -19,13 +19,13 @@ using Youtube.Manager.Droid.Models.Settings;
 #if DEBUG
 [assembly: Application(Debuggable = true)]
 #else
-[assembly: Application(Debuggable=false)]
+[assembly: Application(Debuggable = false)]
 #endif
 namespace Youtube.Manager.Droid
 {
     [Activity(
-        Label = "Youtube.Manager",
-        Icon = "@mipmap/icon",
+        Label = "Realm Of Youtube",
+        Icon = "@mipmap/icon48x48",
         Theme = "@style/MainTheme",
         MainLauncher = true,
         LaunchMode = LaunchMode.SingleTop,
@@ -47,7 +47,7 @@ namespace Youtube.Manager.Droid
             ToolbarResource = Resource.Layout.Toolbar;
             base.OnCreate(savedInstanceState);
             Popup.Init(this, savedInstanceState); // popup 
-            Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental");
+            //Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental");
             Forms.Init(this, savedInstanceState);
             Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, savedInstanceState);
             UserDialogs.Init(this);

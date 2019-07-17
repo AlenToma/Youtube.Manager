@@ -50,18 +50,6 @@
           "lib/netstandard2.0/FastDeepCloner.dll": {}
         }
       },
-      "LtGt/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Sprache": "2.2.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/LtGt.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/LtGt.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.5.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -83,7 +71,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Plugin.MediaManager/0.6.7": {
+      "Plugin.MediaManager/0.7.3": {
         "type": "package",
         "compile": {
           "lib/xamarinios10/MediaManager.dll": {}
@@ -92,10 +80,10 @@
           "lib/xamarinios10/MediaManager.dll": {}
         }
       },
-      "Plugin.MediaManager.Forms/0.6.7": {
+      "Plugin.MediaManager.Forms/0.7.3": {
         "type": "package",
         "dependencies": {
-          "Plugin.MediaManager": "0.6.7",
+          "Plugin.MediaManager": "0.7.3",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "compile": {
@@ -119,48 +107,6 @@
           "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
         }
       },
-      "Sprache/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Globalization": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Sprache.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Sprache.dll": {}
-        }
-      },
-      "System.Drawing.Common/4.5.1": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Globalization/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Linq/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
       "System.Reflection.Emit/4.3.0": {
         "type": "package",
         "compile": {
@@ -168,36 +114,6 @@
         },
         "runtime": {
           "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Runtime/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Text.RegularExpressions/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "Xamarin.Auth/1.7.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Json"
-        ],
-        "compile": {
-          "lib/Xamarin.iOS10/Xamarin.Auth.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/Xamarin.Auth.dll": {}
         }
       },
       "Xamarin.Forms/3.3.0.912540": {
@@ -343,9 +259,8 @@
         "dependencies": {
           "Acr.UserDialogs": "7.0.4",
           "Newtonsoft.Json": "12.0.2",
-          "Plugin.MediaManager.Forms": "0.6.7",
+          "Plugin.MediaManager.Forms": "0.7.3",
           "Rg.Plugins.Popup": "1.1.5.188",
-          "Xamarin.Auth": "1.7.0",
           "Xamarin.Forms": "4.1.0.581479",
           "Youtube.Manager.Models.Container": "1.0.0",
           "dotMorten.Xamarin.Forms.AutoSuggestBox": "0.7.0"
@@ -364,29 +279,13 @@
           "EntityWorker.Core": "3.0.7",
           "FastDeepCloner": "1.2.5",
           "Microsoft.CSharp": "4.5.0",
-          "Newtonsoft.Json": "12.0.2",
-          "System.Drawing.Common": "4.5.1",
-          "YoutubeExplode": "4.7.4"
-        },
-        "compile": {
-          "bin/placeholder/Youtube.Manager.Models.Container.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Youtube.Manager.Models.Container.dll": {}
-        }
-      },
-      "YoutubeExplode/4.7.4": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "LtGt": "1.0.1",
           "Newtonsoft.Json": "12.0.2"
         },
         "compile": {
-          "bin/placeholder/YoutubeExplode.dll": {}
+          "bin/placeholder/Youtube.Manager.Models.Container.dll": {}
         },
         "runtime": {
-          "bin/placeholder/YoutubeExplode.dll": {}
+          "bin/placeholder/Youtube.Manager.Models.Container.dll": {}
         }
       }
     },
@@ -439,18 +338,6 @@
           "lib/netstandard2.0/FastDeepCloner.dll": {}
         }
       },
-      "LtGt/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Sprache": "2.2.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/LtGt.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/LtGt.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.5.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -472,7 +359,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Plugin.MediaManager/0.6.7": {
+      "Plugin.MediaManager/0.7.3": {
         "type": "package",
         "compile": {
           "lib/xamarinios10/MediaManager.dll": {}
@@ -481,10 +368,10 @@
           "lib/xamarinios10/MediaManager.dll": {}
         }
       },
-      "Plugin.MediaManager.Forms/0.6.7": {
+      "Plugin.MediaManager.Forms/0.7.3": {
         "type": "package",
         "dependencies": {
-          "Plugin.MediaManager": "0.6.7",
+          "Plugin.MediaManager": "0.7.3",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "compile": {
@@ -508,48 +395,6 @@
           "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
         }
       },
-      "Sprache/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Globalization": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Sprache.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Sprache.dll": {}
-        }
-      },
-      "System.Drawing.Common/4.5.1": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Globalization/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Linq/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
       "System.Reflection.Emit/4.3.0": {
         "type": "package",
         "compile": {
@@ -557,36 +402,6 @@
         },
         "runtime": {
           "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Runtime/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Text.RegularExpressions/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "Xamarin.Auth/1.7.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Json"
-        ],
-        "compile": {
-          "lib/Xamarin.iOS10/Xamarin.Auth.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/Xamarin.Auth.dll": {}
         }
       },
       "Xamarin.Forms/3.3.0.912540": {
@@ -732,9 +547,8 @@
         "dependencies": {
           "Acr.UserDialogs": "7.0.4",
           "Newtonsoft.Json": "12.0.2",
-          "Plugin.MediaManager.Forms": "0.6.7",
+          "Plugin.MediaManager.Forms": "0.7.3",
           "Rg.Plugins.Popup": "1.1.5.188",
-          "Xamarin.Auth": "1.7.0",
           "Xamarin.Forms": "4.1.0.581479",
           "Youtube.Manager.Models.Container": "1.0.0",
           "dotMorten.Xamarin.Forms.AutoSuggestBox": "0.7.0"
@@ -753,29 +567,13 @@
           "EntityWorker.Core": "3.0.7",
           "FastDeepCloner": "1.2.5",
           "Microsoft.CSharp": "4.5.0",
-          "Newtonsoft.Json": "12.0.2",
-          "System.Drawing.Common": "4.5.1",
-          "YoutubeExplode": "4.7.4"
-        },
-        "compile": {
-          "bin/placeholder/Youtube.Manager.Models.Container.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Youtube.Manager.Models.Container.dll": {}
-        }
-      },
-      "YoutubeExplode/4.7.4": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "LtGt": "1.0.1",
           "Newtonsoft.Json": "12.0.2"
         },
         "compile": {
-          "bin/placeholder/YoutubeExplode.dll": {}
+          "bin/placeholder/Youtube.Manager.Models.Container.dll": {}
         },
         "runtime": {
-          "bin/placeholder/YoutubeExplode.dll": {}
+          "bin/placeholder/Youtube.Manager.Models.Container.dll": {}
         }
       }
     },
@@ -828,18 +626,6 @@
           "lib/netstandard2.0/FastDeepCloner.dll": {}
         }
       },
-      "LtGt/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Sprache": "2.2.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/LtGt.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/LtGt.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.5.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -861,7 +647,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Plugin.MediaManager/0.6.7": {
+      "Plugin.MediaManager/0.7.3": {
         "type": "package",
         "compile": {
           "lib/xamarinios10/MediaManager.dll": {}
@@ -870,10 +656,10 @@
           "lib/xamarinios10/MediaManager.dll": {}
         }
       },
-      "Plugin.MediaManager.Forms/0.6.7": {
+      "Plugin.MediaManager.Forms/0.7.3": {
         "type": "package",
         "dependencies": {
-          "Plugin.MediaManager": "0.6.7",
+          "Plugin.MediaManager": "0.7.3",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "compile": {
@@ -897,48 +683,6 @@
           "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
         }
       },
-      "Sprache/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Globalization": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Sprache.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Sprache.dll": {}
-        }
-      },
-      "System.Drawing.Common/4.5.1": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Globalization/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Linq/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
       "System.Reflection.Emit/4.3.0": {
         "type": "package",
         "compile": {
@@ -946,36 +690,6 @@
         },
         "runtime": {
           "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Runtime/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Text.RegularExpressions/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "Xamarin.Auth/1.7.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Json"
-        ],
-        "compile": {
-          "lib/Xamarin.iOS10/Xamarin.Auth.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/Xamarin.Auth.dll": {}
         }
       },
       "Xamarin.Forms/3.3.0.912540": {
@@ -1121,9 +835,8 @@
         "dependencies": {
           "Acr.UserDialogs": "7.0.4",
           "Newtonsoft.Json": "12.0.2",
-          "Plugin.MediaManager.Forms": "0.6.7",
+          "Plugin.MediaManager.Forms": "0.7.3",
           "Rg.Plugins.Popup": "1.1.5.188",
-          "Xamarin.Auth": "1.7.0",
           "Xamarin.Forms": "4.1.0.581479",
           "Youtube.Manager.Models.Container": "1.0.0",
           "dotMorten.Xamarin.Forms.AutoSuggestBox": "0.7.0"
@@ -1142,29 +855,13 @@
           "EntityWorker.Core": "3.0.7",
           "FastDeepCloner": "1.2.5",
           "Microsoft.CSharp": "4.5.0",
-          "Newtonsoft.Json": "12.0.2",
-          "System.Drawing.Common": "4.5.1",
-          "YoutubeExplode": "4.7.4"
-        },
-        "compile": {
-          "bin/placeholder/Youtube.Manager.Models.Container.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Youtube.Manager.Models.Container.dll": {}
-        }
-      },
-      "YoutubeExplode/4.7.4": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "LtGt": "1.0.1",
           "Newtonsoft.Json": "12.0.2"
         },
         "compile": {
-          "bin/placeholder/YoutubeExplode.dll": {}
+          "bin/placeholder/Youtube.Manager.Models.Container.dll": {}
         },
         "runtime": {
-          "bin/placeholder/YoutubeExplode.dll": {}
+          "bin/placeholder/Youtube.Manager.Models.Container.dll": {}
         }
       }
     },
@@ -1217,18 +914,6 @@
           "lib/netstandard2.0/FastDeepCloner.dll": {}
         }
       },
-      "LtGt/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Sprache": "2.2.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/LtGt.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/LtGt.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.5.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -1250,7 +935,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Plugin.MediaManager/0.6.7": {
+      "Plugin.MediaManager/0.7.3": {
         "type": "package",
         "compile": {
           "lib/xamarinios10/MediaManager.dll": {}
@@ -1259,10 +944,10 @@
           "lib/xamarinios10/MediaManager.dll": {}
         }
       },
-      "Plugin.MediaManager.Forms/0.6.7": {
+      "Plugin.MediaManager.Forms/0.7.3": {
         "type": "package",
         "dependencies": {
-          "Plugin.MediaManager": "0.6.7",
+          "Plugin.MediaManager": "0.7.3",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "compile": {
@@ -1286,48 +971,6 @@
           "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
         }
       },
-      "Sprache/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Globalization": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Sprache.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Sprache.dll": {}
-        }
-      },
-      "System.Drawing.Common/4.5.1": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Globalization/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Linq/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
       "System.Reflection.Emit/4.3.0": {
         "type": "package",
         "compile": {
@@ -1335,36 +978,6 @@
         },
         "runtime": {
           "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Runtime/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Text.RegularExpressions/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "Xamarin.Auth/1.7.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Json"
-        ],
-        "compile": {
-          "lib/Xamarin.iOS10/Xamarin.Auth.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/Xamarin.Auth.dll": {}
         }
       },
       "Xamarin.Forms/3.3.0.912540": {
@@ -1510,9 +1123,8 @@
         "dependencies": {
           "Acr.UserDialogs": "7.0.4",
           "Newtonsoft.Json": "12.0.2",
-          "Plugin.MediaManager.Forms": "0.6.7",
+          "Plugin.MediaManager.Forms": "0.7.3",
           "Rg.Plugins.Popup": "1.1.5.188",
-          "Xamarin.Auth": "1.7.0",
           "Xamarin.Forms": "4.1.0.581479",
           "Youtube.Manager.Models.Container": "1.0.0",
           "dotMorten.Xamarin.Forms.AutoSuggestBox": "0.7.0"
@@ -1531,29 +1143,13 @@
           "EntityWorker.Core": "3.0.7",
           "FastDeepCloner": "1.2.5",
           "Microsoft.CSharp": "4.5.0",
-          "Newtonsoft.Json": "12.0.2",
-          "System.Drawing.Common": "4.5.1",
-          "YoutubeExplode": "4.7.4"
-        },
-        "compile": {
-          "bin/placeholder/Youtube.Manager.Models.Container.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Youtube.Manager.Models.Container.dll": {}
-        }
-      },
-      "YoutubeExplode/4.7.4": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "LtGt": "1.0.1",
           "Newtonsoft.Json": "12.0.2"
         },
         "compile": {
-          "bin/placeholder/YoutubeExplode.dll": {}
+          "bin/placeholder/Youtube.Manager.Models.Container.dll": {}
         },
         "runtime": {
-          "bin/placeholder/YoutubeExplode.dll": {}
+          "bin/placeholder/Youtube.Manager.Models.Container.dll": {}
         }
       }
     }
@@ -1642,23 +1238,6 @@
         "lib/netstandard1.3/FastDeepCloner.xml",
         "lib/netstandard2.0/FastDeepCloner.dll",
         "lib/netstandard2.0/FastDeepCloner.xml"
-      ]
-    },
-    "LtGt/1.0.1": {
-      "sha512": "+LdYZ+so6GiLqPmJkyWXp8phcO9q9HddwN3nixF7mLxzTQgHJ5jOeau07YsJm40zS9NxP6Dy15izKv0WJU4ruA==",
-      "type": "package",
-      "path": "ltgt/1.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net45/LtGt.dll",
-        "lib/net45/LtGt.xml",
-        "lib/netstandard1.0/LtGt.dll",
-        "lib/netstandard1.0/LtGt.xml",
-        "lib/netstandard2.0/LtGt.dll",
-        "lib/netstandard2.0/LtGt.xml",
-        "ltgt.1.0.1.nupkg.sha512",
-        "ltgt.nuspec"
       ]
     },
     "Microsoft.CSharp/4.5.0": {
@@ -1759,10 +1338,10 @@
         "newtonsoft.json.nuspec"
       ]
     },
-    "Plugin.MediaManager/0.6.7": {
-      "sha512": "c+El9zxbeIh8WCimp5Wz48kFX21ERya4h8XUWc6XLJuOBMZC9s6nHF9aDR90/fEiWvTPJ8YwcYvo71BcE+dMVQ==",
+    "Plugin.MediaManager/0.7.3": {
+      "sha512": "QI5su4JsZ4V5EEHgybYg6utpjArQ7QEz5JY8W0PTgL4aeV+tbriv3mT79Y6/ZZF8AXhMFiT9YBHy8NglGmaqBQ==",
       "type": "package",
-      "path": "plugin.mediamanager/0.6.7",
+      "path": "plugin.mediamanager/0.7.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1771,9 +1350,9 @@
         "lib/monoandroid90/MediaManager.dll.mdb",
         "lib/monoandroid90/MediaManager.pdb",
         "lib/monoandroid90/MediaManager.xml",
-        "lib/net471/MediaManager.dll",
-        "lib/net471/MediaManager.pdb",
-        "lib/net471/MediaManager.xml",
+        "lib/net472/MediaManager.dll",
+        "lib/net472/MediaManager.pdb",
+        "lib/net472/MediaManager.xml",
         "lib/netstandard2.0/MediaManager.dll",
         "lib/netstandard2.0/MediaManager.pdb",
         "lib/netstandard2.0/MediaManager.xml",
@@ -1795,15 +1374,15 @@
         "lib/xamarintvos10/MediaManager.dll",
         "lib/xamarintvos10/MediaManager.pdb",
         "lib/xamarintvos10/MediaManager.xml",
-        "plugin.mediamanager.0.6.7.nupkg.sha512",
+        "plugin.mediamanager.0.7.3.nupkg.sha512",
         "plugin.mediamanager.nuspec",
         "readme.txt"
       ]
     },
-    "Plugin.MediaManager.Forms/0.6.7": {
-      "sha512": "EJ2Uf5PCY79HXAskGs6n+7eBCYwsBTQCAZ1JAn16D5/toqPPULPCcrRUS9IjZiZFbDHRgBGsQCpKsdTmVZPpRA==",
+    "Plugin.MediaManager.Forms/0.7.3": {
+      "sha512": "5wBhLeeKkOyc2gOcmECVaaDCWz1NSsPibuoZc4+TSFjwWlPMx0DAUWyCyDbiEGd/0h7/hgY833rA6PZU8KGCrw==",
       "type": "package",
-      "path": "plugin.mediamanager.forms/0.6.7",
+      "path": "plugin.mediamanager.forms/0.7.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1812,9 +1391,9 @@
         "lib/monoandroid90/MediaManager.Forms.dll.mdb",
         "lib/monoandroid90/MediaManager.Forms.pdb",
         "lib/monoandroid90/MediaManager.Forms.xml",
-        "lib/net471/MediaManager.Forms.dll",
-        "lib/net471/MediaManager.Forms.pdb",
-        "lib/net471/MediaManager.Forms.xml",
+        "lib/net472/MediaManager.Forms.dll",
+        "lib/net472/MediaManager.Forms.pdb",
+        "lib/net472/MediaManager.Forms.xml",
         "lib/netstandard2.0/MediaManager.Forms.dll",
         "lib/netstandard2.0/MediaManager.Forms.pdb",
         "lib/netstandard2.0/MediaManager.Forms.xml",
@@ -1834,7 +1413,7 @@
         "lib/xamarintvos10/MediaManager.Forms.dll",
         "lib/xamarintvos10/MediaManager.Forms.pdb",
         "lib/xamarintvos10/MediaManager.Forms.xml",
-        "plugin.mediamanager.forms.0.6.7.nupkg.sha512",
+        "plugin.mediamanager.forms.0.7.3.nupkg.sha512",
         "plugin.mediamanager.forms.nuspec",
         "readme.txt"
       ]
@@ -1868,202 +1447,6 @@
         "readme.txt",
         "rg.plugins.popup.1.1.5.188.nupkg.sha512",
         "rg.plugins.popup.nuspec"
-      ]
-    },
-    "Sprache/2.2.0": {
-      "sha512": "yLt63Df6Px5ASLMdXkJ2Kg6Pwui+sGQeOnUimW1DDZqST4cVdJcejtxgTzgai0yR1d00uEMPYCd0SQHfFtGiTA==",
-      "type": "package",
-      "path": "sprache/2.2.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net35/Sprache.dll",
-        "lib/net35/Sprache.xml",
-        "lib/net40/Sprache.dll",
-        "lib/net40/Sprache.xml",
-        "lib/net45/Sprache.dll",
-        "lib/net45/Sprache.xml",
-        "lib/netstandard1.0/Sprache.dll",
-        "lib/netstandard1.0/Sprache.xml",
-        "lib/netstandard2.0/Sprache.dll",
-        "lib/netstandard2.0/Sprache.xml",
-        "lib/sl5/Sprache.dll",
-        "lib/sl5/Sprache.xml",
-        "sprache.2.2.0.nupkg.sha512",
-        "sprache.nuspec"
-      ]
-    },
-    "System.Drawing.Common/4.5.1": {
-      "sha512": "GiyeGi/v4xYDz1vCNFwFvhz9k1XddOG7VD3jxRqzRBCbTHji+s3HxxbxtoymuK4OadEpgotI8zQ5+GEEH9sUEQ==",
-      "type": "package",
-      "path": "system.drawing.common/4.5.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net461/System.Drawing.Common.dll",
-        "lib/netstandard2.0/System.Drawing.Common.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net461/System.Drawing.Common.dll",
-        "ref/netstandard2.0/System.Drawing.Common.dll",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
-        "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
-        "system.drawing.common.4.5.1.nupkg.sha512",
-        "system.drawing.common.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Globalization/4.3.0": {
-      "sha512": "kYdVd2f2PAdFGblzFswE4hkNANJBKRmsfa2X5LG2AcWE1c7/4t0pYae1L8vfZ5xvE2nK/R9JprtToA61OSHWIg==",
-      "type": "package",
-      "path": "system.globalization/4.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net45/_._",
-        "lib/portable-net45+win8+wp8+wpa81/_._",
-        "lib/win8/_._",
-        "lib/wp80/_._",
-        "lib/wpa81/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net45/_._",
-        "ref/netcore50/System.Globalization.dll",
-        "ref/netcore50/System.Globalization.xml",
-        "ref/netcore50/de/System.Globalization.xml",
-        "ref/netcore50/es/System.Globalization.xml",
-        "ref/netcore50/fr/System.Globalization.xml",
-        "ref/netcore50/it/System.Globalization.xml",
-        "ref/netcore50/ja/System.Globalization.xml",
-        "ref/netcore50/ko/System.Globalization.xml",
-        "ref/netcore50/ru/System.Globalization.xml",
-        "ref/netcore50/zh-hans/System.Globalization.xml",
-        "ref/netcore50/zh-hant/System.Globalization.xml",
-        "ref/netstandard1.0/System.Globalization.dll",
-        "ref/netstandard1.0/System.Globalization.xml",
-        "ref/netstandard1.0/de/System.Globalization.xml",
-        "ref/netstandard1.0/es/System.Globalization.xml",
-        "ref/netstandard1.0/fr/System.Globalization.xml",
-        "ref/netstandard1.0/it/System.Globalization.xml",
-        "ref/netstandard1.0/ja/System.Globalization.xml",
-        "ref/netstandard1.0/ko/System.Globalization.xml",
-        "ref/netstandard1.0/ru/System.Globalization.xml",
-        "ref/netstandard1.0/zh-hans/System.Globalization.xml",
-        "ref/netstandard1.0/zh-hant/System.Globalization.xml",
-        "ref/netstandard1.3/System.Globalization.dll",
-        "ref/netstandard1.3/System.Globalization.xml",
-        "ref/netstandard1.3/de/System.Globalization.xml",
-        "ref/netstandard1.3/es/System.Globalization.xml",
-        "ref/netstandard1.3/fr/System.Globalization.xml",
-        "ref/netstandard1.3/it/System.Globalization.xml",
-        "ref/netstandard1.3/ja/System.Globalization.xml",
-        "ref/netstandard1.3/ko/System.Globalization.xml",
-        "ref/netstandard1.3/ru/System.Globalization.xml",
-        "ref/netstandard1.3/zh-hans/System.Globalization.xml",
-        "ref/netstandard1.3/zh-hant/System.Globalization.xml",
-        "ref/portable-net45+win8+wp8+wpa81/_._",
-        "ref/win8/_._",
-        "ref/wp80/_._",
-        "ref/wpa81/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.globalization.4.3.0.nupkg.sha512",
-        "system.globalization.nuspec"
-      ]
-    },
-    "System.Linq/4.3.0": {
-      "sha512": "5DbqIUpsDp0dFftytzuMmc0oeMdQwjcP/EWxsksIz/w1TcFRkZ3yKKz0PqiYFMmEwPSWw+qNVqD7PJ889JzHbw==",
-      "type": "package",
-      "path": "system.linq/4.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net45/_._",
-        "lib/net463/System.Linq.dll",
-        "lib/netcore50/System.Linq.dll",
-        "lib/netstandard1.6/System.Linq.dll",
-        "lib/portable-net45+win8+wp8+wpa81/_._",
-        "lib/win8/_._",
-        "lib/wp80/_._",
-        "lib/wpa81/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net45/_._",
-        "ref/net463/System.Linq.dll",
-        "ref/netcore50/System.Linq.dll",
-        "ref/netcore50/System.Linq.xml",
-        "ref/netcore50/de/System.Linq.xml",
-        "ref/netcore50/es/System.Linq.xml",
-        "ref/netcore50/fr/System.Linq.xml",
-        "ref/netcore50/it/System.Linq.xml",
-        "ref/netcore50/ja/System.Linq.xml",
-        "ref/netcore50/ko/System.Linq.xml",
-        "ref/netcore50/ru/System.Linq.xml",
-        "ref/netcore50/zh-hans/System.Linq.xml",
-        "ref/netcore50/zh-hant/System.Linq.xml",
-        "ref/netstandard1.0/System.Linq.dll",
-        "ref/netstandard1.0/System.Linq.xml",
-        "ref/netstandard1.0/de/System.Linq.xml",
-        "ref/netstandard1.0/es/System.Linq.xml",
-        "ref/netstandard1.0/fr/System.Linq.xml",
-        "ref/netstandard1.0/it/System.Linq.xml",
-        "ref/netstandard1.0/ja/System.Linq.xml",
-        "ref/netstandard1.0/ko/System.Linq.xml",
-        "ref/netstandard1.0/ru/System.Linq.xml",
-        "ref/netstandard1.0/zh-hans/System.Linq.xml",
-        "ref/netstandard1.0/zh-hant/System.Linq.xml",
-        "ref/netstandard1.6/System.Linq.dll",
-        "ref/netstandard1.6/System.Linq.xml",
-        "ref/netstandard1.6/de/System.Linq.xml",
-        "ref/netstandard1.6/es/System.Linq.xml",
-        "ref/netstandard1.6/fr/System.Linq.xml",
-        "ref/netstandard1.6/it/System.Linq.xml",
-        "ref/netstandard1.6/ja/System.Linq.xml",
-        "ref/netstandard1.6/ko/System.Linq.xml",
-        "ref/netstandard1.6/ru/System.Linq.xml",
-        "ref/netstandard1.6/zh-hans/System.Linq.xml",
-        "ref/netstandard1.6/zh-hant/System.Linq.xml",
-        "ref/portable-net45+win8+wp8+wpa81/_._",
-        "ref/win8/_._",
-        "ref/wp80/_._",
-        "ref/wpa81/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.linq.4.3.0.nupkg.sha512",
-        "system.linq.nuspec"
       ]
     },
     "System.Reflection.Emit/4.3.0": {
@@ -2100,207 +1483,6 @@
         "ref/xamarinmac20/_._",
         "system.reflection.emit.4.3.0.nupkg.sha512",
         "system.reflection.emit.nuspec"
-      ]
-    },
-    "System.Runtime/4.3.0": {
-      "sha512": "JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==",
-      "type": "package",
-      "path": "system.runtime/4.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net45/_._",
-        "lib/net462/System.Runtime.dll",
-        "lib/portable-net45+win8+wp80+wpa81/_._",
-        "lib/win8/_._",
-        "lib/wp80/_._",
-        "lib/wpa81/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net45/_._",
-        "ref/net462/System.Runtime.dll",
-        "ref/netcore50/System.Runtime.dll",
-        "ref/netcore50/System.Runtime.xml",
-        "ref/netcore50/de/System.Runtime.xml",
-        "ref/netcore50/es/System.Runtime.xml",
-        "ref/netcore50/fr/System.Runtime.xml",
-        "ref/netcore50/it/System.Runtime.xml",
-        "ref/netcore50/ja/System.Runtime.xml",
-        "ref/netcore50/ko/System.Runtime.xml",
-        "ref/netcore50/ru/System.Runtime.xml",
-        "ref/netcore50/zh-hans/System.Runtime.xml",
-        "ref/netcore50/zh-hant/System.Runtime.xml",
-        "ref/netstandard1.0/System.Runtime.dll",
-        "ref/netstandard1.0/System.Runtime.xml",
-        "ref/netstandard1.0/de/System.Runtime.xml",
-        "ref/netstandard1.0/es/System.Runtime.xml",
-        "ref/netstandard1.0/fr/System.Runtime.xml",
-        "ref/netstandard1.0/it/System.Runtime.xml",
-        "ref/netstandard1.0/ja/System.Runtime.xml",
-        "ref/netstandard1.0/ko/System.Runtime.xml",
-        "ref/netstandard1.0/ru/System.Runtime.xml",
-        "ref/netstandard1.0/zh-hans/System.Runtime.xml",
-        "ref/netstandard1.0/zh-hant/System.Runtime.xml",
-        "ref/netstandard1.2/System.Runtime.dll",
-        "ref/netstandard1.2/System.Runtime.xml",
-        "ref/netstandard1.2/de/System.Runtime.xml",
-        "ref/netstandard1.2/es/System.Runtime.xml",
-        "ref/netstandard1.2/fr/System.Runtime.xml",
-        "ref/netstandard1.2/it/System.Runtime.xml",
-        "ref/netstandard1.2/ja/System.Runtime.xml",
-        "ref/netstandard1.2/ko/System.Runtime.xml",
-        "ref/netstandard1.2/ru/System.Runtime.xml",
-        "ref/netstandard1.2/zh-hans/System.Runtime.xml",
-        "ref/netstandard1.2/zh-hant/System.Runtime.xml",
-        "ref/netstandard1.3/System.Runtime.dll",
-        "ref/netstandard1.3/System.Runtime.xml",
-        "ref/netstandard1.3/de/System.Runtime.xml",
-        "ref/netstandard1.3/es/System.Runtime.xml",
-        "ref/netstandard1.3/fr/System.Runtime.xml",
-        "ref/netstandard1.3/it/System.Runtime.xml",
-        "ref/netstandard1.3/ja/System.Runtime.xml",
-        "ref/netstandard1.3/ko/System.Runtime.xml",
-        "ref/netstandard1.3/ru/System.Runtime.xml",
-        "ref/netstandard1.3/zh-hans/System.Runtime.xml",
-        "ref/netstandard1.3/zh-hant/System.Runtime.xml",
-        "ref/netstandard1.5/System.Runtime.dll",
-        "ref/netstandard1.5/System.Runtime.xml",
-        "ref/netstandard1.5/de/System.Runtime.xml",
-        "ref/netstandard1.5/es/System.Runtime.xml",
-        "ref/netstandard1.5/fr/System.Runtime.xml",
-        "ref/netstandard1.5/it/System.Runtime.xml",
-        "ref/netstandard1.5/ja/System.Runtime.xml",
-        "ref/netstandard1.5/ko/System.Runtime.xml",
-        "ref/netstandard1.5/ru/System.Runtime.xml",
-        "ref/netstandard1.5/zh-hans/System.Runtime.xml",
-        "ref/netstandard1.5/zh-hant/System.Runtime.xml",
-        "ref/portable-net45+win8+wp80+wpa81/_._",
-        "ref/win8/_._",
-        "ref/wp80/_._",
-        "ref/wpa81/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.runtime.4.3.0.nupkg.sha512",
-        "system.runtime.nuspec"
-      ]
-    },
-    "System.Text.RegularExpressions/4.3.0": {
-      "sha512": "RpT2DA+L660cBt1FssIE9CAGpLFdFPuheB7pLpKpn6ZXNby7jDERe8Ua/Ne2xGiwLVG2JOqziiaVCGDon5sKFA==",
-      "type": "package",
-      "path": "system.text.regularexpressions/4.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net45/_._",
-        "lib/net463/System.Text.RegularExpressions.dll",
-        "lib/netcore50/System.Text.RegularExpressions.dll",
-        "lib/netstandard1.6/System.Text.RegularExpressions.dll",
-        "lib/portable-net45+win8+wp8+wpa81/_._",
-        "lib/win8/_._",
-        "lib/wp80/_._",
-        "lib/wpa81/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net45/_._",
-        "ref/net463/System.Text.RegularExpressions.dll",
-        "ref/netcore50/System.Text.RegularExpressions.dll",
-        "ref/netcore50/System.Text.RegularExpressions.xml",
-        "ref/netcore50/de/System.Text.RegularExpressions.xml",
-        "ref/netcore50/es/System.Text.RegularExpressions.xml",
-        "ref/netcore50/fr/System.Text.RegularExpressions.xml",
-        "ref/netcore50/it/System.Text.RegularExpressions.xml",
-        "ref/netcore50/ja/System.Text.RegularExpressions.xml",
-        "ref/netcore50/ko/System.Text.RegularExpressions.xml",
-        "ref/netcore50/ru/System.Text.RegularExpressions.xml",
-        "ref/netcore50/zh-hans/System.Text.RegularExpressions.xml",
-        "ref/netcore50/zh-hant/System.Text.RegularExpressions.xml",
-        "ref/netcoreapp1.1/System.Text.RegularExpressions.dll",
-        "ref/netstandard1.0/System.Text.RegularExpressions.dll",
-        "ref/netstandard1.0/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.0/de/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.0/es/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.0/fr/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.0/it/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.0/ja/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.0/ko/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.0/ru/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.0/zh-hans/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.0/zh-hant/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.3/System.Text.RegularExpressions.dll",
-        "ref/netstandard1.3/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.3/de/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.3/es/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.3/fr/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.3/it/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.3/ja/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.3/ko/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.3/ru/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.3/zh-hans/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.3/zh-hant/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.6/System.Text.RegularExpressions.dll",
-        "ref/netstandard1.6/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.6/de/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.6/es/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.6/fr/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.6/it/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.6/ja/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.6/ko/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.6/ru/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.6/zh-hans/System.Text.RegularExpressions.xml",
-        "ref/netstandard1.6/zh-hant/System.Text.RegularExpressions.xml",
-        "ref/portable-net45+win8+wp8+wpa81/_._",
-        "ref/win8/_._",
-        "ref/wp80/_._",
-        "ref/wpa81/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.text.regularexpressions.4.3.0.nupkg.sha512",
-        "system.text.regularexpressions.nuspec"
-      ]
-    },
-    "Xamarin.Auth/1.7.0": {
-      "sha512": "F5yMDdHmcBRochGOeeyIRJ2fangsCEodSbOwg4TQT5kJnsT/CjP6ieXbFfFF9ccni66EgbQ7NTTjvajUlD3IGQ==",
-      "type": "package",
-      "path": "xamarin.auth/1.7.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/MonoAndroid10/Xamarin.Auth.dll",
-        "lib/MonoAndroid10/Xamarin.Auth.dll.mdb",
-        "lib/MonoAndroid10/Xamarin.Auth.pdb",
-        "lib/Xamarin.iOS10/Xamarin.Auth.dll",
-        "lib/Xamarin.iOS10/Xamarin.Auth.pdb",
-        "lib/netstandard1.0/Xamarin.Auth.dll",
-        "lib/netstandard1.6/Xamarin.Auth.dll",
-        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+XamarinIOS10/Xamarin.Auth.dll",
-        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+XamarinIOS10/Xamarin.Auth.pdb",
-        "lib/uap10.0/Xamarin.Auth.dll",
-        "lib/uap10.0/Xamarin.Auth.pdb",
-        "lib/uap10.0/Xamarin.Auth.pri",
-        "lib/uap10.0/Xamarin.Auth/WebAuthenticatorPage.xbf",
-        "lib/uap10.0/Xamarin.Auth/Xamarin.Auth.xr.xml",
-        "xamarin.auth.1.7.0.nupkg.sha512",
-        "xamarin.auth.nuspec"
       ]
     },
     "Xamarin.Forms/3.3.0.912540": {
@@ -2461,13 +1643,8 @@
     },
     "Youtube.Manager.Models.Container/1.0.0": {
       "type": "project",
-      "path": "../../Youtube.Manager.Models/Youtube.Manager.Models.Container.csproj",
-      "msbuildProject": "../../Youtube.Manager.Models/Youtube.Manager.Models.Container.csproj"
-    },
-    "YoutubeExplode/4.7.4": {
-      "type": "project",
-      "path": "../../../YoutubeExplode/YoutubeExplode/YoutubeExplode.csproj",
-      "msbuildProject": "../../../YoutubeExplode/YoutubeExplode/YoutubeExplode.csproj"
+      "path": "../../Youtube.Manager.Models.Container/Youtube.Manager.Models.Container.csproj",
+      "msbuildProject": "../../Youtube.Manager.Models.Container/Youtube.Manager.Models.Container.csproj"
     }
   },
   "projectFileDependencyGroups": {

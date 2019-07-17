@@ -983,7 +983,6 @@ namespace Youtube.Manager.Droid
 			global::MediaManager.Resource.String.abc_shareactionprovider_share_with = global::Youtube.Manager.Droid.Resource.String.abc_shareactionprovider_share_with;
 			global::MediaManager.Resource.String.abc_shareactionprovider_share_with_application = global::Youtube.Manager.Droid.Resource.String.abc_shareactionprovider_share_with_application;
 			global::MediaManager.Resource.String.abc_toolbar_collapse_description = global::Youtube.Manager.Droid.Resource.String.abc_toolbar_collapse_description;
-			global::MediaManager.Resource.String.download_notification_channel_name = global::Youtube.Manager.Droid.Resource.String.download_notification_channel_name;
 			global::MediaManager.Resource.String.exo_controls_fastforward_description = global::Youtube.Manager.Droid.Resource.String.exo_controls_fastforward_description;
 			global::MediaManager.Resource.String.exo_controls_fullscreen_description = global::Youtube.Manager.Droid.Resource.String.exo_controls_fullscreen_description;
 			global::MediaManager.Resource.String.exo_controls_next_description = global::Youtube.Manager.Droid.Resource.String.exo_controls_next_description;
@@ -8657,7 +8656,7 @@ namespace Youtube.Manager.Droid
 			public const int ic_youtube_24dp = 2130837834;
 			
 			// aapt resource value: 0x7f02014b
-			public const int icon = 2130837835;
+			public const int icon48x48 = 2130837835;
 			
 			// aapt resource value: 0x7f02014c
 			public const int like = 2130837836;
@@ -10198,7 +10197,7 @@ namespace Youtube.Manager.Droid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int icon = 2130903040;
+			public const int icon48x48 = 2130903040;
 			
 			static Mipmap()
 			{
@@ -10213,26 +10212,26 @@ namespace Youtube.Manager.Droid
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f0a009f
+			public const int AdsApplicationIds = 2131361951;
+			
+			// aapt resource value: 0x7f0a009d
+			public const int ApplicationName = 2131361949;
+			
 			// aapt resource value: 0x7f0a00a0
-			public const int AdsApplicationIds = 2131361952;
-			
-			// aapt resource value: 0x7f0a009e
-			public const int ApplicationName = 2131361950;
-			
-			// aapt resource value: 0x7f0a00a1
-			public const int BannerAdd = 2131361953;
-			
-			// aapt resource value: 0x7f0a0096
-			public const int DownloadProgress = 2131361942;
-			
-			// aapt resource value: 0x7f0a0094
-			public const int Downloading = 2131361940;
+			public const int BannerAdd = 2131361952;
 			
 			// aapt resource value: 0x7f0a0095
-			public const int Finished = 2131361941;
+			public const int DownloadProgress = 2131361941;
 			
-			// aapt resource value: 0x7f0a009f
-			public const int RewardAddId = 2131361951;
+			// aapt resource value: 0x7f0a0093
+			public const int Downloading = 2131361939;
+			
+			// aapt resource value: 0x7f0a0094
+			public const int Finished = 2131361940;
+			
+			// aapt resource value: 0x7f0a009e
+			public const int RewardAddId = 2131361950;
 			
 			// aapt resource value: 0x7f0a002f
 			public const int abc_action_bar_home_description = 2131361839;
@@ -10351,8 +10350,8 @@ namespace Youtube.Manager.Droid
 			// aapt resource value: 0x7f0a0049
 			public const int abc_toolbar_collapse_description = 2131361865;
 			
-			// aapt resource value: 0x7f0a008e
-			public const int app_name = 2131361934;
+			// aapt resource value: 0x7f0a008d
+			public const int app_name = 2131361933;
 			
 			// aapt resource value: 0x7f0a0057
 			public const int appbar_scrolling_view_behavior = 2131361879;
@@ -10360,8 +10359,8 @@ namespace Youtube.Manager.Droid
 			// aapt resource value: 0x7f0a0058
 			public const int bottom_sheet_behavior = 2131361880;
 			
-			// aapt resource value: 0x7f0a0097
-			public const int btnA_title = 2131361943;
+			// aapt resource value: 0x7f0a0096
+			public const int btnA_title = 2131361942;
 			
 			// aapt resource value: 0x7f0a0059
 			public const int character_counter_content_description = 2131361881;
@@ -10420,116 +10419,113 @@ namespace Youtube.Manager.Droid
 			// aapt resource value: 0x7f0a0010
 			public const int common_signin_button_text_long = 2131361808;
 			
-			// aapt resource value: 0x7f0a0065
-			public const int download_notification_channel_name = 2131361893;
+			// aapt resource value: 0x7f0a008c
+			public const int error_player = 2131361932;
 			
-			// aapt resource value: 0x7f0a008d
-			public const int error_player = 2131361933;
+			// aapt resource value: 0x7f0a0065
+			public const int exo_controls_fastforward_description = 2131361893;
 			
 			// aapt resource value: 0x7f0a0066
-			public const int exo_controls_fastforward_description = 2131361894;
+			public const int exo_controls_fullscreen_description = 2131361894;
 			
 			// aapt resource value: 0x7f0a0067
-			public const int exo_controls_fullscreen_description = 2131361895;
+			public const int exo_controls_next_description = 2131361895;
 			
 			// aapt resource value: 0x7f0a0068
-			public const int exo_controls_next_description = 2131361896;
+			public const int exo_controls_pause_description = 2131361896;
 			
 			// aapt resource value: 0x7f0a0069
-			public const int exo_controls_pause_description = 2131361897;
+			public const int exo_controls_play_description = 2131361897;
 			
 			// aapt resource value: 0x7f0a006a
-			public const int exo_controls_play_description = 2131361898;
+			public const int exo_controls_previous_description = 2131361898;
 			
 			// aapt resource value: 0x7f0a006b
-			public const int exo_controls_previous_description = 2131361899;
+			public const int exo_controls_repeat_all_description = 2131361899;
 			
 			// aapt resource value: 0x7f0a006c
-			public const int exo_controls_repeat_all_description = 2131361900;
+			public const int exo_controls_repeat_off_description = 2131361900;
 			
 			// aapt resource value: 0x7f0a006d
-			public const int exo_controls_repeat_off_description = 2131361901;
+			public const int exo_controls_repeat_one_description = 2131361901;
 			
 			// aapt resource value: 0x7f0a006e
-			public const int exo_controls_repeat_one_description = 2131361902;
+			public const int exo_controls_rewind_description = 2131361902;
 			
 			// aapt resource value: 0x7f0a006f
-			public const int exo_controls_rewind_description = 2131361903;
+			public const int exo_controls_shuffle_description = 2131361903;
 			
 			// aapt resource value: 0x7f0a0070
-			public const int exo_controls_shuffle_description = 2131361904;
+			public const int exo_controls_stop_description = 2131361904;
 			
 			// aapt resource value: 0x7f0a0071
-			public const int exo_controls_stop_description = 2131361905;
+			public const int exo_download_completed = 2131361905;
 			
 			// aapt resource value: 0x7f0a0072
-			public const int exo_download_completed = 2131361906;
+			public const int exo_download_description = 2131361906;
 			
 			// aapt resource value: 0x7f0a0073
-			public const int exo_download_description = 2131361907;
+			public const int exo_download_downloading = 2131361907;
 			
 			// aapt resource value: 0x7f0a0074
-			public const int exo_download_downloading = 2131361908;
+			public const int exo_download_failed = 2131361908;
 			
 			// aapt resource value: 0x7f0a0075
-			public const int exo_download_failed = 2131361909;
+			public const int exo_download_notification_channel_name = 2131361909;
 			
 			// aapt resource value: 0x7f0a0076
-			public const int exo_download_notification_channel_name = 2131361910;
+			public const int exo_download_removing = 2131361910;
 			
 			// aapt resource value: 0x7f0a0077
-			public const int exo_download_removing = 2131361911;
-			
-			// aapt resource value: 0x7f0a0078
-			public const int exo_item_list = 2131361912;
-			
-			// aapt resource value: 0x7f0a0086
-			public const int exo_media_action_repeat_all_description = 2131361926;
-			
-			// aapt resource value: 0x7f0a0087
-			public const int exo_media_action_repeat_off_description = 2131361927;
-			
-			// aapt resource value: 0x7f0a0088
-			public const int exo_media_action_repeat_one_description = 2131361928;
-			
-			// aapt resource value: 0x7f0a0079
-			public const int exo_track_bitrate = 2131361913;
-			
-			// aapt resource value: 0x7f0a007a
-			public const int exo_track_mono = 2131361914;
-			
-			// aapt resource value: 0x7f0a007b
-			public const int exo_track_resolution = 2131361915;
-			
-			// aapt resource value: 0x7f0a007c
-			public const int exo_track_selection_auto = 2131361916;
-			
-			// aapt resource value: 0x7f0a007d
-			public const int exo_track_selection_none = 2131361917;
-			
-			// aapt resource value: 0x7f0a007e
-			public const int exo_track_selection_title_audio = 2131361918;
-			
-			// aapt resource value: 0x7f0a007f
-			public const int exo_track_selection_title_text = 2131361919;
-			
-			// aapt resource value: 0x7f0a0080
-			public const int exo_track_selection_title_video = 2131361920;
-			
-			// aapt resource value: 0x7f0a0081
-			public const int exo_track_stereo = 2131361921;
-			
-			// aapt resource value: 0x7f0a0082
-			public const int exo_track_surround = 2131361922;
-			
-			// aapt resource value: 0x7f0a0083
-			public const int exo_track_surround_5_point_1 = 2131361923;
-			
-			// aapt resource value: 0x7f0a0084
-			public const int exo_track_surround_7_point_1 = 2131361924;
+			public const int exo_item_list = 2131361911;
 			
 			// aapt resource value: 0x7f0a0085
-			public const int exo_track_unknown = 2131361925;
+			public const int exo_media_action_repeat_all_description = 2131361925;
+			
+			// aapt resource value: 0x7f0a0086
+			public const int exo_media_action_repeat_off_description = 2131361926;
+			
+			// aapt resource value: 0x7f0a0087
+			public const int exo_media_action_repeat_one_description = 2131361927;
+			
+			// aapt resource value: 0x7f0a0078
+			public const int exo_track_bitrate = 2131361912;
+			
+			// aapt resource value: 0x7f0a0079
+			public const int exo_track_mono = 2131361913;
+			
+			// aapt resource value: 0x7f0a007a
+			public const int exo_track_resolution = 2131361914;
+			
+			// aapt resource value: 0x7f0a007b
+			public const int exo_track_selection_auto = 2131361915;
+			
+			// aapt resource value: 0x7f0a007c
+			public const int exo_track_selection_none = 2131361916;
+			
+			// aapt resource value: 0x7f0a007d
+			public const int exo_track_selection_title_audio = 2131361917;
+			
+			// aapt resource value: 0x7f0a007e
+			public const int exo_track_selection_title_text = 2131361918;
+			
+			// aapt resource value: 0x7f0a007f
+			public const int exo_track_selection_title_video = 2131361919;
+			
+			// aapt resource value: 0x7f0a0080
+			public const int exo_track_stereo = 2131361920;
+			
+			// aapt resource value: 0x7f0a0081
+			public const int exo_track_surround = 2131361921;
+			
+			// aapt resource value: 0x7f0a0082
+			public const int exo_track_surround_5_point_1 = 2131361922;
+			
+			// aapt resource value: 0x7f0a0083
+			public const int exo_track_surround_7_point_1 = 2131361923;
+			
+			// aapt resource value: 0x7f0a0084
+			public const int exo_track_unknown = 2131361924;
 			
 			// aapt resource value: 0x7f0a005b
 			public const int fab_transformation_scrim_behavior = 2131361883;
@@ -10537,26 +10533,26 @@ namespace Youtube.Manager.Droid
 			// aapt resource value: 0x7f0a005c
 			public const int fab_transformation_sheet_behavior = 2131361884;
 			
-			// aapt resource value: 0x7f0a0092
-			public const int full_screen_button = 2131361938;
+			// aapt resource value: 0x7f0a0091
+			public const int full_screen_button = 2131361937;
 			
 			// aapt resource value: 0x7f0a005d
 			public const int hide_bottom_view_on_scroll_behavior = 2131361885;
 			
+			// aapt resource value: 0x7f0a008a
+			public const int isLaunchableActivity = 2131361930;
+			
+			// aapt resource value: 0x7f0a0088
+			public const int library_name = 2131361928;
+			
+			// aapt resource value: 0x7f0a0092
+			public const int live = 2131361938;
+			
 			// aapt resource value: 0x7f0a008b
-			public const int isLaunchableActivity = 2131361931;
+			public const int loggingTag = 2131361931;
 			
 			// aapt resource value: 0x7f0a0089
-			public const int library_name = 2131361929;
-			
-			// aapt resource value: 0x7f0a0093
-			public const int live = 2131361939;
-			
-			// aapt resource value: 0x7f0a008c
-			public const int loggingTag = 2131361932;
-			
-			// aapt resource value: 0x7f0a008a
-			public const int minVersion = 2131361930;
+			public const int minVersion = 2131361929;
 			
 			// aapt resource value: 0x7f0a0017
 			public const int mr_button_content_description = 2131361815;
@@ -10633,23 +10629,23 @@ namespace Youtube.Manager.Droid
 			// aapt resource value: 0x7f0a005e
 			public const int mtrl_chip_close_icon_content_description = 2131361886;
 			
-			// aapt resource value: 0x7f0a0099
-			public const int noti1_title = 2131361945;
-			
-			// aapt resource value: 0x7f0a009b
-			public const int noti2_title = 2131361947;
-			
 			// aapt resource value: 0x7f0a0098
-			public const int noti_channel_default = 2131361944;
+			public const int noti1_title = 2131361944;
 			
-			// aapt resource value: 0x7f0a009d
-			public const int noti_channel_second = 2131361949;
+			// aapt resource value: 0x7f0a009a
+			public const int noti2_title = 2131361946;
+			
+			// aapt resource value: 0x7f0a0097
+			public const int noti_channel_default = 2131361943;
+			
+			// aapt resource value: 0x7f0a009c
+			public const int noti_channel_second = 2131361948;
+			
+			// aapt resource value: 0x7f0a008f
+			public const int null_time = 2131361935;
 			
 			// aapt resource value: 0x7f0a0090
-			public const int null_time = 2131361936;
-			
-			// aapt resource value: 0x7f0a0091
-			public const int open_video_in_youtube = 2131361937;
+			public const int open_video_in_youtube = 2131361936;
 			
 			// aapt resource value: 0x7f0a005f
 			public const int password_toggle_content_description = 2131361887;
@@ -10666,11 +10662,11 @@ namespace Youtube.Manager.Droid
 			// aapt resource value: 0x7f0a0063
 			public const int path_password_strike_through = 2131361891;
 			
-			// aapt resource value: 0x7f0a008f
-			public const int play_button = 2131361935;
+			// aapt resource value: 0x7f0a008e
+			public const int play_button = 2131361934;
 			
-			// aapt resource value: 0x7f0a009a
-			public const int primary1_body = 2131361946;
+			// aapt resource value: 0x7f0a0099
+			public const int primary1_body = 2131361945;
 			
 			// aapt resource value: 0x7f0a0011
 			public const int s1 = 2131361809;
@@ -10693,8 +10689,8 @@ namespace Youtube.Manager.Droid
 			// aapt resource value: 0x7f0a004a
 			public const int search_menu_title = 2131361866;
 			
-			// aapt resource value: 0x7f0a009c
-			public const int secondary1_body = 2131361948;
+			// aapt resource value: 0x7f0a009b
+			public const int secondary1_body = 2131361947;
 			
 			// aapt resource value: 0x7f0a0064
 			public const int status_bar_notification_info_overflow = 2131361892;

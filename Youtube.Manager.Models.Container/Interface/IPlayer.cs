@@ -31,5 +31,7 @@ namespace Youtube.Manager.Models.Container.Interface
         Action Abort { get; }
 
         Action Reset { get; set; }
+
+        Action<int> PlayQueueItem { get; set; }
     }
 }

@@ -29,7 +29,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\EntityWorker.Core\Source\EntityWorker.Core\EntityWorker.Core.csproj" />
-    <ProjectReference Include="..\..\YoutubeExplode\YoutubeExplode\YoutubeExplode.csproj" />
   </ItemGroup>
 
 </Project>

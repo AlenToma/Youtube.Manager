@@ -43,7 +43,7 @@ namespace Youtube.Manager.Droid
         }
 
         //int SmallIcon => Android.Resource.Drawable.StatNotifyChat;
-        private int SmallIcon => Resource.Drawable.icon;
+        private int SmallIcon => Resource.Drawable.icon48x48;
 
         public Notification.Builder GetNotification1(string title, string body, PendingIntent contentIntent)
         {

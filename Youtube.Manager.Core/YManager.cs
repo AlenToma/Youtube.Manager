@@ -11,7 +11,28 @@ namespace Youtube.Manager.Core
 {
     public class YManager
     {
-        private YoutubeClient dataContext = new YoutubeClient();
+
+        private VideoWrapper Create(Video video)
+        {
+            return new VideoWrapper()
+            {
+                VideoType = video.VideoType.ToString(),
+                Author = video.Author,
+                UploadDate = video.UploadDate,
+                Title = video.Title,
+                DefaultThumbnailUrl = video.Thumbnails.HighResUrl,
+                Duration = video.Duration.TotalHours >= 1 ? video.Duration.ToString("c") : string.Format("{0:mm}:{1:ss}", video.Duration, video.Duration),
+                Views = video.Views,
+                TotalVideoViews = video.TotalVideoViews,
+                Description = video.Description,
+                Id = video.Id,
+                IsPlaylist = video.VideoType == YoutubeExplode.Models.VideoType.Playlist,
+                IsChannel = video.VideoType == YoutubeExplode.Models.VideoType.Channel,
+                IsVideo = video.VideoType == YoutubeExplode.Models.VideoType.Video,
+            };
+        }
+
+        private readonly YoutubeClient dataContext = new YoutubeClient();
 
         /// <summary>
         /// Get the dycrptet videos url
@@ -68,7 +89,7 @@ namespace Youtube.Manager.Core
         /// <returns></returns>
         public async Task<IEnumerable<VideoWrapper>> GetPlaylistVideosAsync(string playlistId, int pageNumber = 1, int pageSize = 30)
         {
-            return (await dataContext.GetPlaylistAsync(playlistId, pageNumber, pageSize))?.Videos?.Select(x => new VideoWrapper(x));
+            return (await dataContext.GetPlaylistAsync(playlistId, pageNumber, pageSize))?.Videos?.Select(x => Create(x));
         }
 
         /// <summary>
@@ -78,7 +99,7 @@ namespace Youtube.Manager.Core
         /// <returns></returns>
         public async Task<IEnumerable<VideoWrapper>> GetChannelVideosAsync(string channelId, int pageNumber = 1, int pageSize = 30)
         {
-            return (await dataContext.GetChannelUploadsAsync(channelId, pageNumber, pageSize))?.Select(x => new VideoWrapper(x));
+            return (await dataContext.GetChannelUploadsAsync(channelId, pageNumber, pageSize))?.Select(x => Create(x));
         }
 
 
@@ -129,7 +150,7 @@ namespace Youtube.Manager.Core
             }
 
             var data = await dataContext.SearchVideosByFilterAsync(searchText, pageNumber, pageSize, searchFilterType);
-            return (string.IsNullOrEmpty(searchText) ? data.OrderByDescending(x => x.Statistics.ViewCount) : data.OrderBy(x => x.Title.Contains(searchText)).ThenByDescending(x => x.Statistics.ViewCount)).Select(x => new VideoWrapper(x));
+            return (string.IsNullOrEmpty(searchText) ? data.OrderByDescending(x => x.Statistics.ViewCount) : data.OrderBy(x => x.Title.Contains(searchText)).ThenByDescending(x => x.Statistics.ViewCount)).Select(x => Create(x));
 
 
         }

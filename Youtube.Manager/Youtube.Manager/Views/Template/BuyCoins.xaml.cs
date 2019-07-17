@@ -32,6 +32,7 @@ namespace Youtube.Manager.Views.Template
 
         private async void _btnStartAds_Clicked(object sender, EventArgs e)
         {
+            Methods.ApplicationPlayer?.Player?.Stop();
             var lo = await this.StartLoading();
             Methods.AppSettings.ReguastNewAdd();
             await this.Close();
@@ -42,7 +43,6 @@ namespace Youtube.Manager.Views.Template
         {
             var product = ((Button)sender).BindingContext as AppBillingProduct;
             var r = await Methods.AppSettings.Buy(product);
-
             if (r)
                 await this.Close();
 

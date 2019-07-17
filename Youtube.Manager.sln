@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Youtube.Manager", "Youtube.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Youtube.Manager.Core", "Youtube.Manager.Core\Youtube.Manager.Core.csproj", "{A33F1B17-4448-4CB8-8EAF-A45A47062CA9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Youtube.Manager.Models.Container", "Youtube.Manager.Models\Youtube.Manager.Models.Container.csproj", "{B3DC7CAC-DDF4-43FB-B78A-4BB4C031528B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Youtube.Manager.Models.Container", "Youtube.Manager.Models.Container\Youtube.Manager.Models.Container.csproj", "{B3DC7CAC-DDF4-43FB-B78A-4BB4C031528B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Youtube.Manager.Core.API", "Youtube.Manager.Core.API\Youtube.Manager.Core.API.csproj", "{24141959-28E5-4987-9338-13AD0B054A32}"
 EndProject
