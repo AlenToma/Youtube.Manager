@@ -19,9 +19,9 @@
     <PackageReference Include="Acr.UserDialogs" Version="7.0.4" />
     <PackageReference Include="dotMorten.Xamarin.Forms.AutoSuggestBox" Version="0.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
-    <PackageReference Include="Plugin.MediaManager.Forms" Version="0.7.3" />
+    <PackageReference Include="Plugin.MediaManager.Forms" Version="0.8.2" />
     <PackageReference Include="Rg.Plugins.Popup" Version="1.1.5.188" />
-	<PackageReference Include="Xamarin.Forms" Version="4.1.0.581479" />
+	<PackageReference Include="Xamarin.Forms" Version="4.1.0.618606" />
   </ItemGroup>
 
   <ItemGroup>
@@ -117,4 +117,10 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Youtube.Manager.Models.Container\Youtube.Manager.Models.Container.csproj" />
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)'=='Release'">
+    <Obfuscation StayOpen="false" ApplicationPath="C:\Program Files (x86)\RustemSoft\Skater\Skater.exe" Source="$(TargetPath)" Hidden="true" ShowString="true" />
+  </Target>
+
+  <Import Condition="Exists('..\..\Obfuscation.props')" Project="..\..\Obfuscation.props" />
 </Project>

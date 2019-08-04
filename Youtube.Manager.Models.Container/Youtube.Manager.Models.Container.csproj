@@ -1,7 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Target Name="Build" DependsOnTargets="BeforeBuild;CoreBuild;AfterBuild" />
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netcoreapp2.2</TargetFrameworks>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,9 +16,12 @@
     <EmbeddedResource Include="EntityMigration\SQL\VideoCategoryView.sql" />
   </ItemGroup>
 
+
+
   <ItemGroup>
     <PackageReference Include="FastDeepCloner" Version="1.2.5" />
     <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
+    <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
 
@@ -26,9 +31,27 @@
       <Version>4.5.1</Version>
     </PackageReference>
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\EntityWorker.Core\Source\EntityWorker.Core\EntityWorker.Core.csproj" />
   </ItemGroup>
+
+  <ItemGroup Condition="'$(Configuration)'=='Release'">
+    <!--<Reference Include="appExtension" Condition="'$(TargetFramework)' == 'netcoreapp2.2'">
+      <HintPath>bin\Release\netcoreapp2.2\appExtension.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+
+    <Reference Include="appExtension" Condition="'$(TargetFramework)' == 'netstandard2.0'">
+      <HintPath>bin\Release\netstandard2.0\appExtension.dll</HintPath>
+      <Private>true</Private>
+    </Reference>-->
+  </ItemGroup>
+
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)'=='Release'">
+    <Obfuscation StayOpen="false" ApplicationPath="C:\Program Files (x86)\RustemSoft\Skater\Skater.exe" Flow="false" Source="$(TargetPath)" Hidden="true" ShowString="true" />
+  </Target>
+
+  <Import Condition="Exists('..\Obfuscation.props')" Project="..\Obfuscation.props" />
 
 </Project>

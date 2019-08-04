@@ -47,12 +47,9 @@ namespace Youtube.Manager.Droid
             ToolbarResource = Resource.Layout.Toolbar;
             base.OnCreate(savedInstanceState);
             Popup.Init(this, savedInstanceState); // popup 
-            //Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental");
+            Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental");
             Forms.Init(this, savedInstanceState);
             Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, savedInstanceState);
-            UserDialogs.Init(this);
-            // Media player
-            CrossMediaManager.Current.Init();
             Methods.AppSettings = new AppSettings(this);
             LoadApplication(new App());
 

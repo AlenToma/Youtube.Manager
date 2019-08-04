@@ -253,10 +253,7 @@ namespace Youtube.Manager.Views
                 var index = searchedVideos.FindIndex(x => x.Id == _video.Id);
                 searchedVideos = ControllerRepository.Youtube(x => x.SearchAsync(UserData.CurrentUser.EntityId.Value, "", 30, 1, _video.Title, VideoSearchType.Mix)).Await().ToItemList(); // get relevant Videos
                 searchedVideos.RemoveAll(x => x.Id == _video.Id);
-                if (searchedVideos.Count() > index && index > 0)
-                    searchedVideos.Insert(index, _video);
-                else
-                    searchedVideos.Insert(0, _video);
+                searchedVideos.Insert(0, _video);
                 LoadlstVideos();
             }
 

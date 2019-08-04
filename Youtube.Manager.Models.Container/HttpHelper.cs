@@ -46,7 +46,7 @@ namespace Youtube.Manager.Models.Container
                 // 
             }
         }
-        private static SafeValueType<string, MethodInformation> cachedMethodInformation = new SafeValueType<string, MethodInformation>();
+        private static readonly SafeValueType<string, MethodInformation> cachedMethodInformation = new SafeValueType<string, MethodInformation>();
         public static MethodInformation GetInfo<T, P>(this Expression<Func<T, P>> expression, bool skipArgs = false)
         {
 
@@ -70,8 +70,7 @@ namespace Youtube.Manager.Models.Container
                 foreach (var pr in method.GetParameters())
                 {
                     var arg = argument[index];
-                    var constExp = arg as ConstantExpression;
-                    var value = constExp != null ? constExp.Value : Expression.Lambda(arg).Compile().DynamicInvoke();
+                    var value = arg is ConstantExpression constExp ? constExp.Value : Expression.Lambda(arg).Compile().DynamicInvoke();
                     item.Arguments.Add(pr.Name, value);
                     index++;
                 }
@@ -89,13 +88,12 @@ namespace Youtube.Manager.Models.Container
         }
 
 
-        public static async Task<dynamic> ExecuteAsync<T, P>(Expression<Func<T, P>> expression)
+        public static async Task<P> ExecuteAsync<T, P>(Expression<Func<T, P>> expression)
         {
-            MethodInformation item = null;
             object result = null;
             try
             {
-                item = expression.GetInfo();
+                MethodInformation item = expression.GetInfo();
                 switch (item?.HttpMethod ?? HttpMethod.GET)
                 {
                     case HttpMethod.GET:
@@ -116,7 +114,7 @@ namespace Youtube.Manager.Models.Container
                 else if (item.IsVoid) result = Task.CompletedTask;
 
 
-                return result;
+                return (P)result;
 
             }
             catch (Exception e)

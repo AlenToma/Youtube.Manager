@@ -73,7 +73,7 @@
                 android:visibility="gone" />
 
             <ImageView
-                android:id="@+id/youtube_button_prev"
+                android:id="@+id/y_button_prev"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/PlayPrev"
@@ -81,10 +81,10 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:background="@drawable/background_item_selected"
-                android:contentDescription="@string/open_video_in_youtube" />
+                android:contentDescription="@string/open_video" />
 
             <ImageView
-                android:id="@+id/youtube_button"
+                android:id="@+id/y_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_youtube_24dp"
@@ -92,10 +92,10 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:background="@drawable/background_item_selected"
-                android:contentDescription="@string/open_video_in_youtube" />
+                android:contentDescription="@string/open_video" />
 
             <ImageView
-                android:id="@+id/youtube_button_next"
+                android:id="@+id/y_button_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/PlayNext"
@@ -103,7 +103,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:background="@drawable/background_item_selected"
-                android:contentDescription="@string/open_video_in_youtube" />
+                android:contentDescription="@string/open_video" />
 
             <ImageView
                 android:id="@+id/fullscreen_button"

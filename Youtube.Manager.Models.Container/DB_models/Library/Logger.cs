@@ -62,8 +62,9 @@ namespace Youtube.Manager.Models.Container
 
             lock (this)
             {
-                using (StreamWriter stream = new StreamWriter(LogIdentifier, append: true))
-                    stream.WriteLine($"{DateTime.Now}: {message}");
+                if (logLevel == LogLevel)
+                    using (StreamWriter stream = new StreamWriter(LogIdentifier, append: true))
+                        stream.WriteLine($"{DateTime.Now}: {message}");
             }
         }
 

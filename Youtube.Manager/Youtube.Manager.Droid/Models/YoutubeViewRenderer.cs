@@ -152,19 +152,19 @@ namespace Youtube.Manager.Droid.Models
 
                         element = args.NewElement;
                         var vi = LayoutInflater.From(Context);
-                        var controller = vi.Inflate(Resource.Layout.youtube_manager_controls, null);
-                        youTubePlayerFragment = MainActivity.Current.SupportFragmentManager.FindFragmentById(Resource.Id.youtube_fragment) as YouTubePlayerSupportFragment;
+                        var controller = vi.Inflate(Resource.Layout.y_manager_controls, null);
+                        youTubePlayerFragment = MainActivity.Current.SupportFragmentManager.FindFragmentById(Resource.Id.y_fragment) as YouTubePlayerSupportFragment;
                         youTubePlayerFragment.Initialize(Methods.AppSettings.YoutubeDeveloperKey, this);
                         youTubePlayerFragment.RetainInstance = true;
                         var relativeLayout = new ARelativeLayout(Context);
                         seeker = controller.FindViewById<SeekBar>(Resource.Id.seek_bar);
                         video_current_time = controller.FindViewById<TextView>(Resource.Id.video_current_time);
-                        btnPlay = controller.FindViewById<ImageView>(Resource.Id.youtube_button);
+                        btnPlay = controller.FindViewById<ImageView>(Resource.Id.y_button);
                         video_duration = controller.FindViewById<TextView>(Resource.Id.video_duration);
                         video_title = controller.FindViewById<TextView>(Resource.Id.video_title);
                         fullscreen_button = controller.FindViewById<ImageView>(Resource.Id.fullscreen_button);
-                        youtube_button_prev = controller.FindViewById<ImageView>(Resource.Id.youtube_button_prev);
-                        youtube_button_next = controller.FindViewById<ImageView>(Resource.Id.youtube_button_next);
+                        youtube_button_prev = controller.FindViewById<ImageView>(Resource.Id.y_button_prev);
+                        youtube_button_next = controller.FindViewById<ImageView>(Resource.Id.y_button_next);
                         btnPlay.Click += TogglePlay;
                         //controller.Click += TogglePlay;
                         youtube_button_prev.Click += (sender, e) => { element?.OnPrev(); };

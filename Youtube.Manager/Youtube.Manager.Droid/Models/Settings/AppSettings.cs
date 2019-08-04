@@ -8,6 +8,7 @@ using Android.Gms.Auth.Api.SignIn;
 using Android.Gms.Common.Apis;
 using Android.OS;
 using Android.Widget;
+using MediaManager;
 using Plugin.InAppBilling;
 using Plugin.InAppBilling.Abstractions;
 using Plugin.Permissions;
@@ -59,8 +60,8 @@ namespace Youtube.Manager.Droid.Models.Settings
                 .Build();
             YoutubeDeveloperKey = ControllerRepository.Db(x => x.GetSetting("YoutubeDeveloperKey")).Value;
             AdsApplicationIds = ControllerRepository.Db(x => x.GetSetting("AdsApplicationIds")).Value;
-            BannerAdd= ControllerRepository.Db(x => x.GetSetting("BannerAdd")).Value;
-            RewardAddId = ControllerRepository.Db(x => x.GetSetting("RewardAddId")).Value; 
+            BannerAdd = ControllerRepository.Db(x => x.GetSetting("BannerAdd")).Value;
+            RewardAddId = ControllerRepository.Db(x => x.GetSetting("RewardAddId")).Value;
             MobileAds.Initialize(context, AdsApplicationIds); // Ads
             mRewardedVideoAd = MobileAds.GetRewardedVideoAdInstance(context);
             mRewardedVideoAd.RewardedVideoAdListener = new RewardedVideoAdListener(mRewardedVideoAd);
@@ -68,7 +69,9 @@ namespace Youtube.Manager.Droid.Models.Settings
             LocalMusicFolder = Path.Combine(Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryMusic).ToString(), "YoutubeManager");
             Logger = new Logger(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal));
             UserLocalSettings = FastDeepCloner.DeepCloner.CreateProxyInstance<LocalFileSettings>().ReadSettings(Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Youtube.Manager.config"));
-
+            UserDialogs.Init(context as MainActivity);
+            // Media player
+            CrossMediaManager.Current.Init();
         }
 
         public void OnAuthCompleted(GoogleSignInResult result)
@@ -260,7 +263,7 @@ namespace Youtube.Manager.Droid.Models.Settings
             }
             catch (Exception e)
             {
-                Logger?.Error(e);
+                Logger?.Error(e.Message, LogLevel.Debug);
                 return new List<AppBillingProduct>();
             }
         }

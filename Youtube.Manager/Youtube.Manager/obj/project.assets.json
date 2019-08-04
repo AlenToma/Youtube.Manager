@@ -62,6 +62,15 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "Microsoft.VisualBasic/10.3.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/Microsoft.VisualBasic.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.VisualBasic.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.3": {
         "type": "package",
         "dependencies": {
@@ -86,7 +95,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Plugin.MediaManager/0.7.3": {
+      "Plugin.MediaManager/0.8.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/MediaManager.dll": {}
@@ -95,11 +104,11 @@
           "lib/netstandard2.0/MediaManager.dll": {}
         }
       },
-      "Plugin.MediaManager.Forms/0.7.3": {
+      "Plugin.MediaManager.Forms/0.8.2": {
         "type": "package",
         "dependencies": {
-          "Plugin.MediaManager": "0.7.3",
-          "Xamarin.Forms": "3.6.0.344457"
+          "Plugin.MediaManager": "0.8.2",
+          "Xamarin.Forms": "4.1.0.581479"
         },
         "compile": {
           "lib/netstandard2.0/MediaManager.Forms.dll": {}
@@ -219,7 +228,7 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
-      "Xamarin.Forms/4.1.0.581479": {
+      "Xamarin.Forms/4.1.0.618606": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {},
@@ -257,6 +266,7 @@
           "EntityWorker.Core": "3.0.7",
           "FastDeepCloner": "1.2.5",
           "Microsoft.CSharp": "4.5.0",
+          "Microsoft.VisualBasic": "10.3.0",
           "Newtonsoft.Json": "12.0.2"
         },
         "compile": {
@@ -439,6 +449,60 @@
         "runtime.json"
       ]
     },
+    "Microsoft.VisualBasic/10.3.0": {
+      "sha512": "AvMDjmJHjz9bdlvxiSdEHHcWP+sZtp7zwule5ab6DaUbgoBnwCsd7nymj69vSz18ypXuEv3SI7ZUNwbIKrvtMA==",
+      "type": "package",
+      "path": "microsoft.visualbasic/10.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net45/_._",
+        "lib/netcore50/Microsoft.VisualBasic.dll",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.3/Microsoft.VisualBasic.dll",
+        "lib/netstandard2.0/Microsoft.VisualBasic.dll",
+        "lib/portable-net45+win8+wpa81/_._",
+        "lib/uap10.0.16299/_._",
+        "lib/win8/_._",
+        "lib/wpa81/_._",
+        "microsoft.visualbasic.10.3.0.nupkg.sha512",
+        "microsoft.visualbasic.nuspec",
+        "ref/net45/_._",
+        "ref/netcore50/Microsoft.VisualBasic.dll",
+        "ref/netcore50/Microsoft.VisualBasic.xml",
+        "ref/netcore50/de/Microsoft.VisualBasic.xml",
+        "ref/netcore50/es/Microsoft.VisualBasic.xml",
+        "ref/netcore50/fr/Microsoft.VisualBasic.xml",
+        "ref/netcore50/it/Microsoft.VisualBasic.xml",
+        "ref/netcore50/ja/Microsoft.VisualBasic.xml",
+        "ref/netcore50/ko/Microsoft.VisualBasic.xml",
+        "ref/netcore50/ru/Microsoft.VisualBasic.xml",
+        "ref/netcore50/zh-hans/Microsoft.VisualBasic.xml",
+        "ref/netcore50/zh-hant/Microsoft.VisualBasic.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.1/Microsoft.VisualBasic.dll",
+        "ref/netstandard1.1/Microsoft.VisualBasic.xml",
+        "ref/netstandard1.1/de/Microsoft.VisualBasic.xml",
+        "ref/netstandard1.1/es/Microsoft.VisualBasic.xml",
+        "ref/netstandard1.1/fr/Microsoft.VisualBasic.xml",
+        "ref/netstandard1.1/it/Microsoft.VisualBasic.xml",
+        "ref/netstandard1.1/ja/Microsoft.VisualBasic.xml",
+        "ref/netstandard1.1/ko/Microsoft.VisualBasic.xml",
+        "ref/netstandard1.1/ru/Microsoft.VisualBasic.xml",
+        "ref/netstandard1.1/zh-hans/Microsoft.VisualBasic.xml",
+        "ref/netstandard1.1/zh-hant/Microsoft.VisualBasic.xml",
+        "ref/netstandard2.0/Microsoft.VisualBasic.dll",
+        "ref/netstandard2.0/Microsoft.VisualBasic.xml",
+        "ref/portable-net45+win8+wpa81/_._",
+        "ref/uap10.0.16299/_._",
+        "ref/win8/_._",
+        "ref/wpa81/_._",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "NETStandard.Library/2.0.3": {
       "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "type": "package",
@@ -597,16 +661,15 @@
         "newtonsoft.json.nuspec"
       ]
     },
-    "Plugin.MediaManager/0.7.3": {
-      "sha512": "QI5su4JsZ4V5EEHgybYg6utpjArQ7QEz5JY8W0PTgL4aeV+tbriv3mT79Y6/ZZF8AXhMFiT9YBHy8NglGmaqBQ==",
+    "Plugin.MediaManager/0.8.2": {
+      "sha512": "3H8iQYiMqwjQpfYSwxj/5O2F/fcsAps1qmqhUZS8t7jgfHucQH5NMhNF8t23lz5r0Tc0XT2Lsn8N72Ul+Uef4g==",
       "type": "package",
-      "path": "plugin.mediamanager/0.7.3",
+      "path": "plugin.mediamanager/0.8.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
         "lib/monoandroid90/MediaManager.dll",
-        "lib/monoandroid90/MediaManager.dll.mdb",
         "lib/monoandroid90/MediaManager.pdb",
         "lib/monoandroid90/MediaManager.xml",
         "lib/net472/MediaManager.dll",
@@ -633,21 +696,20 @@
         "lib/xamarintvos10/MediaManager.dll",
         "lib/xamarintvos10/MediaManager.pdb",
         "lib/xamarintvos10/MediaManager.xml",
-        "plugin.mediamanager.0.7.3.nupkg.sha512",
+        "plugin.mediamanager.0.8.2.nupkg.sha512",
         "plugin.mediamanager.nuspec",
         "readme.txt"
       ]
     },
-    "Plugin.MediaManager.Forms/0.7.3": {
-      "sha512": "5wBhLeeKkOyc2gOcmECVaaDCWz1NSsPibuoZc4+TSFjwWlPMx0DAUWyCyDbiEGd/0h7/hgY833rA6PZU8KGCrw==",
+    "Plugin.MediaManager.Forms/0.8.2": {
+      "sha512": "70CHGQ/cZTT7Ru7Zzq0Gr2yd+CbF/kT7H6FYTLhETfUIs7rV35NpCI8jyTQGRPGehKE6It1oCIs9ySEGB1pLRg==",
       "type": "package",
-      "path": "plugin.mediamanager.forms/0.7.3",
+      "path": "plugin.mediamanager.forms/0.8.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
         "lib/monoandroid90/MediaManager.Forms.dll",
-        "lib/monoandroid90/MediaManager.Forms.dll.mdb",
         "lib/monoandroid90/MediaManager.Forms.pdb",
         "lib/monoandroid90/MediaManager.Forms.xml",
         "lib/net472/MediaManager.Forms.dll",
@@ -672,7 +734,7 @@
         "lib/xamarintvos10/MediaManager.Forms.dll",
         "lib/xamarintvos10/MediaManager.Forms.pdb",
         "lib/xamarintvos10/MediaManager.Forms.xml",
-        "plugin.mediamanager.forms.0.7.3.nupkg.sha512",
+        "plugin.mediamanager.forms.0.8.2.nupkg.sha512",
         "plugin.mediamanager.forms.nuspec",
         "readme.txt"
       ]
@@ -1236,10 +1298,10 @@
         "system.threading.tasks.nuspec"
       ]
     },
-    "Xamarin.Forms/4.1.0.581479": {
-      "sha512": "wrO8AOW1xsFoGgT1SUvJ9OEeqAduJOm0xezZGNe0rCiAv2N9Qc/n5uywhlSia1s1k+Zy/hOrhZ4b7/EM6z9oog==",
+    "Xamarin.Forms/4.1.0.618606": {
+      "sha512": "qJoOu0DiSzsfQj7nuMtKUcl39KsUxfU9yDJ5HU1flM+hnOrSD6IyDgKKxOkqIdmVwAL8R6hISz+b8MB4P5oDFw==",
       "type": "package",
-      "path": "xamarin.forms/4.1.0.581479",
+      "path": "xamarin.forms/4.1.0.618606",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1478,7 +1540,7 @@
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.4.1.0.581479.nupkg.sha512",
+        "xamarin.forms.4.1.0.618606.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -1498,9 +1560,9 @@
       "Acr.UserDialogs >= 7.0.4",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.2",
-      "Plugin.MediaManager.Forms >= 0.7.3",
+      "Plugin.MediaManager.Forms >= 0.8.2",
       "Rg.Plugins.Popup >= 1.1.5.188",
-      "Xamarin.Forms >= 4.1.0.581479",
+      "Xamarin.Forms >= 4.1.0.618606",
       "Youtube.Manager.Models.Container >= 1.0.0",
       "dotMorten.Xamarin.Forms.AutoSuggestBox >= 0.7.0"
     ]
@@ -1533,6 +1595,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "E:\\Projects\\Local Nuget Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1569,7 +1632,7 @@
           },
           "Plugin.MediaManager.Forms": {
             "target": "Package",
-            "version": "[0.7.3, )"
+            "version": "[0.8.2, )"
           },
           "Rg.Plugins.Popup": {
             "target": "Package",
@@ -1577,7 +1640,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[4.1.0.581479, )"
+            "version": "[4.1.0.618606, )"
           },
           "dotMorten.Xamarin.Forms.AutoSuggestBox": {
             "target": "Package",

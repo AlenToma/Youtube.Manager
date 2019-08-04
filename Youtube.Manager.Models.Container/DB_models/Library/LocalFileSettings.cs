@@ -44,6 +44,7 @@ namespace Youtube.Manager.Models.Container
                 UserName = localSettings.UserName;
                 Image = localSettings.Image;
                 Password = localSettings.Password;
+                PermissionCheck = localSettings.PermissionCheck;
             }
             _prevSave = false;
 

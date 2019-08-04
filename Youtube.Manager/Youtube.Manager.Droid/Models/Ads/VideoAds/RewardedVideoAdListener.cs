@@ -5,7 +5,7 @@ namespace Youtube.Manager.Droid.Models.Ads.VideoAds
 {
     public class RewardedVideoAdListener : Java.Lang.Object, IRewardedVideoAdListener
     {
-        private IRewardedVideoAd _rewardedVideoAd;
+        private readonly IRewardedVideoAd _rewardedVideoAd;
         public RewardedVideoAdListener(IRewardedVideoAd rewardedVideoAd)
         {
             _rewardedVideoAd = rewardedVideoAd;
@@ -50,6 +50,11 @@ namespace Youtube.Manager.Droid.Models.Ads.VideoAds
         public void OnRewardedVideoAdOpened()
         {
             //throw new NotImplementedException();
+        }
+
+        public void OnRewardedVideoCompleted()
+        {
+            //throw new System.NotImplementedException();
         }
 
         public void OnRewardedVideoStarted()
