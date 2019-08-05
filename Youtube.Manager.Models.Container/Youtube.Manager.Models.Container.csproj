@@ -48,8 +48,12 @@
   </ItemGroup>
 
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)'=='Release'">
+  <!--<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)'=='Release'">
     <Obfuscation StayOpen="false" ApplicationPath="C:\Program Files (x86)\RustemSoft\Skater\Skater.exe" Flow="false" Source="$(TargetPath)" Hidden="true" ShowString="true" />
+  </Target>-->
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)'=='Release'">
+    <Phoenix_Protector ApplicationPath="C:\Program Files (x86)\NTCore\Phoenix Protector\Phoenix_Protector.exe" Source="$(TargetPath)" />
   </Target>
 
   <Import Condition="Exists('..\Obfuscation.props')" Project="..\Obfuscation.props" />

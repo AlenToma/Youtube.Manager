@@ -49,8 +49,6 @@ namespace Youtube.Manager.Models.Container
         private static readonly SafeValueType<string, MethodInformation> cachedMethodInformation = new SafeValueType<string, MethodInformation>();
         public static MethodInformation GetInfo<T, P>(this Expression<Func<T, P>> expression, bool skipArgs = false)
         {
-
-
             MethodCallExpression callExpression = expression.Body as MethodCallExpression;
             var method = callExpression.Method;
             var argument = callExpression.Arguments;

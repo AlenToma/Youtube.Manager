@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Project>
  <UsingTask TaskName="Tasker.Obfuscation" AssemblyFile="E:\Projects\Tasker\bin\Release\netstandard2.0\tasker.dll" />
+ <UsingTask TaskName="Tasker.Phoenix_Protector" AssemblyFile="E:\Projects\Tasker\bin\Release\netstandard2.0\tasker.dll" />
  </Project>
