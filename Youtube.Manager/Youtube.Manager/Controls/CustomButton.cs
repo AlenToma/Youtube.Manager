@@ -7,7 +7,7 @@ namespace Youtube.Manager.Controls
     {
         public bool _isSelected;
         private Color ColorBeforeSelection;
-        public Action<double, double> SizeAllocated;
+        public new Action<double, double> SizeAllocated;
 
         public CustomButton()
         {

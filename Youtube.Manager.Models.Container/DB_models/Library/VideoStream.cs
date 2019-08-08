@@ -1,22 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 
 namespace Youtube.Manager.Models.Container
 {
     public class VideoStream
     {
-        private readonly string _filename;
-
         private readonly byte[] _data;
 
         public VideoStream(byte[] data)
         {
             _data = data;
-            //_filename = @"C:UsersFilipDownloads" + filename + "." + ext;
         }
 
         public async void WriteToStream(Stream outputStream, HttpContent content, TransportContext context)
@@ -37,7 +32,7 @@ namespace Youtube.Manager.Models.Container
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
             }
             finally

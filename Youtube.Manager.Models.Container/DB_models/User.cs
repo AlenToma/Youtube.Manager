@@ -18,6 +18,6 @@ namespace Youtube.Manager.Models.Container.DB_models
         [Stringify]
         public UserType UserType { get; set; }
 
-        public List<VideoCategory> VideoCategories { get; set; }
+        public List<Youtube.Manager.Models.Container.DB_models.VideoCategory> VideoCategories { get; set; }
     }
 }

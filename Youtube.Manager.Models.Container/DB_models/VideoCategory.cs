@@ -12,7 +12,7 @@ namespace Youtube.Manager.Models.Container.DB_models
 
         public string Logo { get; set; }
 
-        [ForeignKey(typeof(User))]
+        [ForeignKey(typeof(Youtube.Manager.Models.Container.DB_models.User))]
         public long User_Id { get; set; }
 
         public List<Rating> Rating { get; set; }

@@ -9,7 +9,7 @@ namespace Youtube.Manager.Models.Container.DB_models
     {
         public string Text { get; set; }
 
-        [ForeignKey(typeof(User))]
+        [ForeignKey(typeof(Youtube.Manager.Models.Container.DB_models.User))]
         public long User_Id { get; set; }
 
         // how many times the user search for this

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace Youtube.Manager.Models.Container
 {
@@ -26,7 +27,7 @@ namespace Youtube.Manager.Models.Container
 
         public static string ImageRootPath => Path.Combine(ApplicationRootPath, "UploadedImages");
 
-        public const string SystemYoutubeUserName = "Youtube.Manager";
+        public const string SystemYoutubeUserName = "System@local.com";
 
         public const string SystemYoutubePassword = "Youtube.Manager.Password";
 

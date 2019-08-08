@@ -10,13 +10,13 @@ namespace Youtube.Manager.Models.Container.DB_models
         [Stringify]
         public Ratingtype Ratingtype { get; set; }
 
-        [ForeignKey(typeof(VideoData))]
+        [ForeignKey(typeof(Youtube.Manager.Models.Container.DB_models.VideoData))]
         public long? VideoData_Id { get; set; }
 
-        [ForeignKey(typeof(VideoCategory))]
+        [ForeignKey(typeof(Youtube.Manager.Models.Container.DB_models.VideoCategory))]
         public long? Category_Id { get; set; }
 
-        [ForeignKey(typeof(User))]
+        [ForeignKey(typeof(Youtube.Manager.Models.Container.DB_models.User))]
         public long User_Id { get; set; }
 
     }

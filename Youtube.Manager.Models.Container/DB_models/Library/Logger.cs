@@ -12,6 +12,8 @@ namespace Youtube.Manager.Models.Container
         private readonly string LogIdentifier;
         private readonly string LogPath;
         private const string LogFolder = "Logs";
+
+        public string CurrentUserEmail { get; set; }
         public LogLevel LogLevel { get; set; }
 
         public Logger(string logPath)
@@ -52,6 +54,25 @@ namespace Youtube.Manager.Models.Container
         }
 
 
+        private void UploadLog(string errorMessage)
+        {
+            var email = !string.IsNullOrWhiteSpace(CurrentUserEmail) ? CurrentUserEmail : Actions.SystemYoutubeUserName;
+            errorMessage = Convert.ToBase64String(Encoding.UTF8.GetBytes(errorMessage));
+            ControllerRepository.Db(x => x.AddLog(email, errorMessage));
+        }
+
+        private void LogError(string message, LogLevel logLevel)
+        {
+            lock (this)
+            {
+                if (logLevel == LogLevel)
+                    using (StreamWriter stream = new StreamWriter(LogIdentifier, append: true))
+                        stream.WriteLine($"Error: {DateTime.Now}: {message}");
+
+                UploadLog(message);
+            }
+        }
+
         public List<string> GetLog()
         {
             return File.ReadLines(LogIdentifier, Encoding.UTF8).ToList();
@@ -59,30 +80,17 @@ namespace Youtube.Manager.Models.Container
 
         public void Error(string message, LogLevel logLevel)
         {
-
-            lock (this)
-            {
-                if (logLevel == LogLevel)
-                    using (StreamWriter stream = new StreamWriter(LogIdentifier, append: true))
-                        stream.WriteLine($"{DateTime.Now}: {message}");
-            }
+            LogError(message, logLevel);
         }
 
         public void Error(Exception exception)
         {
-            lock (this)
-            {
-                using (StreamWriter stream = new StreamWriter(LogIdentifier, append: true))
-                    stream.WriteLine($"{DateTime.Now}: {exception.Message}");
-            }
+            LogError(exception.Message, LogLevel);
+
         }
         public void Error(object exception)
         {
-            lock (this)
-            {
-                using (StreamWriter stream = new StreamWriter(LogIdentifier, append: true))
-                    stream.WriteLine($"{DateTime.Now}: {(exception != null ? JsonConvert.SerializeObject(exception) : "")}");
-            }
+            LogError(exception != null ? JsonConvert.SerializeObject(exception) : "", LogLevel);
         }
 
         public void Clear()
@@ -94,6 +102,7 @@ namespace Youtube.Manager.Models.Container
 
         public void Info(string message, object infoData = null, LogLevel logLevel = LogLevel.Debug)
         {
+
             if (logLevel == LogLevel)
             {
                 lock (this)

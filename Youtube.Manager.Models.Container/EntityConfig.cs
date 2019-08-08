@@ -13,7 +13,8 @@ namespace Youtube.Manager.Models.Container
             return new List<Migration>()
             {
                 new StartMigration(),
-                new ApplicationSettingsMigration()
+                new ApplicationSettingsMigration(),
+                new UserLogsMigration()
             };
         }
     }

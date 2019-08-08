@@ -22,9 +22,9 @@
     </NuGetPackageImportStamp>
     <AndroidDexTool>d8</AndroidDexTool>
     <AndroidKeyStore>true</AndroidKeyStore>
-    <AndroidSigningKeyStore>C:\Users\alent\AppData\Local\Xamarin\Mono for Android\Keystore\Youtube.Manager\Youtube.Manager.keystore</AndroidSigningKeyStore>
+    <AndroidSigningKeyStore>C:\Users\alent\AppData\Local\Xamarin\Mono for Android\Keystore\alentoma\alentoma.keystore</AndroidSigningKeyStore>
     <AndroidSigningStorePass>Iraki4mo</AndroidSigningStorePass>
-    <AndroidSigningKeyAlias>Youtube.Manager</AndroidSigningKeyAlias>
+    <AndroidSigningKeyAlias>alentoma</AndroidSigningKeyAlias>
     <AndroidSigningKeyPass>Iraki4mo</AndroidSigningKeyPass>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -42,6 +42,8 @@
     <DefineConstants>DEBUG</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
     <AotAssemblies>false</AotAssemblies>
     <EnableLLVM>false</EnableLLVM>
     <BundleAssemblies>false</BundleAssemblies>
@@ -53,9 +55,11 @@
     <MandroidI18n />
     <AndroidSupportedAbis />
     <AndroidDexTool>d8</AndroidDexTool>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <Optimize>true</Optimize>
   </PropertyGroup>
   <PropertyGroup>
-    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -282,8 +286,12 @@
   <!--<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)'=='Release'">
     <Obfuscation StayOpen="false" ApplicationPath="C:\Program Files (x86)\RustemSoft\Skater\Skater.exe" Source="$(TargetPath)" Hidden="true" ShowString="true" />
   </Target>-->
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)'=='Release'">
+  <!--<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)'=='Release'">
     <Phoenix_Protector ApplicationPath="C:\Program Files (x86)\NTCore\Phoenix Protector\Phoenix_Protector.exe" Source="$(TargetPath)" />
+    Module="Youtube.Manager.Models.Container.dll;Youtube.Manager.dll;Youtube.Manager.Droid.dll"
+  </Target>-->
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent; PreBuildEvent" Condition="'$(Configuration)'=='Release' And Exists('$(TargetPath)')">
+    <ConfuserEx ApplicationPath="E:\Programs\ConfuserEx\Confuser.CLI.exe" Source="$(TargetPath)" AssetMap="linksrc" RefProxy="false" ReName="false" Modules="Youtube.Manager.Models.Container.dll;Youtube.Manager.dll" MonoDir="C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid" />
   </Target>
   <Import Condition="Exists('..\..\Obfuscation.props')" Project="..\..\Obfuscation.props" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

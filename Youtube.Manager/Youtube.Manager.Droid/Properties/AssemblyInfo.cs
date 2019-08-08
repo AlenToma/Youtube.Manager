@@ -32,3 +32,4 @@ using Android.App;
 // Add some common permissions, these can be removed if not needed
 [assembly: UsesPermission(Manifest.Permission.Internet)]
 [assembly: UsesPermission(Manifest.Permission.WriteExternalStorage)]
+//[assembly: ObfuscationAttribute(Exclude = false, Feature = "namespace('Youtube.Manager.Models.Container'):-rename;-anti debug;-anti ildasm;-constants;-ctrl flow;-ref proxy;-resources")]

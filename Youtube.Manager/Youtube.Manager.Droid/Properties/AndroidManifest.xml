@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="4" android:versionName="4.0" package="com.alentoma.realm_of_youtube" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.alentoma.apps.realm_of_Y" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="24" android:targetSdkVersion="28" />
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -12,5 +12,5 @@
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 	<uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
-	<application android:label="Realm Of Youtube" android:icon="@mipmap/icon48x48" android:theme="@style/MainTheme" />
+	<application android:label="Realm Of Music" android:icon="@mipmap/icon48x48" android:theme="@style/MainTheme" />
 </manifest>

@@ -15,22 +15,24 @@ using EntityWorker.Core.Helper;
 using Youtube.Manager.Models.Container.DB_models.API;
 using FastDeepCloner;
 
+////[assembly: ObfuscationAttribute(Exclude = false, Feature = "namespace('Youtube.Manager.Models.Container'):-rename;")]
+//[assembly: ObfuscationAttribute(Exclude = false, Feature = "namespace('Youtube.Manager.Models.Container.DB_models.Rules'):-rename;")]
+//[assembly: ObfuscationAttribute(Exclude = false, Feature = "namespace('Youtube.Manager.Models.Container.DB_models.API'):-rename;")]
+//[assembly: ObfuscationAttribute(Exclude = false, Feature = "namespace('FastDeepCloner'):-rename;")]
 namespace Youtube.Manager.Models.Container
 {
+    [ObfuscationAttribute(Exclude = true)]
     public static class HttpHelper
     {
         private static readonly HttpClient client;
 
-        public static string BaseUrl = "http://youtubemanager.ddns.net/Youtube.Manager.API";
+        private static readonly string _baseUrl = "http://youtubemanager.ddns.net/Youtube.Manager.API";
         static HttpHelper()
         {
             try
             {
                 ServicePointManager.ServerCertificateValidationCallback += (sender, cert, chain, sslPolicyErrors) =>
                 {
-                    //Debug.WriteLine(cert.GetSerialNumberString());
-                    //Debug.WriteLine(cert.Issuer);
-                    //Debug.WriteLine(cert.Subject);
                     return true;
                 };
                 var clientcert = new HttpClientHandler
@@ -38,15 +40,14 @@ namespace Youtube.Manager.Models.Container
                     ClientCertificateOptions = ClientCertificateOption.Manual
                 };
                 client = new HttpClient(clientcert);
-
-                //client.BaseAddress = new Uri(Methods.BaseUrl);
             }
-            catch (Exception e)
+            catch
             {
                 // 
             }
         }
         private static readonly SafeValueType<string, MethodInformation> cachedMethodInformation = new SafeValueType<string, MethodInformation>();
+        [ObfuscationAttribute(Exclude = true)]
         public static MethodInformation GetInfo<T, P>(this Expression<Func<T, P>> expression, bool skipArgs = false)
         {
             MethodCallExpression callExpression = expression.Body as MethodCallExpression;
@@ -78,13 +79,12 @@ namespace Youtube.Manager.Models.Container
                 var mRoute = method.GetCustomAttribute<Route>();
                 var classRoute = typeof(T).GetCustomAttribute<Route>()?.Url ?? "";
                 var controller = typeof(T).Name.Substring(1).Replace("Controller", "");
-                item.FullUrl = Path.Combine(BaseUrl, classRoute, controller, (mRoute != null && !string.IsNullOrEmpty(mRoute.Url) ? mRoute.Url : method.Name)).Replace("\\", "/");
+                item.FullUrl = Path.Combine(_baseUrl, classRoute, controller, (mRoute != null && !string.IsNullOrEmpty(mRoute.Url) ? mRoute.Url : method.Name)).Replace("\\", "/");
                 item.HttpMethod = mRoute?.HttpMethod ?? HttpMethod.GET;
             }
             return item;
 
         }
-
 
         public static async Task<P> ExecuteAsync<T, P>(Expression<Func<T, P>> expression)
         {
@@ -137,7 +137,6 @@ namespace Youtube.Manager.Models.Container
             return (T)await (PostAsync(url, parameter, typeof(T)));
         }
 
-
         public static async Task<object> PostAsync(this string url, object parameter, Type castToType = null)
         {
             if (parameter == null)
@@ -151,10 +150,15 @@ namespace Youtube.Manager.Models.Container
             }
 
             var content = new FormUrlEncodedContent(values);
-            var response = await client.PostAsync(url, content);
-            var contents = await response.Content.ReadAsStringAsync();
-            if (castToType != null && !string.IsNullOrEmpty(contents))
-                return JsonConvert.DeserializeObject(contents, castToType);
+            using (var response = await client.PostAsync(new Uri(url), content))
+            {
+                if (castToType != null)
+                {
+                    var contents = await response.Content.ReadAsStringAsync();
+                    if (!string.IsNullOrEmpty(contents))
+                        return JsonConvert.DeserializeObject(contents, castToType);
+                }
+            }
             return null;
         }
 
@@ -171,12 +175,16 @@ namespace Youtube.Manager.Models.Container
                 throw new Exception("POST operation need a parameters");
             var item = parameter is IDictionary<string, object> ? ((IDictionary<string, object>)parameter).Values.FirstOrDefault() : parameter;
             HttpContent contentPost = new StringContent(JsonConvert.SerializeObject(item), Encoding.UTF8, "application/json");
+            using (var response = await client.PostAsync(new Uri(url), contentPost))
+            {
+                if (castToType != null)
+                {
+                    var contents = await response.Content.ReadAsStringAsync();
+                    if (!string.IsNullOrEmpty(contents))
+                        return JsonConvert.DeserializeObject(contents, castToType);
 
-
-            var response = await client.PostAsync(new Uri(url), contentPost);
-            var contents = await response.Content.ReadAsStringAsync();
-            if (castToType != null && !string.IsNullOrEmpty(contents))
-                return JsonConvert.DeserializeObject(contents, castToType);
+                }
+            }
             return null;
         }
 

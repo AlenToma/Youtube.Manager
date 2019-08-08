@@ -227,5 +227,23 @@ namespace Youtube.Manager.Core.API.Controller
         {
             return Actions.ImageRootPath;
         }
+
+        [HttpPost]
+        public async Task AddLog(string userEmail, string errorMessage)
+        {
+            using (var db = new DbRepository())
+            {
+                var user = db.Get<User>().Where(x => x.Email.Contains(userEmail)).ExecuteFirstOrDefault();
+                var date = DateTime.Now.AddMonths(-3);
+                db.Get<UserErrorLog>().Where(x => x.User_Id == user.EntityId && x.Added <= date).Remove(); /// Remove 3 month old logs for the current user
+                var log = new UserErrorLog()
+                {
+                    Added = DateTime.Now,
+                    Text = errorMessage,
+                    User_Id = user.EntityId.Value
+                };
+                db.Save(log).SaveChanges();
+            }
+        }
     }
 }

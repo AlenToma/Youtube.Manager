@@ -15,13 +15,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="EntityWorker.Core" Version="3.0.7" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
     <PackageReference Include="System.Data.SqlClient" Version="4.6.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\EntityWorker.Core\Source\EntityWorker.Core\EntityWorker.Core.csproj" />
     <ProjectReference Include="..\Youtube.Manager.Core\Youtube.Manager.Core.csproj" />
     <ProjectReference Include="..\Youtube.Manager.Models.Container\Youtube.Manager.Models.Container.csproj" />
   </ItemGroup>

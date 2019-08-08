@@ -23,6 +23,19 @@
           "lib/netstandard2.0/dotMorten.Xamarin.Forms.AutoSuggestBox.dll": {}
         }
       },
+      "EntityWorker.Core/3.0.7": {
+        "type": "package",
+        "dependencies": {
+          "FastDeepCloner": "1.2.5",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/EntityWorker.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/EntityWorker.Core.dll": {}
+        }
+      },
       "FastDeepCloner/1.2.5": {
         "type": "package",
         "dependencies": {
@@ -245,20 +258,6 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
-      "EntityWorker.Core/3.0.7": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "FastDeepCloner": "1.2.5",
-          "System.Reflection.Emit": "4.3.0"
-        },
-        "compile": {
-          "bin/placeholder/EntityWorker.Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EntityWorker.Core.dll": {}
-        }
-      },
       "Youtube.Manager.Models.Container/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -330,6 +329,26 @@
         "lib/xamarinios10/dotMorten.Xamarin.Forms.AutoSuggestBox.dll",
         "lib/xamarinios10/dotMorten.Xamarin.Forms.AutoSuggestBox.pdb",
         "lib/xamarinios10/dotMorten.Xamarin.Forms.AutoSuggestBox.xml"
+      ]
+    },
+    "EntityWorker.Core/3.0.7": {
+      "sha512": "7nNUnaQWuLlpDNfNMBwz7vVMHueeleW7Kw45EV2mjJKdZvkK8SZnD5Th/AT1pmHAiyzP2NULaoEA7jk66c1hqQ==",
+      "type": "package",
+      "path": "entityworker.core/3.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "entityworker.core.3.0.7.nupkg.sha512",
+        "entityworker.core.nuspec",
+        "lib/net451/EntityWorker.Core.dll",
+        "lib/net451/EntityWorker.Core.runtimeconfig.json",
+        "lib/net451/EntityWorker.Core.xml",
+        "lib/netcoreapp2.0/EntityWorker.Core.dll",
+        "lib/netcoreapp2.0/EntityWorker.Core.runtimeconfig.json",
+        "lib/netcoreapp2.0/EntityWorker.Core.xml",
+        "lib/netstandard2.0/EntityWorker.Core.dll",
+        "lib/netstandard2.0/EntityWorker.Core.runtimeconfig.json",
+        "lib/netstandard2.0/EntityWorker.Core.xml"
       ]
     },
     "FastDeepCloner/1.2.5": {
@@ -1543,11 +1562,6 @@
         "xamarin.forms.4.1.0.618606.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
-    },
-    "EntityWorker.Core/3.0.7": {
-      "type": "project",
-      "path": "../../../EntityWorker.Core/Source/EntityWorker.Core/EntityWorker.Core.csproj",
-      "msbuildProject": "../../../EntityWorker.Core/Source/EntityWorker.Core/EntityWorker.Core.csproj"
     },
     "Youtube.Manager.Models.Container/1.0.0": {
       "type": "project",

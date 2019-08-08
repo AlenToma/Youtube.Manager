@@ -16,12 +16,18 @@ namespace Youtube.Manager.Models.Container.Interface.API
         List<RatingModelView> GetItemRating(VideoSearchType type, List<long> ids);
         List<VideoCategoryView> GetVideoCategory(long? userId = null, long? categoryId = null);
         Task<List<VideoData>> GetVideoData(string videoId, long? categoryId = null, long? userId = null, int page = 1);
+
         [Route(httpMethod: HttpMethod.JSONPOST)]
         Task SaveVideo(VideoData video);
+
         [Route(httpMethod: HttpMethod.JSONPOST)]
         Task<long> SaveCategory(VideoCategory videoCategory);
         List<VideoCategoryView> GetUserSuggestion(long userId);
+
         [Route(httpMethod: HttpMethod.JSONPOST)]
         User SaveUser(User user);
+
+        [Route(httpMethod: HttpMethod.POST)]
+        Task AddLog(string userEmail, string errorMessage);
     }
 }

@@ -39,5 +39,5 @@
     /// Primary= User who paid for the app
     /// User = normal user eg Download coins and ads applied
     /// </summary>
-    public enum UserType { User, Premium }
+    public enum UserType { User, Premium, System }
 }

@@ -4,105 +4,6 @@
     "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core.API\\Youtube.Manager.Core.API.csproj": {}
   },
   "projects": {
-    "E:\\Projects\\EntityWorker.Core\\Source\\EntityWorker.Core\\EntityWorker.Core.csproj": {
-      "version": "3.0.7",
-      "restore": {
-        "projectUniqueName": "E:\\Projects\\EntityWorker.Core\\Source\\EntityWorker.Core\\EntityWorker.Core.csproj",
-        "projectName": "EntityWorker.Core",
-        "projectPath": "E:\\Projects\\EntityWorker.Core\\Source\\EntityWorker.Core\\EntityWorker.Core.csproj",
-        "packagesPath": "C:\\Users\\alent\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\EntityWorker.Core\\Source\\EntityWorker.Core\\obj\\",
-        "projectStyle": "PackageReference",
-        "crossTargeting": true,
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\alent\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net451",
-          "netcoreapp2.0",
-          "netstandard2.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "E:\\Projects\\Local Nuget Packages": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netcoreapp2.0": {
-            "projectReferences": {}
-          },
-          "net451": {
-            "projectReferences": {}
-          },
-          "netstandard2.0": {
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp2.0": {
-          "dependencies": {
-            "FastDeepCloner": {
-              "target": "Package",
-              "version": "[1.2.5, )"
-            },
-            "Microsoft.NETCore.App": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.0, )",
-              "autoReferenced": true
-            }
-          },
-          "imports": [
-            "net461"
-          ],
-          "assetTargetFallback": true,
-          "warn": true
-        },
-        "net451": {
-          "dependencies": {
-            "FastDeepCloner": {
-              "target": "Package",
-              "version": "[1.2.5, )"
-            }
-          }
-        },
-        "netstandard2.0": {
-          "dependencies": {
-            "FastDeepCloner": {
-              "target": "Package",
-              "version": "[1.2.5, )"
-            },
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            },
-            "System.Reflection.Emit": {
-              "target": "Package",
-              "version": "[4.3.0, )"
-            }
-          },
-          "imports": [
-            "net461"
-          ],
-          "assetTargetFallback": true,
-          "warn": true
-        }
-      }
-    },
     "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core.API\\Youtube.Manager.Core.API.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -132,9 +33,6 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "E:\\Projects\\EntityWorker.Core\\Source\\EntityWorker.Core\\EntityWorker.Core.csproj": {
-                "projectPath": "E:\\Projects\\EntityWorker.Core\\Source\\EntityWorker.Core\\EntityWorker.Core.csproj"
-              },
               "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core\\Youtube.Manager.Core.csproj": {
                 "projectPath": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core\\Youtube.Manager.Core.csproj"
               },
@@ -153,6 +51,10 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "EntityWorker.Core": {
+              "target": "Package",
+              "version": "[3.0.7, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
@@ -275,18 +177,10 @@
         },
         "frameworks": {
           "netcoreapp2.2": {
-            "projectReferences": {
-              "E:\\Projects\\EntityWorker.Core\\Source\\EntityWorker.Core\\EntityWorker.Core.csproj": {
-                "projectPath": "E:\\Projects\\EntityWorker.Core\\Source\\EntityWorker.Core\\EntityWorker.Core.csproj"
-              }
-            }
+            "projectReferences": {}
           },
           "netstandard2.0": {
-            "projectReferences": {
-              "E:\\Projects\\EntityWorker.Core\\Source\\EntityWorker.Core\\EntityWorker.Core.csproj": {
-                "projectPath": "E:\\Projects\\EntityWorker.Core\\Source\\EntityWorker.Core\\EntityWorker.Core.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -298,6 +192,10 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "EntityWorker.Core": {
+              "target": "Package",
+              "version": "[3.0.7, )"
+            },
             "FastDeepCloner": {
               "target": "Package",
               "version": "[1.2.5, )"
@@ -333,6 +231,10 @@
         },
         "netstandard2.0": {
           "dependencies": {
+            "EntityWorker.Core": {
+              "target": "Package",
+              "version": "[3.0.7, )"
+            },
             "FastDeepCloner": {
               "target": "Package",
               "version": "[1.2.5, )"

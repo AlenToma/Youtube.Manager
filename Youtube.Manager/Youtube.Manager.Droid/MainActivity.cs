@@ -24,7 +24,7 @@ using Youtube.Manager.Droid.Models.Settings;
 namespace Youtube.Manager.Droid
 {
     [Activity(
-        Label = "Realm Of Youtube",
+        Label = "Realm Of Music",
         Icon = "@mipmap/icon48x48",
         Theme = "@style/MainTheme",
         MainLauncher = true,
