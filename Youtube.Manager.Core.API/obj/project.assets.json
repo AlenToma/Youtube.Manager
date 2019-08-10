@@ -4819,6 +4819,20 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
+      "Rest.API.Translator/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "FastDeepCloner": "1.2.5",
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "compile": {
+          "bin/placeholder/Rest.API.Translator.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Rest.API.Translator.dll": {}
+        }
+      },
       "Youtube.Manager.Core/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -4842,6 +4856,7 @@
           "Microsoft.CSharp": "4.5.0",
           "Microsoft.VisualBasic": "10.3.0",
           "Newtonsoft.Json": "12.0.2",
+          "Rest.API.Translator": "1.0.0",
           "System.Drawing.Common": "4.5.1"
         },
         "compile": {
@@ -13314,6 +13329,11 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "Rest.API.Translator/1.0.0": {
+      "type": "project",
+      "path": "../../Rest.API.Translator/Rest.API.Translator/Rest.API.Translator.csproj",
+      "msbuildProject": "../../Rest.API.Translator/Rest.API.Translator/Rest.API.Translator.csproj"
     },
     "Youtube.Manager.Core/1.0.0": {
       "type": "project",

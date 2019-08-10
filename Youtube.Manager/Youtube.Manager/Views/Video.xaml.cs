@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using MediaManager;
+using Rest.API.Translator;
 using Xamarin.Forms;
 using Youtube.Manager.Controls;
 using Youtube.Manager.Helper;

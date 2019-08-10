@@ -40,6 +40,8 @@
     </DocumentationFile>
     <Optimize>false</Optimize>
     <DefineConstants>DEBUG</DefineConstants>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <AndroidLinkMode>None</AndroidLinkMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -48,7 +50,7 @@
     <EnableLLVM>false</EnableLLVM>
     <BundleAssemblies>false</BundleAssemblies>
     <OutputPath>bin\Release\</OutputPath>
-    <AndroidLinkTool>proguard</AndroidLinkTool>
+    <AndroidLinkTool>None</AndroidLinkTool>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
     <AndroidLinkMode>None</AndroidLinkMode>
@@ -270,6 +272,10 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon48x48.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Rest.API.Translator\Rest.API.Translator\Rest.API.Translator.csproj">
+      <Project>{6089851D-16A0-4616-B521-2A4B3A8EFE5D}</Project>
+      <Name>Rest.API.Translator</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Youtube.Manager.Models.Container\Youtube.Manager.Models.Container.csproj">
       <Project>{b3dc7cac-ddf4-43fb-b78a-4bb4c031528b}</Project>
       <Name>Youtube.Manager.Models.Container</Name>
@@ -291,7 +297,8 @@
     Module="Youtube.Manager.Models.Container.dll;Youtube.Manager.dll;Youtube.Manager.Droid.dll"
   </Target>-->
   <Target Name="PostBuild" AfterTargets="PostBuildEvent; PreBuildEvent" Condition="'$(Configuration)'=='Release' And Exists('$(TargetPath)')">
-    <ConfuserEx ApplicationPath="E:\Programs\ConfuserEx\Confuser.CLI.exe" Source="$(TargetPath)" AssetMap="linksrc" RefProxy="false" ReName="false" Modules="Youtube.Manager.Models.Container.dll;Youtube.Manager.dll" MonoDir="C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid" />
+    <ConfuserEx ApplicationPath="E:\Programs\ConfuserEx\Confuser.CLI.exe" Source="$(TargetPath)" AssetMap="linksrc" RefProxy="false" ReName="false" SettingsFileName="Youtube.Manager.Container" Modules="Rest.API.Translator.dll;Youtube.Manager.Models.Container.dll" />
+    <ConfuserEx ApplicationPath="E:\Programs\ConfuserEx\Confuser.CLI.exe" Source="$(TargetPath)" AssetMap="linksrc" RefProxy="false" ReName="false" SettingsFileName="Youtube.Manager.Droid" Modules="Youtube.Manager.dll" MonoDir="C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid" />
   </Target>
   <Import Condition="Exists('..\..\Obfuscation.props')" Project="..\..\Obfuscation.props" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

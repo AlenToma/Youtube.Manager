@@ -231,18 +231,22 @@ namespace Youtube.Manager.Core.API.Controller
         [HttpPost]
         public async Task AddLog(string userEmail, string errorMessage)
         {
-            using (var db = new DbRepository())
+            if (userEmail != null && errorMessage != null && errorMessage.Length >= 4)
             {
-                var user = db.Get<User>().Where(x => x.Email.Contains(userEmail)).ExecuteFirstOrDefault();
-                var date = DateTime.Now.AddMonths(-3);
-                db.Get<UserErrorLog>().Where(x => x.User_Id == user.EntityId && x.Added <= date).Remove(); /// Remove 3 month old logs for the current user
-                var log = new UserErrorLog()
+                errorMessage = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(errorMessage));
+                using (var db = new DbRepository())
                 {
-                    Added = DateTime.Now,
-                    Text = errorMessage,
-                    User_Id = user.EntityId.Value
-                };
-                db.Save(log).SaveChanges();
+                    var user = db.Get<User>().Where(x => x.Email.Contains(userEmail)).ExecuteFirstOrDefault();
+                    var date = DateTime.Now.AddMonths(-3);
+                    db.Get<UserErrorLog>().Where(x => x.User_Id == user.EntityId && x.Added <= date).Remove(); /// Remove 3 month old logs for the current user
+                    var log = new UserErrorLog()
+                    {
+                        Added = DateTime.Now,
+                        Text = errorMessage,
+                        User_Id = user.EntityId.Value
+                    };
+                    db.Save(log).SaveChanges();
+                }
             }
         }
     }

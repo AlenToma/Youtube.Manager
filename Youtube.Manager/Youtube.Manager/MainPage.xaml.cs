@@ -1,4 +1,5 @@
 ﻿using dotMorten.Xamarin.Forms;
+using Rest.API.Translator;
 using System;
 using System.Linq;
 using System.Threading.Tasks;

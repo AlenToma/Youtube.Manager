@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Rest.API.Translator;
 using Rg.Plugins.Popup.Pages;
 using Youtube.Manager.Helper;
 using Youtube.Manager.Models.Container;

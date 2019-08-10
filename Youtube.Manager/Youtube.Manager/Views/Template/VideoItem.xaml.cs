@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using Youtube.Manager.Helper;
 using Youtube.Manager.Models.Container;
 using Youtube.Manager.Models.Container.DB_models.Library;
+using Rest.API.Translator;
 
 namespace Youtube.Manager.Views.Template
 {

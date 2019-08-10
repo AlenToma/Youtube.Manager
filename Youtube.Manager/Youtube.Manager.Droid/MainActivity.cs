@@ -6,7 +6,6 @@ using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using Android.Views;
-using MediaManager;
 using Rg.Plugins.Popup;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
@@ -14,7 +13,6 @@ using Youtube.Manager.Droid.Models;
 using Youtube.Manager.Helper;
 using Plugin.Permissions;
 using Android.Runtime;
-using Acr.UserDialogs;
 using Youtube.Manager.Droid.Models.Settings;
 #if DEBUG
 [assembly: Application(Debuggable = true)]

@@ -4,6 +4,113 @@
     "E:\\Projects\\Youtube.Manager\\Youtube.Manager\\Youtube.Manager\\Youtube.Manager.csproj": {}
   },
   "projects": {
+    "E:\\Projects\\Rest.API.Translator\\Rest.API.Translator\\Rest.API.Translator.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Projects\\Rest.API.Translator\\Rest.API.Translator\\Rest.API.Translator.csproj",
+        "projectName": "Rest.API.Translator",
+        "projectPath": "E:\\Projects\\Rest.API.Translator\\Rest.API.Translator\\Rest.API.Translator.csproj",
+        "packagesPath": "C:\\Users\\alent\\.nuget\\packages\\",
+        "outputPath": "E:\\Projects\\Rest.API.Translator\\Rest.API.Translator\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\alent\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net46",
+          "netcoreapp2.0",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "E:\\Projects\\Local Nuget Packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.0": {
+            "projectReferences": {}
+          },
+          "net46": {
+            "projectReferences": {}
+          },
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.0": {
+          "dependencies": {
+            "FastDeepCloner": {
+              "target": "Package",
+              "version": "[1.2.5, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.0, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        },
+        "net46": {
+          "dependencies": {
+            "FastDeepCloner": {
+              "target": "Package",
+              "version": "[1.2.5, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
+            }
+          }
+        },
+        "netstandard2.0": {
+          "dependencies": {
+            "FastDeepCloner": {
+              "target": "Package",
+              "version": "[1.2.5, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
     "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Models.Container\\Youtube.Manager.Models.Container.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -34,10 +141,18 @@
         },
         "frameworks": {
           "netcoreapp2.2": {
-            "projectReferences": {}
+            "projectReferences": {
+              "E:\\Projects\\Rest.API.Translator\\Rest.API.Translator\\Rest.API.Translator.csproj": {
+                "projectPath": "E:\\Projects\\Rest.API.Translator\\Rest.API.Translator\\Rest.API.Translator.csproj"
+              }
+            }
           },
           "netstandard2.0": {
-            "projectReferences": {}
+            "projectReferences": {
+              "E:\\Projects\\Rest.API.Translator\\Rest.API.Translator\\Rest.API.Translator.csproj": {
+                "projectPath": "E:\\Projects\\Rest.API.Translator\\Rest.API.Translator\\Rest.API.Translator.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

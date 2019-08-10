@@ -1,5 +1,4 @@
 ﻿using Android.Gms.Ads.Reward;
-using Youtube.Manager.Models.Container;
 
 namespace Youtube.Manager.Droid.Models.Ads.VideoAds
 {
@@ -15,36 +14,29 @@ namespace Youtube.Manager.Droid.Models.Ads.VideoAds
         {
             base.Dispose();
             _rewardedVideoAd.Dispose();
-            //throw new NotImplementedException();
         }
 
         public void OnRewarded(IRewardItem reward)
         {
-            var amount = decimal.Parse(ControllerRepository.Db(x => x.GetSetting("VideoRewardAmount")).Value);
-            UserData.CurrentUser.DownloadCoins += amount;
-            UserData.SaveUserChanges();
+            UserData.Reward();
         }
 
         public void OnRewardedVideoAdClosed()
         {
-            //throw new NotImplementedException();
         }
 
         public void OnRewardedVideoAdFailedToLoad(int errorCode)
         {
-            //throw new NotImplementedException();
         }
 
         public void OnRewardedVideoAdLeftApplication()
         {
-            //throw new NotImplementedException();
         }
 
         public void OnRewardedVideoAdLoaded()
         {
             if (_rewardedVideoAd.IsLoaded)
                 _rewardedVideoAd.Show();
-            //throw new NotImplementedException();
         }
 
         public void OnRewardedVideoAdOpened()

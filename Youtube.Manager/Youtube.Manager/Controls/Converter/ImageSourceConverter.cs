@@ -44,7 +44,7 @@ namespace Youtube.Manager.Controls.Converter
 
             if (value is string && !string.IsNullOrEmpty(value?.ToString() ?? "") && value.ToString().Contains("http"))
             {
-                var data = Models.Container.HttpHelper.GetImage(value.ToString());
+                var data = Models.Container.Actions.GetImage(value.ToString());
                 ObjectCacher.CachedImages.Add(value.ToString(), data);
                 return ImageSource.FromStream(() => new MemoryStream(data));
             }

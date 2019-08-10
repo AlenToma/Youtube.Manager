@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using Rest.API.Translator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using Youtube.Manager.Helper;
 using Youtube.Manager.Models.Container;
 using Youtube.Manager.Models.Container.DB_models;
 using Youtube.Manager.Models.Container.DB_models.Library;
+using Youtube.Manager.Models.Container.Interface;
 using Youtube.Manager.Models.Container.Interface.API;
 using Youtube.Manager.Views.Template;
 
@@ -22,8 +24,10 @@ namespace Youtube.Manager
 
         public static DirectoryManager DirectoryManager { get; set; }
 
-        public static async Task LogIn(string email, string password = "google.com", string imageUrl = "")
+        public static async Task LogIn(string email, string password = null, string imageUrl = "")
         {
+            if (string.IsNullOrWhiteSpace(password))
+                password = "google.com";
             DirectoryManager = null;
             MethodInformation info = null;
             ControllerRepository.Db(x => x.LogIn(email, imageUrl, password), (x, data) => { CurrentUser = data; info = x; });
@@ -37,7 +41,7 @@ namespace Youtube.Manager
             }
 
 
-            await LoadUserData(true);
+            LoadUserData(true);
             await info.ExecuteTrigger();
         }
 
@@ -76,7 +80,7 @@ namespace Youtube.Manager
                         file.File.Delete();
                 }
             }
-            await UserData.LoadUserData(true);
+            UserData.LoadUserData(true);
             await ControllerRepository.GetInfo<IDbController, Task>((x) => x.SaveVideo(null)).ExecuteTrigger();
         }
 
@@ -91,7 +95,7 @@ namespace Youtube.Manager
             if (videoCategory.State == State.Removed)
                 UserData.DirectoryManager.Folder(videoCategory.Name).Delete();
             var id = ControllerRepository.Db(x => x.SaveCategory(videoCategory), (i, x) => info = i).Await();
-            await LoadUserData(true);
+            LoadUserData(true);
             await info.ExecuteTrigger();
             return await Task.FromResult(id);
 
@@ -146,13 +150,34 @@ namespace Youtube.Manager
         /// Reload/Load the userData
         /// </summary>
         /// <returns></returns>
-        public static async Task LoadUserData(bool forceReload = true)
+        public static void LoadUserData(bool forceReload = true)
         {
             if (CurrentUser == null)
                 return;
             if (forceReload)
                 VideoCategoryViews = CurrentUser?.EntityId.HasValue ?? false ? ControllerRepository.Db(x => x.GetVideoCategory(CurrentUser.EntityId, null)) : new List<VideoCategoryView>();
+        }
 
+        /// <summary>
+        /// Load Application Settings from the db
+        /// </summary>
+        /// <param name="mainActivity"></param>
+        public static void LoadApplicationSettings(IMainActivity mainActivity)
+        {
+            mainActivity.YoutubeDeveloperKey = ControllerRepository.Db(x => x.GetSetting("YoutubeDeveloperKey")).Value;
+            mainActivity.AdsApplicationIds = ControllerRepository.Db(x => x.GetSetting("AdsApplicationIds")).Value;
+            mainActivity.BannerAdd = ControllerRepository.Db(x => x.GetSetting("BannerAdd")).Value;
+            mainActivity.RewardAddId = ControllerRepository.Db(x => x.GetSetting("RewardAddId")).Value;
+        }
+
+        /// <summary>
+        /// Reward the user after watching an ads
+        /// </summary>
+        public static void Reward()
+        {
+            var amount = decimal.Parse(ControllerRepository.Db(x => x.GetSetting("VideoRewardAmount")).Value);
+            UserData.CurrentUser.DownloadCoins += amount;
+            UserData.SaveUserChanges();
         }
     }
 }

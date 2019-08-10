@@ -316,6 +316,20 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
+      "Rest.API.Translator/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "FastDeepCloner": "1.2.5",
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "compile": {
+          "bin/placeholder/Rest.API.Translator.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Rest.API.Translator.dll": {}
+        }
+      },
       "Youtube.Manager.Models.Container/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -324,7 +338,8 @@
           "FastDeepCloner": "1.2.5",
           "Microsoft.CSharp": "4.5.0",
           "Microsoft.VisualBasic": "10.3.0",
-          "Newtonsoft.Json": "12.0.2"
+          "Newtonsoft.Json": "12.0.2",
+          "Rest.API.Translator": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Youtube.Manager.Models.Container.dll": {}
@@ -1835,6 +1850,11 @@
         "system.threading.tasks.4.3.0.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
+    },
+    "Rest.API.Translator/1.0.0": {
+      "type": "project",
+      "path": "../../Rest.API.Translator/Rest.API.Translator/Rest.API.Translator.csproj",
+      "msbuildProject": "../../Rest.API.Translator/Rest.API.Translator/Rest.API.Translator.csproj"
     },
     "Youtube.Manager.Models.Container/1.0.0": {
       "type": "project",

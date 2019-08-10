@@ -16,6 +16,30 @@ namespace Youtube.Manager.Core.API.Controller
     [Route("api/[controller]/[action]")]
     public class YoutubeController : ControllerBase, IYoutubeController
     {
+
+        [HttpPost]
+        public async void SyncData()
+        {
+            using (var db = new DbRepository())
+            {
+                var videoData = db.Get<VideoData>().Where(x => string.IsNullOrEmpty(x.Duration)).Execute();
+                foreach (var data in videoData)
+                {
+                    var video = (await this.GetVideoAsync(data.Video_Id)).FirstOrDefault();
+                    if (video != null)
+                    {
+                        data.Auther = video.Auther;
+                        data.Duration = video.Duration;
+                        data.Description = video.Description;
+                        data.Quality = video.Quality;
+                        data.Resolution = video.Resolution;
+                        db.Save(data);
+                    }
+                }
+                db.SaveChanges();
+            }
+        }
+
         [HttpGet]
         public async Task<List<YoutubeVideoInfo>> GetVideoAsync(string videoId, int? formatCode = 18)
         {

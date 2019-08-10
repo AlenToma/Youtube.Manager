@@ -8,13 +8,13 @@ namespace Youtube.Manager.Models.Container.Interface
 {
     public interface IMainActivity
     {
-        string BannerAdd { get; }
+        string BannerAdd { get; set; }
 
-        string RewardAddId { get; }
+        string RewardAddId { get; set; }
 
-        string AdsApplicationIds { get; }
+        string AdsApplicationIds { get; set; }
 
-        string YoutubeDeveloperKey { get; }
+        string YoutubeDeveloperKey { get; set; }
 
         /// <summary>
         /// when the login is completed

@@ -1,20 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using Rest.API.Translator;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Youtube.Manager.Models.Container.Attributes;
 using Youtube.Manager.Models.Container.DB_models.Library;
 
 namespace Youtube.Manager.Models.Container.Interface.API
 {
-    [Route(url: "api/")]
+    [Route(relativeUrl: "api/")]
     public interface IYoutubeController
     {
-
         // we may need to add some changes here later as if now, the Google provider
         // take care of the login
-
         object Google(object error = null);
-
         /// <summary>
         /// Get a collection of the searched youtube videos
         /// </summary>
@@ -23,17 +20,14 @@ namespace Youtube.Manager.Models.Container.Interface.API
         /// <param name="relatedTo"></param>
         /// <param name="videoSearchType"></param>
         /// <returns></returns>
-        [Route]
         Task<YoutubeVideoCollection> SearchAsync(long userId, string searchString, int pageSize, int pageNumber, string relatedTo = null, VideoSearchType videoSearchType = VideoSearchType.Videos);
         /// <summary>
         /// Get the playlist video contents
         /// </summary>
         /// <param name="playListId"></param>
         /// <returns></returns>
-        [Route]
         Task<IEnumerable<VideoWrapper>> GetPlaylistVideosAsync(string playlistId, int pageNumber, int pageSize);
 
-        [Route]
         Task<IEnumerable<VideoWrapper>> GetChannelVideosAsync(string channelId, int pageNumber, int pageSize);
 
         /// <summary>
@@ -41,7 +35,6 @@ namespace Youtube.Manager.Models.Container.Interface.API
         /// </summary>
         /// <param name="videoId"></param>
         /// <returns></returns>
-        [Route]
         Task<List<YoutubeVideoInfo>> GetVideoAsync(string videoId, int? formatCode = 18);
 
         /// <summary>
@@ -64,7 +57,6 @@ namespace Youtube.Manager.Models.Container.Interface.API
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
-        [Route]
         Task<IEnumerable<string>> GetSuggestQueries(string text);
     }
 }

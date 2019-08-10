@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Net;
 
 namespace Youtube.Manager.Models.Container
 {
@@ -27,57 +28,27 @@ namespace Youtube.Manager.Models.Container
 
         public static string ImageRootPath => Path.Combine(ApplicationRootPath, "UploadedImages");
 
-        public const string SystemYoutubeUserName = "System@local.com";
+        public static string SystemYoutubeUserName = "System@local.com";
 
-        public const string SystemYoutubePassword = "Youtube.Manager.Password";
+        public static string SystemYoutubePassword = "Youtube.Manager.Password";
 
+        public static byte[] GetImage(string url)
+        {
 
-        private static readonly TaskFactory _myTaskFactory = new TaskFactory(CancellationToken.None, TaskCreationOptions.None, TaskContinuationOptions.None, TaskScheduler.Default);
+            using (var webClient = new WebClient())
+            {
+                using (var stream = new MemoryStream())
+                {
+                    webClient.OpenRead(url).CopyTo(stream);
+                    return stream.ToArray();
+                }
+            }
+        }
 
         public static T Astype<T>(this object item)
         {
             return item.ToType<T>();
         }
-
-
-        public static T Await<T>(this Task<T> task)
-        {
-            T result = default;
-            if (task == null)
-                return result;
-            _myTaskFactory.StartNew(new Func<Task>(async () =>
-            {
-                result = await task; // Simulates a method that returns a task and
-                                     // inside it is possible that there
-                                     // async keywords or anothers tasks
-            })).Unwrap().GetAwaiter().GetResult();
-            return result;
-        }
-
-
-
-
-        public static T Await<T>(this Func<Task<T>> task)
-        {
-            return _myTaskFactory.StartNew(task).Unwrap().GetAwaiter().GetResult();
-        }
-
-
-
-        public static void Await(this Task task)
-        {
-
-            task.GetAwaiter().GetResult();
-
-        }
-
-        public static void Await(this Action task)
-        {
-
-            _myTaskFactory.StartNew(task).ConfigureAwait(true).GetAwaiter().GetResult();
-
-        }
-
 
         static readonly string[] SizeSuffixes = { "bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB" };
         public static string SizeSuffix(Int64 value, int decimalPlaces = 1)
@@ -179,7 +150,7 @@ namespace Youtube.Manager.Models.Container
         }
 
 #if NETCOREAPP2_2
-        public static Bitmap GetImage(string filename)
+        public static Bitmap GetBitMap(string filename)
         {
             using (var client = new System.Net.WebClient())
             {
@@ -233,7 +204,7 @@ namespace Youtube.Manager.Models.Container
             var staticHeight = 200;
             // download the images from the url and then resize them
             List<Bitmap> images = imageUrl
-                .Select((x, i) => i <= 3 ? GenerateThumbImage(GetImage(x), staticWidth, staticHeight) : null)
+                .Select((x, i) => i <= 3 ? GenerateThumbImage(GetBitMap(x), staticWidth, staticHeight) : null)
                 .Where(x => x != null).ToList();
             var nIndex = 0;
             var max_Height = 0;

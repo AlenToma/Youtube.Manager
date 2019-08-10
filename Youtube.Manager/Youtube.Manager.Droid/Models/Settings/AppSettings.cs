@@ -26,6 +26,7 @@ using Youtube.Manager.Models.Container;
 using Youtube.Manager.Models.Container.DB_models;
 using Youtube.Manager.Models.Container.DB_models.Library;
 using Youtube.Manager.Models.Container.Interface;
+using Rest.API.Translator;
 
 namespace Youtube.Manager.Droid.Models.Settings
 {
@@ -35,11 +36,11 @@ namespace Youtube.Manager.Droid.Models.Settings
 
         protected IRewardedVideoAd mRewardedVideoAd;
 
-        public string YoutubeDeveloperKey { get; }
+        public string YoutubeDeveloperKey { get; set; }
 
-        public string BannerAdd { get; }
+        public string BannerAdd { get; set; }
 
-        public string RewardAddId { get; }
+        public string RewardAddId { get; set; }
 
         public string AdsApplicationIds { get; set; }
 
@@ -58,10 +59,7 @@ namespace Youtube.Manager.Droid.Models.Settings
                 .AddApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .AddScope(new Scope(Android.Gms.Common.Scopes.Profile))
                 .Build();
-            YoutubeDeveloperKey = ControllerRepository.Db(x => x.GetSetting("YoutubeDeveloperKey")).Value;
-            AdsApplicationIds = ControllerRepository.Db(x => x.GetSetting("AdsApplicationIds")).Value;
-            BannerAdd = ControllerRepository.Db(x => x.GetSetting("BannerAdd")).Value;
-            RewardAddId = ControllerRepository.Db(x => x.GetSetting("RewardAddId")).Value;
+            UserData.LoadApplicationSettings(this);
             MobileAds.Initialize(context, AdsApplicationIds); // Ads
             mRewardedVideoAd = MobileAds.GetRewardedVideoAdInstance(context);
             mRewardedVideoAd.RewardedVideoAdListener = new RewardedVideoAdListener(mRewardedVideoAd);
@@ -154,7 +152,6 @@ namespace Youtube.Manager.Droid.Models.Settings
                 return Task.FromResult(true);
             if (Connectivity.ConnectionProfiles.Contains(ConnectionProfile.WiFi))
                 return Task.FromResult(true);
-
             return Task.FromResult(true);
         }
 
@@ -241,9 +238,7 @@ namespace Youtube.Manager.Droid.Models.Settings
 
             if (item == null || item.State != PurchaseState.Purchased)
                 return false;
-
             await CrossInAppBilling.Current.ConsumePurchaseAsync(item.ProductId, item.PurchaseToken);
-
             UserData.CurrentUser.DownloadCoins += appBillingProduct.CoinsAmount;
             await UserData.SaveUserChanges();
             return true;

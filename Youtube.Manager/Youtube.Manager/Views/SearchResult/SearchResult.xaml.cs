@@ -1,4 +1,5 @@
-﻿using Rg.Plugins.Popup.Pages;
+﻿using Rest.API.Translator;
+using Rg.Plugins.Popup.Pages;
 using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;

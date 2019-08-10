@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Rest.API.Translator;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using Youtube.Manager.Models.Container.Attributes;
 using Youtube.Manager.Models.Container.DB_models;
 using Youtube.Manager.Models.Container.DB_models.Library;
 
 namespace Youtube.Manager.Models.Container.Interface.API
 {
-    [Route(url: "api/")]
+    [Route(relativeUrl: "api/")]
     public interface IDbController
     {
         List<ProductLink> GetProductLinks(string product_Id = null);
@@ -16,18 +16,18 @@ namespace Youtube.Manager.Models.Container.Interface.API
         List<RatingModelView> GetItemRating(VideoSearchType type, List<long> ids);
         List<VideoCategoryView> GetVideoCategory(long? userId = null, long? categoryId = null);
         Task<List<VideoData>> GetVideoData(string videoId, long? categoryId = null, long? userId = null, int page = 1);
-
-        [Route(httpMethod: HttpMethod.JSONPOST)]
-        Task SaveVideo(VideoData video);
-
-        [Route(httpMethod: HttpMethod.JSONPOST)]
-        Task<long> SaveCategory(VideoCategory videoCategory);
         List<VideoCategoryView> GetUserSuggestion(long userId);
 
-        [Route(httpMethod: HttpMethod.JSONPOST)]
+        [Route(httpMethod: MethodType.JSONPOST)]
+        Task SaveVideo(VideoData video);
+
+        [Route(httpMethod: MethodType.JSONPOST)]
+        Task<long> SaveCategory(VideoCategory videoCategory);
+
+        [Route(httpMethod: MethodType.JSONPOST)]
         User SaveUser(User user);
 
-        [Route(httpMethod: HttpMethod.POST)]
+        [Route(httpMethod: MethodType.POST)]
         Task AddLog(string userEmail, string errorMessage);
     }
 }

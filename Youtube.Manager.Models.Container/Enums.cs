@@ -6,8 +6,6 @@
 
     public enum State { Added, Removed }
 
-    public enum HttpMethod { POST, GET, JSONPOST }
-
     public enum LogLevel { Release, Debug }
 
     public enum PageType { Popup, DisplayActionSheet }
