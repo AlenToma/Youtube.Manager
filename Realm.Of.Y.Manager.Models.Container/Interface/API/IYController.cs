@@ -20,7 +20,7 @@ namespace Realm.Of.Y.Manager.Models.Container.Interface.API
         /// <param name="relatedTo"></param>
         /// <param name="videoSearchType"></param>
         /// <returns></returns>
-        Task<YoutubeVideoCollection> SearchAsync(long userId, string searchString, int pageSize, int pageNumber, string relatedTo = null, VideoSearchType videoSearchType = VideoSearchType.Videos);
+        Task<YVideoCollection> SearchAsync(long userId, string searchString, int pageSize, int pageNumber, string relatedTo = null, VideoSearchType videoSearchType = VideoSearchType.Videos);
         /// <summary>
         /// Get the playlist video contents
         /// </summary>
@@ -35,7 +35,7 @@ namespace Realm.Of.Y.Manager.Models.Container.Interface.API
         /// </summary>
         /// <param name="videoId"></param>
         /// <returns></returns>
-        Task<List<YoutubeVideoInfo>> GetVideoAsync(string videoId, int? formatCode = 18);
+        Task<List<YVideoInfo>> GetVideoAsync(string videoId, int? formatCode = 18);
 
         /// <summary>
         /// Stream youtube video

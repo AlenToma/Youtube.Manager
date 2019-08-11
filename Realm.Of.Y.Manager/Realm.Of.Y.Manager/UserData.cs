@@ -164,7 +164,7 @@ namespace Realm.Of.Y.Manager
         /// <param name="mainActivity"></param>
         public static void LoadApplicationSettings(IMainActivity mainActivity)
         {
-            mainActivity.YoutubeDeveloperKey = ControllerRepository.Db(x => x.GetSetting("YoutubeDeveloperKey")).Value;
+            mainActivity.YDeveloperKey = ControllerRepository.Db(x => x.GetSetting("YoutubeDeveloperKey")).Value;
             mainActivity.AdsApplicationIds = ControllerRepository.Db(x => x.GetSetting("AdsApplicationIds")).Value;
             mainActivity.BannerAdd = ControllerRepository.Db(x => x.GetSetting("BannerAdd")).Value;
             mainActivity.RewardAddId = ControllerRepository.Db(x => x.GetSetting("RewardAddId")).Value;

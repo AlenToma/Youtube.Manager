@@ -14,7 +14,7 @@ namespace Realm.Of.Y.Manager.Views.SearchResult
     public partial class SearchResult : PopupBase
     {
         private readonly string _searchfor;
-        private YoutubeVideoCollection _videos;
+        private YVideoCollection _videos;
         private readonly VideoSearchType _videoSearchType;
 
         public SearchResult(VideoSearchType videoSearchType, string searchFor)

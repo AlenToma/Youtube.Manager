@@ -23,7 +23,7 @@ namespace Realm.Of.Y.Manager.Views
         private readonly long _category_Id;
         private readonly string _localPath = UserData.DirectoryManager.DirectoryPath;
 
-        private Dictionary<string, YoutubeFileDownloadItem> _localVideos = new Dictionary<string, YoutubeFileDownloadItem>();
+        private Dictionary<string, YFileDownloadItem> _localVideos = new Dictionary<string, YFileDownloadItem>();
 
         private LocalVideoItem _videoList;
         private List<VideoData> _videos;
@@ -126,7 +126,7 @@ namespace Realm.Of.Y.Manager.Views
                         ? files.Select(x => Methods.ParseLocalVideoPath(x.Name)).GroupBy(x => x.VideoId)
                             .Select(x => x.FirstOrDefault()).Where(x => x != null && !string.IsNullOrEmpty(x.VideoId))
                             .ToDictionary(x => x.VideoId, x => x)
-                        : new Dictionary<string, YoutubeFileDownloadItem>();
+                        : new Dictionary<string, YFileDownloadItem>();
 
                     foreach (var value in _localVideos.Values)
                     {

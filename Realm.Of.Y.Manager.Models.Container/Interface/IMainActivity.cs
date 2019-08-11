@@ -14,7 +14,7 @@ namespace Realm.Of.Y.Manager.Models.Container.Interface
 
         string AdsApplicationIds { get; set; }
 
-        string YoutubeDeveloperKey { get; set; }
+        string YDeveloperKey { get; set; }
 
         /// <summary>
         /// when the login is completed
@@ -31,7 +31,7 @@ namespace Realm.Of.Y.Manager.Models.Container.Interface
         /// </summary>
         /// <param name="video"></param>
         /// <returns></returns>
-        void DownloadVideo(YoutubeFileDownloadItem video);
+        void DownloadVideo(YFileDownloadItem video);
 
         /// <summary>
         /// Validate network Activity

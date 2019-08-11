@@ -19,7 +19,7 @@
 
     public enum PlayerType
     {
-        Youtube,
+        Y,
         VideoView
     }
 

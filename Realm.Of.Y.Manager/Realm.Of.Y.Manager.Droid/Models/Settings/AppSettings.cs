@@ -36,7 +36,7 @@ namespace Realm.Of.Y.Manager.Droid.Models.Settings
 
         protected IRewardedVideoAd mRewardedVideoAd;
 
-        public string YoutubeDeveloperKey { get; set; }
+        public string YDeveloperKey { get; set; }
 
         public string BannerAdd { get; set; }
 
@@ -107,7 +107,7 @@ namespace Realm.Of.Y.Manager.Droid.Models.Settings
 
         public IntPtr Handle => throw new NotImplementedException();
 
-        public void DownloadVideo(YoutubeFileDownloadItem video)
+        public void DownloadVideo(YFileDownloadItem video)
         {
             if (!UserData.CanDownload())
             {

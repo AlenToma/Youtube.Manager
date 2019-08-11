@@ -3,7 +3,7 @@ using Realm.Of.Y.Manager.Models.Container.DB_models.Library;
 
 namespace Realm.Of.Y.Manager.Models.Container
 {
-    public class YoutubeVideoCollection 
+    public class YVideoCollection 
     {
         public List<VideoWrapper> Videos { get; set; } = new List<VideoWrapper>();
 

@@ -13,10 +13,10 @@ namespace Realm.Of.Y.Manager.Views
 {
     public partial class SearchView : PopupBase
     {
-        private readonly YoutubeVideoCollection _videos;
+        private readonly YVideoCollection _videos;
         private readonly string textSearch;
 
-        public SearchView(YoutubeVideoCollection videos, string text)
+        public SearchView(YVideoCollection videos, string text)
         {
             InitializeComponent();
             _videos = videos;

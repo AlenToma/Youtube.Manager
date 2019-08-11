@@ -113,7 +113,7 @@
     <Compile Include="Models\Settings\AppSettings.cs" />
     <Compile Include="Models\SwaperRenderer.cs" />
     <Compile Include="Models\VideoViewRenderer.cs" />
-    <Compile Include="Models\YoutubeViewRenderer.cs" />
+    <Compile Include="Models\YViewRenderer.cs" />
     <Compile Include="NotificationHelper.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

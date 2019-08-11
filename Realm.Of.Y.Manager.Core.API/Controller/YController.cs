@@ -40,7 +40,7 @@ namespace Realm.Of.Y.Manager.Core.API.Controller
         }
 
         [HttpGet]
-        public async Task<List<YoutubeVideoInfo>> GetVideoAsync(string videoId, int? formatCode = 18)
+        public async Task<List<YVideoInfo>> GetVideoAsync(string videoId, int? formatCode = 18)
         {
             if (videoId.Contains("youtube", System.StringComparison.OrdinalIgnoreCase))
                 videoId = videoId.Split('=').Last();
@@ -68,9 +68,9 @@ namespace Realm.Of.Y.Manager.Core.API.Controller
         }
 
         [HttpGet]
-        public async Task<YoutubeVideoCollection> SearchAsync(long userId, string searchString, int pageSize, int pageNumber, string relatedTo = null, VideoSearchType videoSearchType = VideoSearchType.Videos)
+        public async Task<YVideoCollection> SearchAsync(long userId, string searchString, int pageSize, int pageNumber, string relatedTo = null, VideoSearchType videoSearchType = VideoSearchType.Videos)
         {
-            var result = new YoutubeVideoCollection();
+            var result = new YVideoCollection();
             using (var db = new DbRepository())
             {
                 var m = new YManager();

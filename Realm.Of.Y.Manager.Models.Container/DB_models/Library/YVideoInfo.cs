@@ -1,6 +1,6 @@
 ﻿namespace Realm.Of.Y.Manager.Models.Container
 {
-    public class YoutubeVideoInfo
+    public class YVideoInfo
     {
         public string Quality { get; set; }
 

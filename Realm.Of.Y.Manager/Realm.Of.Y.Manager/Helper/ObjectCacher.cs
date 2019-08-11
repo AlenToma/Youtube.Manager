@@ -16,8 +16,8 @@ namespace Realm.Of.Y.Manager.Helper
         /// <summary>
         ///     Files to download <videoId, YoutubeFileDownloadItem />
         /// </summary>
-        public static readonly Dictionary<string, YoutubeFileDownloadItem> DownloadingFiles =
-            new Dictionary<string, YoutubeFileDownloadItem>();
+        public static readonly Dictionary<string, YFileDownloadItem> DownloadingFiles =
+            new Dictionary<string, YFileDownloadItem>();
 
 
         /// <summary>

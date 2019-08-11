@@ -13,20 +13,20 @@ using Realm.Of.Y.Manager.Helper;
 using Realm.Of.Y.Manager.Models.Container;
 using ARelativeLayout = Android.Widget.RelativeLayout;
 
-[assembly: ExportRenderer(typeof(YoutubeVideoView),
-    typeof(YoutubeViewRenderer))]
+[assembly: ExportRenderer(typeof(YVideoView),
+    typeof(YViewRenderer))]
 
 namespace Realm.Of.Y.Manager.Droid.Models
 {
-    public class YoutubeViewRenderer :
-        ViewRenderer<YoutubeVideoView, ARelativeLayout>,
+    public class YViewRenderer :
+        ViewRenderer<YVideoView, ARelativeLayout>,
         IYouTubePlayerOnInitializedListener,
         IYouTubePlayerPlaybackEventListener,
         IYouTubePlayerPlayerStateChangeListener,
         IYouTubePlayerOnFullscreenListener
     {
         private ImageView btnPlay;
-        private YoutubeVideoView element;
+        private YVideoView element;
         private bool fullScrean;
         private ImageView fullscreen_button;
         private SeekBar seeker;
@@ -36,11 +36,11 @@ namespace Realm.Of.Y.Manager.Droid.Models
         private ImageView youtube_button_next;
         private ImageView youtube_button_prev;
 
-        private IYouTubePlayer YoutubePlayer;
+        private IYouTubePlayer YPlayer;
         private YouTubePlayerSupportFragment youTubePlayerFragment;
         private MediaItem Current;
         private bool aborted;
-        public YoutubeViewRenderer(Context context) : base(context)
+        public YViewRenderer(Context context) : base(context)
         {
         }
 
@@ -52,7 +52,7 @@ namespace Realm.Of.Y.Manager.Droid.Models
                 MainActivity.Current.Window.AddFlags(WindowManagerFlags.Fullscreen);
             else MainActivity.Current.Window.AddFlags(WindowManagerFlags.TurnScreenOn);
 
-            YoutubePlayer.SetPlayerStyle(fullScrean
+            YPlayer.SetPlayerStyle(fullScrean
                 ? YouTubePlayerPlayerStyle.Minimal
                 : YouTubePlayerPlayerStyle.Chromeless);
         }
@@ -61,13 +61,13 @@ namespace Realm.Of.Y.Manager.Droid.Models
         {
             if (!wasRestored && player != null)
             {
-                YoutubePlayer = player;
-                YoutubePlayer.SetFullscreen(false);
-                YoutubePlayer.SetPlayerStyle(YouTubePlayerPlayerStyle.Chromeless); // style
+                YPlayer = player;
+                YPlayer.SetFullscreen(false);
+                YPlayer.SetPlayerStyle(YouTubePlayerPlayerStyle.Chromeless); // style
                 seeker.ProgressChanged += Seeker_ProgressChanged;
-                YoutubePlayer.SetPlaybackEventListener(this);
-                YoutubePlayer.SetOnFullscreenListener(this);
-                YoutubePlayer.SetPlayerStateChangeListener(this);
+                YPlayer.SetPlaybackEventListener(this);
+                YPlayer.SetOnFullscreenListener(this);
+                YPlayer.SetPlayerStateChangeListener(this);
                 PlayVideo(element.VideoSource);
             }
         }
@@ -97,7 +97,7 @@ namespace Realm.Of.Y.Manager.Droid.Models
 
         public void OnSeekTo(int p0)
         {
-            YoutubePlayer.Play();
+            YPlayer.Play();
             CheckState();
         }
 
@@ -139,7 +139,7 @@ namespace Realm.Of.Y.Manager.Droid.Models
             element?.OnVideoStarted?.Invoke(Current);
         }
 
-        protected override void OnElementChanged(ElementChangedEventArgs<YoutubeVideoView> args)
+        protected override void OnElementChanged(ElementChangedEventArgs<YVideoView> args)
         {
             base.OnElementChanged(args);
             try
@@ -154,7 +154,7 @@ namespace Realm.Of.Y.Manager.Droid.Models
                         var vi = LayoutInflater.From(Context);
                         var controller = vi.Inflate(Resource.Layout.y_manager_controls, null);
                         youTubePlayerFragment = MainActivity.Current.SupportFragmentManager.FindFragmentById(Resource.Id.y_fragment) as YouTubePlayerSupportFragment;
-                        youTubePlayerFragment.Initialize(Methods.AppSettings.YoutubeDeveloperKey, this);
+                        youTubePlayerFragment.Initialize(Methods.AppSettings.YDeveloperKey, this);
                         youTubePlayerFragment.RetainInstance = true;
                         var relativeLayout = new ARelativeLayout(Context);
                         seeker = controller.FindViewById<SeekBar>(Resource.Id.seek_bar);
@@ -170,8 +170,8 @@ namespace Realm.Of.Y.Manager.Droid.Models
                         youtube_button_prev.Click += (sender, e) => { element?.OnPrev(); };
                         youtube_button_next.Click += (sender, e) => { element?.OnNext(); };
                         element.GetCurrentMedia += () => Current;
-                        element.Stop = () => YoutubePlayer?.Pause();
-                        element.Play = () => YoutubePlayer?.Play();
+                        element.Stop = () => YPlayer?.Pause();
+                        element.Play = () => YPlayer?.Play();
                         relativeLayout.AddView(controller);
                         SetNativeControl(relativeLayout);
                         element.OnPlayVideo = PlayVideo;
@@ -226,8 +226,8 @@ namespace Realm.Of.Y.Manager.Droid.Models
                     tr?.Remove(youTubePlayerFragment);
                     tr?.Commit();
                     youTubePlayerFragment?.Dispose();
-                    YoutubePlayer?.Release();
-                    YoutubePlayer?.Dispose();
+                    YPlayer?.Release();
+                    YPlayer?.Dispose();
                 }
             }
             catch
@@ -240,11 +240,11 @@ namespace Realm.Of.Y.Manager.Droid.Models
 
         private void displayCurrentTime()
         {
-            if (null == YoutubePlayer) return;
-            var formattedTime = formatTime(YoutubePlayer.DurationMillis - YoutubePlayer.CurrentTimeMillis);
+            if (null == YPlayer) return;
+            var formattedTime = formatTime(YPlayer.DurationMillis - YPlayer.CurrentTimeMillis);
             video_current_time.SetTextKeepState(formattedTime);
-            var p = YoutubePlayer.CurrentTimeMillis; //get video position
-            var d = YoutubePlayer.DurationMillis; //get video duration
+            var p = YPlayer.CurrentTimeMillis; //get video position
+            var d = YPlayer.DurationMillis; //get video duration
             var c = Convert.ToDouble(p) / Convert.ToDouble(d) * 100; //calculate % complete
             c = Math.Round(Convert.ToDouble(c)); //round to a whole number
             seeker.Progress = (int)c;
@@ -271,18 +271,18 @@ namespace Realm.Of.Y.Manager.Droid.Models
         public async void PlayVideo(params MediaItem[] videos)
         {
 
-            if (YoutubePlayer != null && videos != null)
+            if (YPlayer != null && videos != null)
             {
                 Current = videos.FirstOrDefault();
                 video_title.SetTextKeepState(Current.Title);
                 //if (!Current.Handled)
                 //    await Methods.MediaItemResolver(Current);
                 if (!aborted)
-                    YoutubePlayer.CueVideo(Current.Url);
+                    YPlayer.CueVideo(Current.Url);
                 await Task.Delay(TimeSpan.FromSeconds(1));
                 if (!aborted)
-                    YoutubePlayer.Play();
-                video_duration.SetTextKeepState(formatTime(YoutubePlayer.DurationMillis));
+                    YPlayer.Play();
+                video_duration.SetTextKeepState(formatTime(YPlayer.DurationMillis));
                 element.Reset();
 
             }
@@ -292,34 +292,34 @@ namespace Realm.Of.Y.Manager.Droid.Models
         {
             if (e.FromUser)
             {
-                long lengthPlayed = YoutubePlayer.DurationMillis * e.Progress / 100;
-                YoutubePlayer.SeekToMillis((int)lengthPlayed);
+                long lengthPlayed = YPlayer.DurationMillis * e.Progress / 100;
+                YPlayer.SeekToMillis((int)lengthPlayed);
             }
         }
 
         public void TogglePlay(object sender, EventArgs arg)
         {
-            if (YoutubePlayer.IsPlaying)
-                YoutubePlayer.Pause();
-            else YoutubePlayer.Play();
+            if (YPlayer.IsPlaying)
+                YPlayer.Pause();
+            else YPlayer.Play();
         }
 
         public void ToggleFullScrean(object sender, EventArgs arg)
         {
-            if (YoutubePlayer.IsPlaying)
-                YoutubePlayer.SetFullscreen(true);
+            if (YPlayer.IsPlaying)
+                YPlayer.SetFullscreen(true);
         }
 
         private async void CheckState()
         {
             try
             {
-                while (YoutubePlayer?.IsPlaying ?? false)
+                while (YPlayer?.IsPlaying ?? false)
                 {
                     displayCurrentTime();
 
 
-                    if (YoutubePlayer?.IsPlaying ?? false)
+                    if (YPlayer?.IsPlaying ?? false)
                         await Task.Delay(TimeSpan.FromSeconds(1));
                 }
             }

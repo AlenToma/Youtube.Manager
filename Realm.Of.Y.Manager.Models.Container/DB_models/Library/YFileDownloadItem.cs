@@ -1,7 +1,7 @@
 ﻿
 namespace Realm.Of.Y.Manager.Models.Container
 {
-    public class YoutubeFileDownloadItem : YoutubeVideoInfo
+    public class YFileDownloadItem : YVideoInfo
     {
         public string VideoId { get; set; }
 

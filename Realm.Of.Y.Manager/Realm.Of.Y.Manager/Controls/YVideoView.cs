@@ -5,7 +5,7 @@ using Realm.Of.Y.Manager.Models.Container.Interface;
 
 namespace Realm.Of.Y.Manager.Controls
 {
-    public class YoutubeVideoView : View, IPlayer
+    public class YVideoView : View, IPlayer
     {
         public MediaItem[] VideoSource { get; private set; }
         public Action<Exception> OnError { get; set; }

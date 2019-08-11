@@ -127,7 +127,7 @@ namespace Realm.Of.Y.Manager.Helper
         public static string GetResources(string fileName)
         {
             var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = $"Youtube.Manager.Resources.{fileName}";
+            var resourceName = $"Realm.Of.Y.Manager.Resources.{fileName}";
             using (var stream = assembly.GetManifestResourceStream(resourceName))
             using (var reader = new StreamReader(stream))
             {
@@ -136,7 +136,7 @@ namespace Realm.Of.Y.Manager.Helper
             }
         }
 
-        public static List<VideoWrapper> ToItemList(this YoutubeVideoCollection items)
+        public static List<VideoWrapper> ToItemList(this YVideoCollection items)
         {
             var result = new List<VideoWrapper>();
             result.AddRange(items.Videos);
@@ -264,14 +264,14 @@ namespace Realm.Of.Y.Manager.Helper
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
-        public static YoutubeFileDownloadItem ParseLocalVideoPath(string url)
+        public static YFileDownloadItem ParseLocalVideoPath(string url)
         {
-            YoutubeFileDownloadItem res = null;
+            YFileDownloadItem res = null;
             var reg = new Regex(@"\[(.*?)\]");
             var matches = reg.Matches(url);
             if (matches.Count >= 3) // [I=][F=18][P=]
             {
-                res = new YoutubeFileDownloadItem
+                res = new YFileDownloadItem
                 {
                     VideoId = matches.Cast<Match>().FirstOrDefault()?.Value?.Replace("I=", "").Replace("[", "")
                         .Replace("]", ""),
@@ -288,30 +288,30 @@ namespace Realm.Of.Y.Manager.Helper
         /// <summary>
         ///     Prepare a downloadable object
         /// </summary>
-        /// <param name="youtubeItem"></param>
+        /// <param name="ytubeItem"></param>
         /// <param name="videoCategory"></param>
         /// <returns></returns>
-        public static YoutubeFileDownloadItem GetDownloadableItem(this VideoData youtubeItem)
+        public static YFileDownloadItem GetDownloadableItem(this VideoData ytubeItem)
         {
-            var videoCategory = ControllerRepository.Db(x => x.GetVideoCategory(UserData.CurrentUser.EntityId, youtubeItem.Category_Id)).FirstOrDefault();
+            var videoCategory = ControllerRepository.Db(x => x.GetVideoCategory(UserData.CurrentUser.EntityId, ytubeItem.Category_Id)).FirstOrDefault();
 
-            if (youtubeItem.Video_Id.ToLower().Contains("youtube"))
-                youtubeItem.Video_Id = youtubeItem.Video_Id.Split('=').Last();
-            var v = new YoutubeFileDownloadItem();
+            if (ytubeItem.Video_Id.ToLower().Contains("youtube"))
+                ytubeItem.Video_Id = ytubeItem.Video_Id.Split('=').Last();
+            var v = new YFileDownloadItem();
             v.Playlist = videoCategory?.Name;
-            v.VideoId = youtubeItem.Video_Id;
-            v.Title = youtubeItem.Title;
+            v.VideoId = ytubeItem.Video_Id;
+            v.Title = ytubeItem.Title;
             v.category_Id = videoCategory?.EntityId;
-            v.ThumpUrl = youtubeItem.ThumpUrl;
+            v.ThumpUrl = ytubeItem.ThumpUrl;
             return v;
         }
 
         /// <summary>
-        ///     Generate localPath from YoutubeFileDownloadItem
+        ///     Generate localPath from YFileDownloadItem
         /// </summary>
         /// <param name="video"></param>
         /// <returns></returns>
-        public static string GenerateLocalPath(this YoutubeFileDownloadItem video, YoutubeVideoInfo youtubeVideoInfo)
+        public static string GenerateLocalPath(this YFileDownloadItem video, YVideoInfo youtubeVideoInfo)
         {
             return
                 $"{video.Title.Replace("[", "{").Replace("]", "}")}[I={video.VideoId}][F={youtubeVideoInfo?.FormatCode ?? 18}][P={video.category_Id}].mp4";
@@ -321,17 +321,17 @@ namespace Realm.Of.Y.Manager.Helper
         /// <summary>
         ///     Prepare a downloadable object
         /// </summary>
-        /// <param name="youtubeItem"></param>
+        /// <param name="yubeItem"></param>
         /// <param name="videoCategory"></param>
         /// <returns></returns>
-        public static YoutubeFileDownloadItem GetDownloadableItem(this VideoWrapper youtubeItem, VideoCategory videoCategory)
+        public static YFileDownloadItem GetDownloadableItem(this VideoWrapper yubeItem, VideoCategory videoCategory)
         {
-            var v = new YoutubeFileDownloadItem();
+            var v = new YFileDownloadItem();
             v.Playlist = videoCategory.Name;
-            v.VideoId = youtubeItem.Id;
-            v.Title = youtubeItem.Title;
+            v.VideoId = yubeItem.Id;
+            v.Title = yubeItem.Title;
             v.category_Id = videoCategory.EntityId;
-            v.ThumpUrl = youtubeItem.DefaultThumbnailUrl;
+            v.ThumpUrl = yubeItem.DefaultThumbnailUrl;
             return v;
         }
 

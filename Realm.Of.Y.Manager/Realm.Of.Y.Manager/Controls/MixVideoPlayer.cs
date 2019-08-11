@@ -12,7 +12,7 @@ namespace Realm.Of.Y.Manager.Controls
     {
         public List<MediaItem> VideoSource = new List<MediaItem>();
 
-        private readonly YoutubeVideoView youtubePlayer = new YoutubeVideoView();
+        private readonly YVideoView yPlayer = new YVideoView();
 
         private readonly LocalVideoView videoView = new LocalVideoView();
 
@@ -24,7 +24,7 @@ namespace Realm.Of.Y.Manager.Controls
             set
             {
                 videoView.OnError = value;
-                youtubePlayer.OnError = value;
+                yPlayer.OnError = value;
             }
         }
 
@@ -34,7 +34,7 @@ namespace Realm.Of.Y.Manager.Controls
             set
             {
                 videoView.OnFullScrean = value;
-                youtubePlayer.OnFullScrean = value;
+                yPlayer.OnFullScrean = value;
             }
         }
 
@@ -44,7 +44,7 @@ namespace Realm.Of.Y.Manager.Controls
             set
             {
                 videoView.OnNext = value;
-                youtubePlayer.OnNext = value;
+                yPlayer.OnNext = value;
             }
         }
 
@@ -54,7 +54,7 @@ namespace Realm.Of.Y.Manager.Controls
             set
             {
                 videoView.OnPlayVideo = value;
-                youtubePlayer.OnPlayVideo = value;
+                yPlayer.OnPlayVideo = value;
             }
         }
 
@@ -64,7 +64,7 @@ namespace Realm.Of.Y.Manager.Controls
             set
             {
                 videoView.OnPrev = value;
-                youtubePlayer.OnPrev = value;
+                yPlayer.OnPrev = value;
             }
         }
 
@@ -74,7 +74,7 @@ namespace Realm.Of.Y.Manager.Controls
             set
             {
                 videoView.OnVideoEnded = value;
-                youtubePlayer.OnVideoEnded = value;
+                yPlayer.OnVideoEnded = value;
             }
         }
 
@@ -84,7 +84,7 @@ namespace Realm.Of.Y.Manager.Controls
             set
             {
                 videoView.OnVideoStarted = value;
-                youtubePlayer.OnVideoStarted = value;
+                yPlayer.OnVideoStarted = value;
             }
         }
 
@@ -94,7 +94,7 @@ namespace Realm.Of.Y.Manager.Controls
             set
             {
                 videoView.SetFullScrean = value;
-                youtubePlayer.SetFullScrean = value;
+                yPlayer.SetFullScrean = value;
             }
         }
 
@@ -146,9 +146,9 @@ namespace Realm.Of.Y.Manager.Controls
 
         public MixVideoPlayer()
         {
-            youtubePlayer.VerticalOptions = videoView.VerticalOptions = LayoutOptions.FillAndExpand;
-            youtubePlayer.HorizontalOptions = videoView.HorizontalOptions = LayoutOptions.FillAndExpand;
-            this.Children.Insert(0, youtubePlayer);
+            yPlayer.VerticalOptions = videoView.VerticalOptions = LayoutOptions.FillAndExpand;
+            yPlayer.HorizontalOptions = videoView.HorizontalOptions = LayoutOptions.FillAndExpand;
+            this.Children.Insert(0, yPlayer);
             this.Children.Insert(0, videoView);
             Methods.ApplicationPlayer = this;
         }
@@ -173,16 +173,16 @@ namespace Realm.Of.Y.Manager.Controls
             Player?.Stop();
             Player?.Abort();
             PlayerType = playerType;
-            if (playerType == PlayerType.Youtube)
+            if (playerType == PlayerType.Y)
             {
-                Player = youtubePlayer;
-                youtubePlayer.IsVisible = true;
+                Player = yPlayer;
+                yPlayer.IsVisible = true;
                 videoView.IsVisible = false;
             }
             else
             {
                 Player = videoView;
-                youtubePlayer.IsVisible = false;
+                yPlayer.IsVisible = false;
                 videoView.IsVisible = true;
             }
 

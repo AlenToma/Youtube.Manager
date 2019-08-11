@@ -39,11 +39,11 @@ namespace Realm.Of.Y.Manager.Core
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<List<YoutubeVideoInfo>> GetVideos(string id, int? formatCode = null)
+        public async Task<List<YVideoInfo>> GetVideos(string id, int? formatCode = null)
         {
             try
             {
-                var result = new List<YoutubeVideoInfo>();
+                var result = new List<YVideoInfo>();
                 var streamInfoSet = await dataContext.GetVideoMediaStreamInfosAsync(id);
                 var video = await dataContext.GetVideoAsync(id);
 
@@ -51,7 +51,7 @@ namespace Realm.Of.Y.Manager.Core
                 {
                     if (formatCode.HasValue && formatCode.Value != item.Itag)
                         continue;
-                    result.Add(new YoutubeVideoInfo()
+                    result.Add(new YVideoInfo()
                     {
                         FormatCode = item.Itag,
                         Url = item.Url,
