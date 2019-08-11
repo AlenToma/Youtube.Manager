@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:Realm.Of.Y.Manager.Controls"
+             mc:Ignorable="d"
+             x:Class="Realm.Of.Y.Manager.Views.Template.BuyCoins">
+
+    <StackLayout Style="{StaticResource PopUpCenter}">
+        <StackLayout Style="{StaticResource FormFloatLeft}"
+                     BackgroundColor="{StaticResource barBackgroundColor}"
+                     VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand"
+                     Orientation="Vertical" Padding="5">
+
+            <controls:CustomButton Style="{StaticResource ButtonContainer}"
+                                   Text="{StaticResource AdsButton}"
+                                   TextColor="{StaticResource text}"
+                                   ImageSource="coinCounter.png" 
+                                   FontSize="10"
+                                   x:Name="_btnStartAds" 
+                                   Clicked="_btnStartAds_Clicked" />
+
+            <controls:HorizontalList x:Name="_products" ListOrientation="Vertical">
+                <controls:HorizontalList.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Style="{StaticResource FormFloatLeft}">
+                            <AbsoluteLayout WidthRequest="50">
+                                <Image Source="gameCoins.png" WidthRequest="50" HeightRequest="45"/>
+                                <StackLayout BackgroundColor="Red" IsVisible="{Binding Duration, Converter={StaticResource StringNullOrEmpty}}"
+                                               AbsoluteLayout.LayoutBounds="1,1,25,12"
+                                               AbsoluteLayout.LayoutFlags="PositionProportional">
+                                    <Label 
+                                                   HorizontalOptions="CenterAndExpand"
+                                                   LineBreakMode="NoWrap"
+                                                   FontAttributes="Bold"
+                                                   FontSize="8"
+                                                   TextColor="White"
+                                                   Text="{Binding CoinsAmount}" />
+                                </StackLayout>
+                            </AbsoluteLayout>
+                            <Label Style="{StaticResource Notify}" Text="{Binding Description}"></Label>
+                            <controls:CustomButton 
+                                   Style="{StaticResource ButtonContainer}"
+                                   VerticalOptions="Center"
+                                   Text="{Binding Price}"
+                                   TextColor="{StaticResource text}"
+                                   ImageSource="coinCounter.png" FontSize="10"
+                                   x:Name="_btnBuy" Clicked="_btnBuy_Clicked" />
+                        </StackLayout>
+                    </DataTemplate>
+                </controls:HorizontalList.ItemTemplate>
+            </controls:HorizontalList>
+
+        </StackLayout>
+    </StackLayout>
+
+</pages:PopupPage>

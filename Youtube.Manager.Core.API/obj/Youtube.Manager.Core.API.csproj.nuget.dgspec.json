@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core.API\\Youtube.Manager.Core.API.csproj": {}
+    "E:\\Projects\\Realm.Of.Y.Manager\\Youtube.Manager.Core.API\\Youtube.Manager.Core.API.csproj": {}
   },
   "projects": {
-    "E:\\Projects\\Rest.API.Translator\\Rest.API.Translator\\Rest.API.Translator.csproj": {
+    "E:\\Projects\\Realm.Of.Y.Manager\\Realm.Of.Y.Manager.Models.Container\\Realm.Of.Y.Manager.Models.Container.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\Rest.API.Translator\\Rest.API.Translator\\Rest.API.Translator.csproj",
-        "projectName": "Rest.API.Translator",
-        "projectPath": "E:\\Projects\\Rest.API.Translator\\Rest.API.Translator\\Rest.API.Translator.csproj",
+        "projectUniqueName": "E:\\Projects\\Realm.Of.Y.Manager\\Realm.Of.Y.Manager.Models.Container\\Realm.Of.Y.Manager.Models.Container.csproj",
+        "projectName": "Realm.Of.Y.Manager.Models.Container",
+        "projectPath": "E:\\Projects\\Realm.Of.Y.Manager\\Realm.Of.Y.Manager.Models.Container\\Realm.Of.Y.Manager.Models.Container.csproj",
         "packagesPath": "C:\\Users\\alent\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\Rest.API.Translator\\Rest.API.Translator\\obj\\",
+        "outputPath": "E:\\Projects\\Realm.Of.Y.Manager\\Realm.Of.Y.Manager.Models.Container\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -24,8 +24,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net46",
-          "netcoreapp2.0",
+          "netcoreapp2.2",
           "netstandard2.0"
         ],
         "sources": {
@@ -34,10 +33,7 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.0": {
-            "projectReferences": {}
-          },
-          "net46": {
+          "netcoreapp2.2": {
             "projectReferences": {}
           },
           "netstandard2.0": {
@@ -51,21 +47,41 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.0": {
+        "netcoreapp2.2": {
           "dependencies": {
+            "EntityWorker.Core": {
+              "target": "Package",
+              "version": "[3.0.7, )"
+            },
             "FastDeepCloner": {
               "target": "Package",
               "version": "[1.2.5, )"
             },
+            "Microsoft.CSharp": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.0.0, )",
+              "version": "[2.2.0, )",
               "autoReferenced": true
+            },
+            "Microsoft.VisualBasic": {
+              "target": "Package",
+              "version": "[10.3.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.2, )"
+            },
+            "Rest.API.Translator": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[4.5.1, )"
             }
           },
           "imports": [
@@ -74,23 +90,23 @@
           "assetTargetFallback": true,
           "warn": true
         },
-        "net46": {
+        "netstandard2.0": {
           "dependencies": {
+            "EntityWorker.Core": {
+              "target": "Package",
+              "version": "[3.0.7, )"
+            },
             "FastDeepCloner": {
               "target": "Package",
               "version": "[1.2.5, )"
             },
-            "Newtonsoft.Json": {
+            "Microsoft.CSharp": {
               "target": "Package",
-              "version": "[12.0.2, )"
-            }
-          }
-        },
-        "netstandard2.0": {
-          "dependencies": {
-            "FastDeepCloner": {
+              "version": "[4.5.0, )"
+            },
+            "Microsoft.VisualBasic": {
               "target": "Package",
-              "version": "[1.2.5, )"
+              "version": "[10.3.0, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",
@@ -101,6 +117,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.2, )"
+            },
+            "Rest.API.Translator": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             }
           },
           "imports": [
@@ -111,14 +131,14 @@
         }
       }
     },
-    "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core.API\\Youtube.Manager.Core.API.csproj": {
+    "E:\\Projects\\Realm.Of.Y.Manager\\Youtube.Manager.Core.API\\Youtube.Manager.Core.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core.API\\Youtube.Manager.Core.API.csproj",
+        "projectUniqueName": "E:\\Projects\\Realm.Of.Y.Manager\\Youtube.Manager.Core.API\\Youtube.Manager.Core.API.csproj",
         "projectName": "Youtube.Manager.Core.API",
-        "projectPath": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core.API\\Youtube.Manager.Core.API.csproj",
+        "projectPath": "E:\\Projects\\Realm.Of.Y.Manager\\Youtube.Manager.Core.API\\Youtube.Manager.Core.API.csproj",
         "packagesPath": "C:\\Users\\alent\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core.API\\obj\\",
+        "outputPath": "E:\\Projects\\Realm.Of.Y.Manager\\Youtube.Manager.Core.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -140,11 +160,11 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core\\Youtube.Manager.Core.csproj": {
-                "projectPath": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core\\Youtube.Manager.Core.csproj"
+              "E:\\Projects\\Realm.Of.Y.Manager\\Realm.Of.Y.Manager.Models.Container\\Realm.Of.Y.Manager.Models.Container.csproj": {
+                "projectPath": "E:\\Projects\\Realm.Of.Y.Manager\\Realm.Of.Y.Manager.Models.Container\\Realm.Of.Y.Manager.Models.Container.csproj"
               },
-              "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Models.Container\\Youtube.Manager.Models.Container.csproj": {
-                "projectPath": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Models.Container\\Youtube.Manager.Models.Container.csproj"
+              "E:\\Projects\\Realm.Of.Y.Manager\\Youtube.Manager.Core\\Youtube.Manager.Core.csproj": {
+                "projectPath": "E:\\Projects\\Realm.Of.Y.Manager\\Youtube.Manager.Core\\Youtube.Manager.Core.csproj"
               }
             }
           }
@@ -191,14 +211,14 @@
         }
       }
     },
-    "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core\\Youtube.Manager.Core.csproj": {
+    "E:\\Projects\\Realm.Of.Y.Manager\\Youtube.Manager.Core\\Youtube.Manager.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core\\Youtube.Manager.Core.csproj",
+        "projectUniqueName": "E:\\Projects\\Realm.Of.Y.Manager\\Youtube.Manager.Core\\Youtube.Manager.Core.csproj",
         "projectName": "Youtube.Manager.Core",
-        "projectPath": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core\\Youtube.Manager.Core.csproj",
+        "projectPath": "E:\\Projects\\Realm.Of.Y.Manager\\Youtube.Manager.Core\\Youtube.Manager.Core.csproj",
         "packagesPath": "C:\\Users\\alent\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core\\obj\\",
+        "outputPath": "E:\\Projects\\Realm.Of.Y.Manager\\Youtube.Manager.Core\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -221,8 +241,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Models.Container\\Youtube.Manager.Models.Container.csproj": {
-                "projectPath": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Models.Container\\Youtube.Manager.Models.Container.csproj"
+              "E:\\Projects\\Realm.Of.Y.Manager\\Realm.Of.Y.Manager.Models.Container\\Realm.Of.Y.Manager.Models.Container.csproj": {
+                "projectPath": "E:\\Projects\\Realm.Of.Y.Manager\\Realm.Of.Y.Manager.Models.Container\\Realm.Of.Y.Manager.Models.Container.csproj"
               },
               "E:\\Projects\\YoutubeExplode\\YoutubeExplode\\YoutubeExplode.csproj": {
                 "projectPath": "E:\\Projects\\YoutubeExplode\\YoutubeExplode\\YoutubeExplode.csproj"
@@ -244,133 +264,6 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
-            }
-          },
-          "imports": [
-            "net461"
-          ],
-          "assetTargetFallback": true,
-          "warn": true
-        }
-      }
-    },
-    "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Models.Container\\Youtube.Manager.Models.Container.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Models.Container\\Youtube.Manager.Models.Container.csproj",
-        "projectName": "Youtube.Manager.Models.Container",
-        "projectPath": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Models.Container\\Youtube.Manager.Models.Container.csproj",
-        "packagesPath": "C:\\Users\\alent\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Models.Container\\obj\\",
-        "projectStyle": "PackageReference",
-        "crossTargeting": true,
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\alent\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netcoreapp2.2",
-          "netstandard2.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "E:\\Projects\\Local Nuget Packages": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netcoreapp2.2": {
-            "projectReferences": {
-              "E:\\Projects\\Rest.API.Translator\\Rest.API.Translator\\Rest.API.Translator.csproj": {
-                "projectPath": "E:\\Projects\\Rest.API.Translator\\Rest.API.Translator\\Rest.API.Translator.csproj"
-              }
-            }
-          },
-          "netstandard2.0": {
-            "projectReferences": {
-              "E:\\Projects\\Rest.API.Translator\\Rest.API.Translator\\Rest.API.Translator.csproj": {
-                "projectPath": "E:\\Projects\\Rest.API.Translator\\Rest.API.Translator\\Rest.API.Translator.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp2.2": {
-          "dependencies": {
-            "EntityWorker.Core": {
-              "target": "Package",
-              "version": "[3.0.7, )"
-            },
-            "FastDeepCloner": {
-              "target": "Package",
-              "version": "[1.2.5, )"
-            },
-            "Microsoft.CSharp": {
-              "target": "Package",
-              "version": "[4.5.0, )"
-            },
-            "Microsoft.NETCore.App": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.2.0, )",
-              "autoReferenced": true
-            },
-            "Microsoft.VisualBasic": {
-              "target": "Package",
-              "version": "[10.3.0, )"
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[12.0.2, )"
-            },
-            "System.Drawing.Common": {
-              "target": "Package",
-              "version": "[4.5.1, )"
-            }
-          },
-          "imports": [
-            "net461"
-          ],
-          "assetTargetFallback": true,
-          "warn": true
-        },
-        "netstandard2.0": {
-          "dependencies": {
-            "EntityWorker.Core": {
-              "target": "Package",
-              "version": "[3.0.7, )"
-            },
-            "FastDeepCloner": {
-              "target": "Package",
-              "version": "[1.2.5, )"
-            },
-            "Microsoft.CSharp": {
-              "target": "Package",
-              "version": "[4.5.0, )"
-            },
-            "Microsoft.VisualBasic": {
-              "target": "Package",
-              "version": "[10.3.0, )"
-            },
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[12.0.2, )"
             }
           },
           "imports": [

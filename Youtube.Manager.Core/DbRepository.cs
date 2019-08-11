@@ -9,8 +9,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using Youtube.Manager.Models.Container.DB_models;
-using Youtube.Manager.Models.Container.DB_models.Library;
+using Realm.Of.Y.Manager.Models.Container.DB_models;
+using Realm.Of.Y.Manager.Models.Container.DB_models.Library;
 
 namespace Youtube.Manager.Core
 {
@@ -53,7 +53,7 @@ namespace Youtube.Manager.Core
                         {
                             var e = ilist[i] as Base_Entity;
                             i--;
-                            if (e.State == Models.Container.State.Removed)
+                            if (e.State == Realm.Of.Y.Manager.Models.Container.State.Removed)
                             {
                                 Delete(e);
                             }
@@ -66,7 +66,7 @@ namespace Youtube.Manager.Core
                     else
                     {
                         var e = value as Base_Entity;
-                        if (e.State == Models.Container.State.Removed)
+                        if (e.State == Realm.Of.Y.Manager.Models.Container.State.Removed)
                         {
                             Delete(e);
                             prop.SetValue(data, null);
@@ -79,7 +79,7 @@ namespace Youtube.Manager.Core
 
             if (entity as Base_Entity != null)
             {
-                if ((entity as Base_Entity).State != Models.Container.State.Removed)
+                if ((entity as Base_Entity).State != Realm.Of.Y.Manager.Models.Container.State.Removed)
                     Prepare(entity);
                 else
                 {

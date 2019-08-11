@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<manager:PopupBase
+    xmlns:manager="clr-namespace:Realm.Of.Y.Manager"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:Realm.Of.Y.Manager.Controls"
+    xmlns:template="clr-namespace:Realm.Of.Y.Manager.Views.Template"
+    mc:Ignorable="d" BackgroundColor="{StaticResource applicationColor}"
+    x:Class="Realm.Of.Y.Manager.Views.LocalVideo">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <controls:MixVideoPlayer VerticalOptions="FillAndExpand" x:Name="lVideo" PlayerType="VideoView" />
+        <!--<mm:VideoView VerticalOptions="FillAndExpand" x:Name="lVideo" ShowControls="true" />-->
+
+        <controls:ExpandableView x:Name="expandableView"
+                                 Grid.Row="1"
+                                 VerticalOptions="FillAndExpand"
+                                 ExpandAnimationLength="600"
+                                 TouchHandlerView="{x:Reference exPlayListHeader}"
+                                 StatusChanged="ExpandableViewPlayList_IsExpandChanged">
+            <controls:ExpandableView.PrimaryView>
+                <StackLayout Style="{StaticResource expanse}" x:Name="exPlayListHeader">
+                    <Label Text="" x:Name="txtPlayTitle" Style="{StaticResource UnderText}" />
+                    <Image x:Name="playListArrow" Source="arrow.png" HeightRequest="16" WidthRequest="16" />
+                </StackLayout>
+            </controls:ExpandableView.PrimaryView>
+            <controls:ExpandableView.SecondaryViewTemplate>
+                <DataTemplate>
+                    <template:LocalVideoItem HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                                             OnSelection="LstVideos_OnSelection" x:Name="lstVideos" />
+                </DataTemplate>
+            </controls:ExpandableView.SecondaryViewTemplate>
+        </controls:ExpandableView>
+    </Grid>
+</manager:PopupBase>

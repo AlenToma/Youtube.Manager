@@ -22,8 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Realm.Of.Y.Manager.Models.Container\Realm.Of.Y.Manager.Models.Container.csproj" />
     <ProjectReference Include="..\Youtube.Manager.Core\Youtube.Manager.Core.csproj" />
-    <ProjectReference Include="..\Youtube.Manager.Models.Container\Youtube.Manager.Models.Container.csproj" />
   </ItemGroup>
 
   <ItemGroup>

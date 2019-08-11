@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:Realm.Of.Y.Manager.Controls"
+             mc:Ignorable="d"
+             x:Class="Realm.Of.Y.Manager.Views.Template.VideoItem">
+
+    <ContentView.Content>
+        <controls:HorizontalList x:Name="hLstVideos" HorizontalOptions="FillAndExpand" SelectedItemChanged="LstVideos_SelectedItemChanged" ListOrientation="Vertical">
+            <controls:HorizontalList.Header>
+                <StackLayout x:Name="stackHeader">
+                    <controls:CustomButton TextAlignment="Start"
+                                           Clicked="HeaderCustomButton_Clicked"
+                                           Margin=".5,5,0,5"
+                                           Image="right_arrow"
+                                           x:Name="btnHeader"
+                                           Style="{StaticResource ButtonContainer}"
+                                           ContentLayout="Right,10"
+                                           HorizontalOptions="FillAndExpand"
+                                           Text="Videos" />
+                </StackLayout>
+            </controls:HorizontalList.Header>
+            <controls:HorizontalList.ItemTemplate>
+                <DataTemplate>
+                    <controls:ButtonContextMenu HeightRequest="45" x:Name="yItem" >
+                        <controls:ButtonContextMenu.ItemView>
+                            <DataTemplate>
+                                <StackLayout x:Name="itemContainer" Style="{StaticResource FormFloatLeft}">
+                                    <AbsoluteLayout WidthRequest="50">
+                                        <Image Aspect="Fill" HeightRequest="40" WidthRequest="50" Source="{ Binding DefaultThumbnailUrl}" />
+                                        <StackLayout Style="{StaticResource Dim}" IsVisible="{Binding IsPlaylist}"
+                                                     HorizontalOptions="Center"
+                                                     VerticalOptions="Center"
+                                                     AbsoluteLayout.LayoutBounds="0.5,0.5,50,35"
+                                                     AbsoluteLayout.LayoutFlags="PositionProportional">
+
+                                            <Label Text="{StaticResource PIdentifire}"
+                                                   HorizontalOptions="CenterAndExpand"
+                                                   LineBreakMode="NoWrap"
+                                                   FontAttributes="Bold"
+                                                   FontSize="8"
+                                                   TextColor="White" />
+
+                                        </StackLayout>
+                                        <StackLayout BackgroundColor="Red"  IsVisible="{Binding IsPlaylist, Converter={StaticResource Invert}}"
+                                               AbsoluteLayout.LayoutBounds="1,1,25,12"
+                                               AbsoluteLayout.LayoutFlags="PositionProportional">
+                                            <Label 
+                                                   HorizontalOptions="CenterAndExpand"
+                                                   LineBreakMode="NoWrap"
+                                                   FontAttributes="Bold"
+                                                   FontSize="8"
+                                                   TextColor="White"
+                                                   Text="{Binding Duration}" />
+                                        </StackLayout>
+                                    </AbsoluteLayout>
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding Title}" VerticalOptions="Start" HorizontalOptions="Start"
+                                               Style="{StaticResource Header}" />
+                                        <StackLayout Style="{StaticResource FormFloatLeft}">
+                                            <Label
+                                                IsVisible="{Binding TotalVideoViews, Converter={StaticResource StringNullOrEmpty}}"
+                                                Text="{Binding TotalVideoViews}" Style="{StaticResource UnderText}" />
+                                            <Label
+                                                IsVisible="{Binding Views, Converter={StaticResource StringNullOrEmpty}}"
+                                                Text="{Binding Views}" Style="{StaticResource UnderText}" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </DataTemplate>
+                        </controls:ButtonContextMenu.ItemView>
+                        <controls:ButtonContextMenu.ItemContext>
+                            <DataTemplate>
+                                <Frame Style="{StaticResource FrameContainer}"
+                                       BorderColor="Transparent" HeightRequest="35" VerticalOptions="StartAndExpand">
+                                    <StackLayout Style="{StaticResource FormFloatLeft}">
+                                        <controls:CustomButton
+                                            Clicked="CustomButton_OnPressUp"
+                                            IsVisible="{Binding ., Converter={StaticResource Downloadable}}"
+                                            Image="download.png"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            Style="{StaticResource Icon}" />
+                                        <controls:CustomButton
+                                            x:Name="btnDelete"
+                                            Image="cancel.png"
+                                            Clicked="BtnDelete_Clicked"
+                                            IsVisible="{Binding ., Converter={StaticResource Downloadable}, ConverterParameter='Invert'}"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            Style="{StaticResource Icon}" />
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </controls:ButtonContextMenu.ItemContext>
+                    </controls:ButtonContextMenu>
+                </DataTemplate>
+            </controls:HorizontalList.ItemTemplate>
+        </controls:HorizontalList>
+    </ContentView.Content>
+</ContentView>

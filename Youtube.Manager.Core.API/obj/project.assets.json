@@ -2975,6 +2975,19 @@
           "lib/netstandard1.0/Remotion.Linq.dll": {}
         }
       },
+      "Rest.API.Translator/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "FastDeepCloner": "1.2.5",
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/Rest.API.Translator.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Rest.API.Translator.dll": {}
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "type": "package",
         "runtimeTargets": {
@@ -4819,35 +4832,7 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
-      "Rest.API.Translator/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.0",
-        "dependencies": {
-          "FastDeepCloner": "1.2.5",
-          "Newtonsoft.Json": "12.0.2"
-        },
-        "compile": {
-          "bin/placeholder/Rest.API.Translator.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Rest.API.Translator.dll": {}
-        }
-      },
-      "Youtube.Manager.Core/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Youtube.Manager.Models.Container": "1.0.0",
-          "YoutubeExplode": "4.7.4"
-        },
-        "compile": {
-          "bin/placeholder/Youtube.Manager.Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Youtube.Manager.Core.dll": {}
-        }
-      },
-      "Youtube.Manager.Models.Container/1.0.0": {
+      "Realm.Of.Y.Manager.Models.Container/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
@@ -4860,10 +4845,24 @@
           "System.Drawing.Common": "4.5.1"
         },
         "compile": {
-          "bin/placeholder/Youtube.Manager.Models.Container.dll": {}
+          "bin/placeholder/Realm.Of.Y.Manager.Models.Container.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Youtube.Manager.Models.Container.dll": {}
+          "bin/placeholder/Realm.Of.Y.Manager.Models.Container.dll": {}
+        }
+      },
+      "Youtube.Manager.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Realm.Of.Y.Manager.Models.Container": "1.0.0",
+          "YoutubeExplode": "4.7.4"
+        },
+        "compile": {
+          "bin/placeholder/Youtube.Manager.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Youtube.Manager.Core.dll": {}
         }
       },
       "YoutubeExplode/4.7.4": {
@@ -8408,6 +8407,23 @@
         "lib/portable-net45+win+wpa81+wp80/Remotion.Linq.xml",
         "remotion.linq.2.2.0.nupkg.sha512",
         "remotion.linq.nuspec"
+      ]
+    },
+    "Rest.API.Translator/1.0.0": {
+      "sha512": "tHUleFO5AG2oW/8pAsg0eYxQGamNUvb4RubEa7v8CXvvssSqg9Ed+lB0nyo9IIK5XlCvEzSWRY8OCF2tbyd1PQ==",
+      "type": "package",
+      "path": "rest.api.translator/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/Rest.API.Translator.dll",
+        "lib/net46/Rest.API.Translator.xml",
+        "lib/netcoreapp2.0/Rest.API.Translator.dll",
+        "lib/netcoreapp2.0/Rest.API.Translator.xml",
+        "lib/netstandard2.0/Rest.API.Translator.dll",
+        "lib/netstandard2.0/Rest.API.Translator.xml",
+        "rest.api.translator.1.0.0.nupkg.sha512",
+        "rest.api.translator.nuspec"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -13330,20 +13346,15 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
-    "Rest.API.Translator/1.0.0": {
+    "Realm.Of.Y.Manager.Models.Container/1.0.0": {
       "type": "project",
-      "path": "../../Rest.API.Translator/Rest.API.Translator/Rest.API.Translator.csproj",
-      "msbuildProject": "../../Rest.API.Translator/Rest.API.Translator/Rest.API.Translator.csproj"
+      "path": "../Realm.Of.Y.Manager.Models.Container/Realm.Of.Y.Manager.Models.Container.csproj",
+      "msbuildProject": "../Realm.Of.Y.Manager.Models.Container/Realm.Of.Y.Manager.Models.Container.csproj"
     },
     "Youtube.Manager.Core/1.0.0": {
       "type": "project",
       "path": "../Youtube.Manager.Core/Youtube.Manager.Core.csproj",
       "msbuildProject": "../Youtube.Manager.Core/Youtube.Manager.Core.csproj"
-    },
-    "Youtube.Manager.Models.Container/1.0.0": {
-      "type": "project",
-      "path": "../Youtube.Manager.Models.Container/Youtube.Manager.Models.Container.csproj",
-      "msbuildProject": "../Youtube.Manager.Models.Container/Youtube.Manager.Models.Container.csproj"
     },
     "YoutubeExplode/4.7.4": {
       "type": "project",
@@ -13357,9 +13368,9 @@
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.3",
+      "Realm.Of.Y.Manager.Models.Container >= 1.0.0",
       "System.Data.SqlClient >= 4.6.1",
-      "Youtube.Manager.Core >= 1.0.0",
-      "Youtube.Manager.Models.Container >= 1.0.0"
+      "Youtube.Manager.Core >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -13370,11 +13381,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core.API\\Youtube.Manager.Core.API.csproj",
+      "projectUniqueName": "E:\\Projects\\Realm.Of.Y.Manager\\Youtube.Manager.Core.API\\Youtube.Manager.Core.API.csproj",
       "projectName": "Youtube.Manager.Core.API",
-      "projectPath": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core.API\\Youtube.Manager.Core.API.csproj",
+      "projectPath": "E:\\Projects\\Realm.Of.Y.Manager\\Youtube.Manager.Core.API\\Youtube.Manager.Core.API.csproj",
       "packagesPath": "C:\\Users\\alent\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core.API\\obj\\",
+      "outputPath": "E:\\Projects\\Realm.Of.Y.Manager\\Youtube.Manager.Core.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -13396,11 +13407,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core\\Youtube.Manager.Core.csproj": {
-              "projectPath": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core\\Youtube.Manager.Core.csproj"
+            "E:\\Projects\\Realm.Of.Y.Manager\\Realm.Of.Y.Manager.Models.Container\\Realm.Of.Y.Manager.Models.Container.csproj": {
+              "projectPath": "E:\\Projects\\Realm.Of.Y.Manager\\Realm.Of.Y.Manager.Models.Container\\Realm.Of.Y.Manager.Models.Container.csproj"
             },
-            "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Models.Container\\Youtube.Manager.Models.Container.csproj": {
-              "projectPath": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Models.Container\\Youtube.Manager.Models.Container.csproj"
+            "E:\\Projects\\Realm.Of.Y.Manager\\Youtube.Manager.Core\\Youtube.Manager.Core.csproj": {
+              "projectPath": "E:\\Projects\\Realm.Of.Y.Manager\\Youtube.Manager.Core\\Youtube.Manager.Core.csproj"
             }
           }
         }
