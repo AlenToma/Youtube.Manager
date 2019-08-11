@@ -22,7 +22,7 @@
     },
     "Youtube.Manager.Core.API": {
       "commandName": "IIS",
-      "workingDirectory": "E:\\Projects\\Youtube.Manager\\Youtube.Manager.Core.API",
+      "workingDirectory": "E:\\Projects\\Realm.Of.Y.Manager\\Realm.Of.Y.Manager.Core.API",
       "launchBrowser": true,
       "launchUrl": "http://localhost/Youtube.Manager.Core.API",
       "environmentVariables": {

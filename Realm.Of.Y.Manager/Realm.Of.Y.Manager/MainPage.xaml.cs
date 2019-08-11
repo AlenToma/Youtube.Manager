@@ -42,7 +42,7 @@ namespace Realm.Of.Y.Manager
             {
                 Task.Run(async () =>
                 {
-                    var source = ControllerRepository.Youtube(x => x.GetSuggestQueries(_txtSearch.Text)).Await()?.ToList();
+                    var source = ControllerRepository.Y(x => x.GetSuggestQueries(_txtSearch.Text)).Await()?.ToList();
                     Device.BeginInvokeOnMainThread(() =>
                     {
                         _txtSearch.ItemsSource = source;
@@ -65,7 +65,7 @@ namespace Realm.Of.Y.Manager
                 return;
 
             var l = await this.StartLoading();
-            var videos = ControllerRepository.Youtube(x => x.SearchAsync(UserData.CurrentUser.EntityId.Value, text, 6, 1, null, VideoSearchType.All)).Await();
+            var videos = ControllerRepository.Y(x => x.SearchAsync(UserData.CurrentUser.EntityId.Value, text, 6, 1, null, VideoSearchType.All)).Await();
             var src = new SearchView(videos, _txtSearch.Text);
             src.Open();
             l.EndLoading();

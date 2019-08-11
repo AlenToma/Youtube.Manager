@@ -8,13 +8,12 @@ using System.Threading.Tasks;
 using Realm.Of.Y.Manager.Models.Container;
 using Realm.Of.Y.Manager.Models.Container.DB_models;
 using Realm.Of.Y.Manager.Models.Container.DB_models.Library;
-using Realm.Of.Y.Manager.Models.Container.Interface.API;
 
-namespace Youtube.Manager.Core.API.Controller
+namespace Realm.Of.Y.Manager.Core.API.Controller
 {
     [ApiController]
     [Route("api/[controller]/[action]")]
-    public class YoutubeController : ControllerBase, IYoutubeController
+    public class YController : ControllerBase
     {
 
         [HttpPost]

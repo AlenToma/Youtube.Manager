@@ -7,7 +7,7 @@ using Realm.Of.Y.Manager.Models.Container.DB_models.Library;
 using YoutubeExplode;
 using YoutubeExplode.Models;
 
-namespace Youtube.Manager.Core
+namespace Realm.Of.Y.Manager.Core
 {
     public class YManager
     {

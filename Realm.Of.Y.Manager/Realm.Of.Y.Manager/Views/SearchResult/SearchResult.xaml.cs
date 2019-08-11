@@ -39,7 +39,7 @@ namespace Realm.Of.Y.Manager.Views.SearchResult
         public async Task<SearchResult> DataBind()
         {
             var l = await this.StartLoading();
-            _videos = ControllerRepository.Youtube(x => x.SearchAsync(UserData.CurrentUser.EntityId.Value, _searchfor, 20, 1, null, _videoSearchType)).Await();
+            _videos = ControllerRepository.Y(x => x.SearchAsync(UserData.CurrentUser.EntityId.Value, _searchfor, 20, 1, null, _videoSearchType)).Await();
             if (_videoSearchType == VideoSearchType.Album)
                 stVideoContainer.SourceItems = _videos.Albums;
             else if (_videoSearchType == VideoSearchType.PlayList)

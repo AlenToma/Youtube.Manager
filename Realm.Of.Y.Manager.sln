@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.452
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Youtube.Manager.iOS", "Realm.Of.Y.Manager\Youtube.Manager.iOS\Youtube.Manager.iOS.csproj", "{F4B13BDB-B50A-49C5-B97A-0760939B64FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Realm.Of.Y.Manager.iOS", "Realm.Of.Y.Manager\Realm.Of.Y.Manager.iOS\Realm.Of.Y.Manager.iOS.csproj", "{F4B13BDB-B50A-49C5-B97A-0760939B64FD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Realm.Of.Y.Manager", "Realm.Of.Y.Manager\Realm.Of.Y.Manager\Realm.Of.Y.Manager.csproj", "{8799A2A6-0777-405E-99CA-7068E6F472B5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Youtube.Manager.Core", "Youtube.Manager.Core\Youtube.Manager.Core.csproj", "{A33F1B17-4448-4CB8-8EAF-A45A47062CA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Realm.Of.Y.Manager.Core", "Realm.Of.Y.Manager.Core\Realm.Of.Y.Manager.Core.csproj", "{A33F1B17-4448-4CB8-8EAF-A45A47062CA9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Realm.Of.Y.Manager.Models.Container", "Realm.Of.Y.Manager.Models.Container\Realm.Of.Y.Manager.Models.Container.csproj", "{B3DC7CAC-DDF4-43FB-B78A-4BB4C031528B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Youtube.Manager.Core.API", "Youtube.Manager.Core.API\Youtube.Manager.Core.API.csproj", "{24141959-28E5-4987-9338-13AD0B054A32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Realm.Of.Y.Manager.Core.API", "Realm.Of.Y.Manager.Core.API\Realm.Of.Y.Manager.Core.API.csproj", "{24141959-28E5-4987-9338-13AD0B054A32}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YJar", "YJar\YJar.csproj", "{A4CA43B8-7140-4483-96BA-6AFC8E935470}"
 EndProject

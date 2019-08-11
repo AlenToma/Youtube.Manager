@@ -12,7 +12,7 @@ using System.Linq.Expressions;
 using Realm.Of.Y.Manager.Models.Container.DB_models;
 using Realm.Of.Y.Manager.Models.Container.DB_models.Library;
 
-namespace Youtube.Manager.Core
+namespace Realm.Of.Y.Manager.Core
 {
     public class DbRepository : Transaction
     {

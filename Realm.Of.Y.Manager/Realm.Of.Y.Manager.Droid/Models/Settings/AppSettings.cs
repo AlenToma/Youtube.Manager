@@ -114,7 +114,7 @@ namespace Realm.Of.Y.Manager.Droid.Models.Settings
                 Toast.MakeText(_context, "You dont have enough coins.", ToastLength.Long).Show();
             }
 
-            var videos = ControllerRepository.Youtube(x => x.GetVideoAsync(video.VideoId, 18)).Await();
+            var videos = ControllerRepository.Y(x => x.GetVideoAsync(video.VideoId, 18)).Await();
             if (!(videos?.Any() ?? false))
             {
                 Toast.MakeText(_context, "Download unavailable", ToastLength.Long).Show();

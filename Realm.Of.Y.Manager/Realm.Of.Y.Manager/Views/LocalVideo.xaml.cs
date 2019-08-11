@@ -135,7 +135,7 @@ namespace Realm.Of.Y.Manager.Views
                         var video = _videos.FirstOrDefault(x => x.Video_Id == value.VideoId) ?? ControllerRepository.Db(x => x.GetVideoData(value.VideoId, _category.EntityId, null, 1)).Await().FirstOrDefault();
                         if (video == null)
                         {
-                            var videoInfo = ControllerRepository.Youtube(x => x.GetVideoAsync(value.VideoId, 18)).Await()?.FirstOrDefault();
+                            var videoInfo = ControllerRepository.Y(x => x.GetVideoAsync(value.VideoId, 18)).Await()?.FirstOrDefault();
                             _category.Videos.Add(new VideoData
                             {
                                 Title = value.Title.Substring(0, value.Title.IndexOf("[")),

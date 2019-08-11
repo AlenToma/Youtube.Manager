@@ -3,8 +3,10 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <StartupObject>Youtube.Manager.Core.API.Program</StartupObject>
     <SignAssembly>false</SignAssembly>
+    <AssemblyName>Realm.Of.Y.Manager.Core.API</AssemblyName>
+    <RootNamespace>Realm.Of.Y.Manager.Core.API</RootNamespace>
+    <StartupObject>Realm.Of.Y.Manager.Core.API.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,7 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Realm.Of.Y.Manager.Models.Container\Realm.Of.Y.Manager.Models.Container.csproj" />
-    <ProjectReference Include="..\Youtube.Manager.Core\Youtube.Manager.Core.csproj" />
+    <ProjectReference Include="..\Realm.Of.Y.Manager.Core\Realm.Of.Y.Manager.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

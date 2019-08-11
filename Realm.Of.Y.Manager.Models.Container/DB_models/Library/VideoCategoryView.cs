@@ -21,7 +21,7 @@ namespace Realm.Of.Y.Manager.Models.Container.DB_models.Library
 
         public string Up_VoteString { get => Up_Vote.RoundAndFormat(); }
 
-        public string Image { get => !string.IsNullOrEmpty(Logo) ? ControllerRepository.GetInfo<IYoutubeController, object>(a => a.GetImage("")).ToQuary(new FastDeepCloner.SafeValueType<string, object>() { { "imagePath", Logo } }) : ""; }
+        public string Image { get => !string.IsNullOrEmpty(Logo) ? ControllerRepository.GetInfo<IYController, object>(a => a.GetImage("")).ToQuary(new FastDeepCloner.SafeValueType<string, object>() { { "imagePath", Logo } }) : ""; }
 
     }
 }

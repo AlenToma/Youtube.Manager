@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Youtube.Manager.Core
+namespace Realm.Of.Y.Manager.Core
 {
     public static class GlobalSettings
     {

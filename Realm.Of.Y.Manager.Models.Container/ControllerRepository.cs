@@ -9,9 +9,9 @@ namespace Realm.Of.Y.Manager.Models.Container
     public static class ControllerRepository
     {
         private static string _baseUrl = "http://youtubemanager.ddns.net/Youtube.Manager.API";
-        public static P Youtube<P>(Expression<Func<IYoutubeController, P>> expression, Action<MethodInformation, P> afterOperation = null)
+        public static P Y<P>(Expression<Func<IYController, P>> expression, Action<MethodInformation, P> afterOperation = null)
         {
-            using (var y = new APIController<IYoutubeController>(_baseUrl))
+            using (var y = new APIController<IYController>(_baseUrl))
             {
                 var data = y.Execute(expression);
                 afterOperation?.Invoke(GetInfo(expression), data);

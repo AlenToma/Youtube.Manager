@@ -8,13 +8,12 @@ using System.Threading.Tasks;
 using Realm.Of.Y.Manager.Models.Container;
 using Realm.Of.Y.Manager.Models.Container.DB_models;
 using Realm.Of.Y.Manager.Models.Container.DB_models.Library;
-using Realm.Of.Y.Manager.Models.Container.Interface.API;
 
-namespace Youtube.Manager.Core.API.Controller
+namespace Realm.Of.Y.Manager.Core.API.Controller
 {
     [ApiController]
     [Route("api/[controller]/[action]")]
-    public class DbController : ControllerBase, IDbController
+    public class DbController : ControllerBase
     {
         [HttpGet]
         public List<VideoCategoryView> GetVideoCategory(long? userId = null, long? categoryId = null)
@@ -90,7 +89,7 @@ namespace Youtube.Manager.Core.API.Controller
         }
 
         [HttpPost]
-        public async Task<long> SaveCategory(VideoCategory videoCategory)
+        public long SaveCategory(VideoCategory videoCategory)
         {
             using (var db = new DbRepository())
             {
@@ -112,7 +111,7 @@ namespace Youtube.Manager.Core.API.Controller
                             foreach (var v in videos)
                             {
                                 v.Category_Id = x.EntityId.Value;
-                                await SaveVideo(v);
+                                SaveVideo(v);
                             }
                         }
                         else
@@ -135,7 +134,7 @@ namespace Youtube.Manager.Core.API.Controller
         }
 
         [HttpPost]
-        public async Task SaveVideo(VideoData video)
+        public void SaveVideo(VideoData video)
         {
             using (var db = new DbRepository())
             {
@@ -172,7 +171,7 @@ namespace Youtube.Manager.Core.API.Controller
 
 
         [HttpGet]
-        public async Task Vote(VideoSearchType type, Ratingtype ratingtype, long id, long userid)
+        public void Vote(VideoSearchType type, Ratingtype ratingtype, long id, long userid)
         {
             using (var db = new DbRepository())
             {
@@ -229,7 +228,7 @@ namespace Youtube.Manager.Core.API.Controller
         }
 
         [HttpPost]
-        public async Task AddLog(string userEmail, string errorMessage)
+        public void AddLog(string userEmail, string errorMessage)
         {
             if (userEmail != null && errorMessage != null && errorMessage.Length >= 4)
             {

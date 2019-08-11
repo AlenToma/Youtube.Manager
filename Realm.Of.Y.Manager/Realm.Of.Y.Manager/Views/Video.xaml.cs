@@ -252,7 +252,7 @@ namespace Realm.Of.Y.Manager.Views
             else
             {
                 var index = searchedVideos.FindIndex(x => x.Id == _video.Id);
-                searchedVideos = ControllerRepository.Youtube(x => x.SearchAsync(UserData.CurrentUser.EntityId.Value, "", 30, 1, _video.Title, VideoSearchType.Mix)).Await().ToItemList(); // get relevant Videos
+                searchedVideos = ControllerRepository.Y(x => x.SearchAsync(UserData.CurrentUser.EntityId.Value, "", 30, 1, _video.Title, VideoSearchType.Mix)).Await().ToItemList(); // get relevant Videos
                 searchedVideos.RemoveAll(x => x.Id == _video.Id);
                 searchedVideos.Insert(0, _video);
                 LoadlstVideos();
