@@ -20,6 +20,7 @@
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+	<AndroidUseAapt2>True</AndroidUseAapt2>
     <AndroidDexTool>d8</AndroidDexTool>
     <AndroidKeyStore>true</AndroidKeyStore>
     <AndroidSigningKeyStore>C:\Users\alent\AppData\Local\Xamarin\Mono for Android\Keystore\alentoma\alentoma.keystore</AndroidSigningKeyStore>
@@ -146,9 +147,6 @@
     <AndroidResource Include="Resources\layout\Y_Notification.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\youtube_view.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\arrow.png" />
   </ItemGroup>
   <ItemGroup>
@@ -234,9 +232,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\User_.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\values\constants.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\dimens.xml" />

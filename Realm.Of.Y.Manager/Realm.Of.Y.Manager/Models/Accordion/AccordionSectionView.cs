@@ -20,8 +20,8 @@ namespace Realm.Of.Y.Manager.Models.Accordion
                 typeof(AccordionSectionView),
                 propertyChanged: ChangeTitle);
 
-        private readonly ImageSource _arrowDown = ImageSource.FromFile("ic_keyboard_arrow_down_white_24dp.png");
-        private readonly ImageSource _arrowRight = ImageSource.FromFile("ic_keyboard_arrow_right_white_24dp.png");
+        private readonly ImageSource _arrowDown = ImageSource.FromFile("keyboard_arrow_down_white_2x.png");
+        private readonly ImageSource _arrowRight = ImageSource.FromFile("keyboard_arrow_right_white_24dp.png");
         private readonly StackLayout _content = new StackLayout {HeightRequest = 0};
         private readonly AbsoluteLayout _header = new AbsoluteLayout();
         private readonly Color _headerColor = Color.FromHex("0067B7");

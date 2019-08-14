@@ -23,6 +23,8 @@ namespace Realm.Of.Y.Manager.Models.Container
         {
             using (var y = new APIController<IDbController>(_baseUrl))
             {
+                var info = GetInfo(expression);
+                var url = info.ToQuary();
                 var data = y.Execute(expression);
                 afterOperation?.Invoke(GetInfo(expression), data);
                 return data;

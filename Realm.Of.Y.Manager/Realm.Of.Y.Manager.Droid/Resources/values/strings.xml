@@ -17,9 +17,4 @@
   <string name="noti2_title">Second notification</string>
   <string name="secondary1_body">Notification body text.</string>
   <string name="noti_channel_second">Secondary Channel</string>
-
-  <string name="ApplicationName">Realm Of Youtube</string>
-  <string name="RewardAddId">ca-app-pub-3087515723805584/6744205931</string>
-  <string name="AdsApplicationIds">ca-app-pub-3087515723805584~6458686351</string>
-  <string name="BannerAdd">ca-app-pub-3087515723805584/1134207484</string>
 </resources>

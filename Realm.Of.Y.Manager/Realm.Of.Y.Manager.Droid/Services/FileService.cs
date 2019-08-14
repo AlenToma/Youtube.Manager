@@ -11,13 +11,13 @@ namespace Realm.Of.Y.Manager.Droid.Services
     [Service(IsolatedProcess = false, Label = "YoutubeDownloadService")]
     public class FileService : Service
     {
-        public static readonly string FileName = "Youtube.Manager.FileName";
+        public static readonly string FileName = "FileService.FileName";
 
-        public static readonly string DirectoryName = "Youtube.Manager.DirectoryName";
+        public static readonly string DirectoryName = "FileService.DirectoryName";
 
-        public static readonly string URL = "Youtube.Manager.URL";
+        public static readonly string URL = "FileService.URL";
 
-        public static readonly string Title = "Youtube.Manager.Title";
+        public static readonly string Title = "FileService.Title";
 
         public IBinder Binder { get; private set; }
 

@@ -6,7 +6,7 @@ using Realm.Of.Y.Manager.Models.Container.DB_models.Library;
 
 namespace Realm.Of.Y.Manager.Models.Container.Interface.API
 {
-    [Route(relativeUrl: "api/")]
+    [Route(relativeUrl: "api")]
     public interface IDbController
     {
         List<ProductLink> GetProductLinks(string product_Id = null);
