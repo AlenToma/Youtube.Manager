@@ -8,7 +8,7 @@ using Realm.Of.Y.Manager.Models.Container;
 
 namespace Realm.Of.Y.Manager.Droid.Services
 {
-    [Service(IsolatedProcess = false, Label = "YoutubeDownloadService")]
+    [Service(IsolatedProcess = false, Label = "Realm_Of_Music.Service")]
     public class FileService : Service
     {
         public static readonly string FileName = "FileService.FileName";
