@@ -1,10 +1,11 @@
 ﻿using EntityWorker.Core.Attributes;
 using System.Collections.Generic;
-using Realm.Of.Y.Manager.Models.Container.DB_models.Rules;
 
 namespace Realm.Of.Y.Manager.Models.Container.DB_models
 {
-    [Rule(ruleType: typeof(CategoryRule))]
+#if NETCOREAPP2_2
+    [Rule(ruleType: typeof(Realm.Of.Y.Manager.Models.Container.DB_models.Rules.CategoryRule))]
+#endif
     public class VideoCategory : Base_Entity
     {
         [NotNullable]

@@ -20,7 +20,7 @@
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-	<AndroidUseAapt2>True</AndroidUseAapt2>
+    <AndroidUseAapt2>True</AndroidUseAapt2>
     <AndroidDexTool>d8</AndroidDexTool>
     <AndroidKeyStore>true</AndroidKeyStore>
     <AndroidSigningKeyStore>C:\Users\alent\AppData\Local\Xamarin\Mono for Android\Keystore\alentoma\alentoma.keystore</AndroidSigningKeyStore>
@@ -51,10 +51,10 @@
     <EnableLLVM>false</EnableLLVM>
     <BundleAssemblies>false</BundleAssemblies>
     <OutputPath>bin\Release\</OutputPath>
-    <AndroidLinkTool>None</AndroidLinkTool>
+    <AndroidLinkTool>proguard</AndroidLinkTool>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
-    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <MandroidI18n />
     <AndroidSupportedAbis />
     <AndroidDexTool>d8</AndroidDexTool>
@@ -280,16 +280,25 @@
       <Name>Realm.Of.Y.Manager</Name>
     </ProjectReference>
   </ItemGroup>
-  <!--<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)'=='Release'">
-    <Obfuscation StayOpen="false" ApplicationPath="C:\Program Files (x86)\RustemSoft\Skater\Skater.exe" Source="$(TargetPath)" Hidden="true" ShowString="true" />
-  </Target>-->
-  <!--<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)'=='Release'">
-    <Phoenix_Protector ApplicationPath="C:\Program Files (x86)\NTCore\Phoenix Protector\Phoenix_Protector.exe" Source="$(TargetPath)" />
-    Module="Youtube.Manager.Models.Container.dll;Youtube.Manager.dll;Youtube.Manager.Droid.dll"
-  </Target>-->
   <Target Name="PostBuild" AfterTargets="PostBuildEvent; PreBuildEvent" Condition="'$(Configuration)'=='Release' And Exists('$(TargetPath)')">
-    <ConfuserEx ApplicationPath="E:\Programs\ConfuserEx\Confuser.CLI.exe" Source="$(TargetPath)" AssetMap="linksrc" RefProxy="false" ReName="false" SettingsFileName="Realm.Of.Y.Manager.Container" Modules="Rest.API.Translator.dll;Realm.Of.Y.Manager.Models.Container.dll" />
-    <ConfuserEx ApplicationPath="E:\Programs\ConfuserEx\Confuser.CLI.exe" Source="$(TargetPath)" AssetMap="linksrc" RefProxy="false" ReName="false" SettingsFileName="Realm.Of.Y.Manager.Droid" Modules="Realm.Of.Y.Manager.dll" MonoDir="C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid" />
+    <ConfuserEx ApplicationPath="E:\Programs\ConfuserEx\Confuser.CLI.exe"
+				      Source="$(TargetPath)"
+				      AssetMap="linksrc"
+	            RefProxy="false"
+				Resources="false"
+				ReName="false"
+				Constants="true"
+				SettingsFileName="Realm.Of.Y.Manager.Container"
+				Modules="Rest.API.Translator.dll;Realm.Of.Y.Manager.Models.Container.dll" />
+    <ConfuserEx ApplicationPath="E:\Programs\ConfuserEx\Confuser.CLI.exe"
+	AssetMap="linksrc"
+	Source="$(TargetPath)"
+					RefProxy="false"
+					Resources="false"
+					ReName="false"
+	              SettingsFileName="Realm.Of.Y.Manager.Droid"
+	              Modules="Realm.Of.Y.Manager.dll"
+	              MonoDir="C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid" />
   </Target>
   <Import Condition="Exists('..\..\Obfuscation.props')" Project="..\..\Obfuscation.props" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

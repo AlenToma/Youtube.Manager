@@ -1,4 +1,5 @@
-﻿using EntityWorker.Core.Interface;
+﻿#if NETCOREAPP2_2
+using EntityWorker.Core.Interface;
 using EntityWorker.Core.InterFace;
 using System;
 
@@ -26,3 +27,4 @@ namespace Realm.Of.Y.Manager.Models.Container.DB_models.Rules
         }
     }
 }
+#endif

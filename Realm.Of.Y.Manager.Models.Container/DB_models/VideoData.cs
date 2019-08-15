@@ -1,10 +1,11 @@
 ﻿using EntityWorker.Core.Attributes;
 using System.Collections.Generic;
-using Realm.Of.Y.Manager.Models.Container.DB_models.Rules;
 
 namespace Realm.Of.Y.Manager.Models.Container.DB_models
 {
-    [Rule(typeof(VideoDataRule))]
+ #if NETCOREAPP2_2
+    [Rule(typeof(Realm.Of.Y.Manager.Models.Container.DB_models.Rules.VideoDataRule))]
+#endif
     public class VideoData : Base_Entity
     {
         public string Video_Id { get; set; }

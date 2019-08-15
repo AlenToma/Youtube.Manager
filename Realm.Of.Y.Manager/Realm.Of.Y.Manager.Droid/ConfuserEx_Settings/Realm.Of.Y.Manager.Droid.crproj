@@ -1,11 +1,11 @@
-<project debug="false" outputDir="E:\Projects\Realm.Of.Y.Manager\Realm.Of.Y.Manager\Realm.Of.Y.Manager.Droid\obj\Release\90\android\assets\ConfuserEx_Temp" baseDir="E:\Projects\Realm.Of.Y.Manager\Realm.Of.Y.Manager\Realm.Of.Y.Manager.Droid\obj\Release\90\android\assets" xmlns="http://confuser.codeplex.com">
-  <rule pattern="true" preset="normal" inherit ="false">
+<project debug="false" outputDir="E:\Projects\Realm.Of.Y.Manager\Realm.Of.Y.Manager\Realm.Of.Y.Manager.Droid\obj\Release\90\linksrc\ConfuserEx_Temp" baseDir="E:\Projects\Realm.Of.Y.Manager\Realm.Of.Y.Manager\Realm.Of.Y.Manager.Droid\obj\Release\90\linksrc" xmlns="http://confuser.codeplex.com">
+  <rule pattern="true" preset="normal" inherit="false">
            <protection id="anti debug" action="add" />
            <protection id="anti ildasm" action="add" />
            <protection id="constants" action="add" />
            <protection id="ctrl flow" action="add" />
            <protection id="ref proxy" action="remove" />
-           <protection id="resources" action="add" />
+           <protection id="resources" action="remove" />
            <protection id="rename" action="remove" />
   </rule>
   <module path="Realm.Of.Y.Manager.dll" />
@@ -26,7 +26,6 @@
   <module path="MediaManager.dll" external="true" />
   <module path="MediaManager.Forms.dll" external="true" />
   <module path="Microsoft.CSharp.dll" external="true" />
-  <module path="Microsoft.VisualBasic.dll" external="true" />
   <module path="Mono.Android.dll" external="true" />
   <module path="Mono.Security.dll" external="true" />
   <module path="mscorlib.dll" external="true" />

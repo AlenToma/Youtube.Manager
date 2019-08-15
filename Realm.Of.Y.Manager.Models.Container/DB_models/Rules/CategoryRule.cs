@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if NETCOREAPP2_2
+using System;
 using System.IO;
 using System.Linq;
 using EntityWorker.Core.Interface;
@@ -30,11 +31,11 @@ namespace Realm.Of.Y.Manager.Models.Container.DB_models.Rules
                     var document = new DirectoryManager(Path.Combine(Actions.ImageRootPath, Actions.GenerateUserFolderName(user.Email))).Create();
                     var fName = $"{Guid.NewGuid().ToString("N")}.png";
                     var path = Path.Combine(document.DirectoryPath, fName);
-#if NETCOREAPP2_2
+
                     var file = Actions.CombineImages(videos.Select(a => a.ThumpUrl).ToArray());
                     File.WriteAllBytes(path, file);
                     x.Logo = Path.Combine(Actions.GenerateUserFolderName(user.Email), fName);
-#endif
+
                 }
             }
 
@@ -52,3 +53,4 @@ namespace Realm.Of.Y.Manager.Models.Container.DB_models.Rules
         }
     }
 }
+#endif

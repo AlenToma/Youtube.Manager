@@ -29,7 +29,6 @@
     <PackageReference Include="EntityWorker.Core" Version="3.0.7" />
     <PackageReference Include="FastDeepCloner" Version="1.2.5" />
     <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
-    <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="Rest.API.Translator" Version="1.0.4" />
   </ItemGroup>
